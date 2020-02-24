@@ -8,6 +8,7 @@ class Screen:
 
         self.sprites = pygame.sprite.Group()
         self.clock = pygame.time.Clock()
+        self.player = None
 
         self.window = pygame.display
         self.window_mode = self.window.set_mode(dimensions)
@@ -24,11 +25,10 @@ class Screen:
 
             self.sprites.update()
 
-            for sprite in self.sprites:
-                if isinstance(sprite, Player):
-                    sprite.move()
-                    self.window_mode.blit(pygame.image.load("images/back pix.png").convert_alpha(), [0, 0])
-                    sprite.draw(self.window_mode)
+            self.player.move()
+            self.window_mode.blit(pygame.image.load("images/back pix.png").convert_alpha(), [0, 0])
+            self.player.draw(self.window_mode)
+            self.draw_sprites()
 
             for event in pygame.event.get():
 
@@ -45,6 +45,9 @@ class Screen:
 
     def get_sprites(self):
         return self.sprites
+
+    def register_player(self, sprite):
+        self.player = sprite
 
     def add_sprite(self, *sprite):
         self.sprites.add(sprite)
