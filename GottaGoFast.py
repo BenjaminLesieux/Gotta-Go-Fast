@@ -10,7 +10,7 @@ player = Player((500, 500), "images/left.png")
 platform = Platform((400, 400), True, "images/platforme V1.png")
 platform2 = Platform((600, 400), True, "images/platforme V1.png")
 
-screen.add_sprite(platform, platform2)
+screen.add_platform(platform, platform2)
 screen.register_player(player)
 
 screen.run()

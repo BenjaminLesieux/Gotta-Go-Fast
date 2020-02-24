@@ -1,5 +1,7 @@
 import pygame
 from entities.player import Player
+from entities.platform import Platform
+from errors.error import GGFError
 
 
 class Screen:
@@ -8,7 +10,7 @@ class Screen:
 
         self.sprites = pygame.sprite.Group()
         self.clock = pygame.time.Clock()
-        self.player = None
+        self.player = None  # :)
 
         self.window = pygame.display
         self.window_mode = self.window.set_mode(dimensions)
@@ -38,6 +40,9 @@ class Screen:
             self.window.flip()
             self.clock.tick(2000)
 
+    def stop(self):
+        self.playing = False
+
     def draw_sprites(self):
         self.sprites.draw(self.window_mode)
         # self.sprites.update() //Optionnel
@@ -49,8 +54,10 @@ class Screen:
     def register_player(self, sprite):
         self.player = sprite
 
-    def add_sprite(self, *sprite):
-        self.sprites.add(sprite)
+    def add_platform(self, *sprite):
+        self.sprites.add(sprite) if isinstance(sprite, Platform) else GGFError(self, GGFError.WRONG_ARGUMENT,
+                                                                               str(self.__class__)).log()
 
-    def remove_sprite(self, *sprite):
-        self.sprites.remove(sprite)
+    def remove_platform(self, *sprite):
+        self.sprites.remove(sprite) if isinstance(sprite, Platform) else GGFError(self, GGFError.WRONG_ARGUMENT,
+                                                                                  str(self.__class__)).log()
