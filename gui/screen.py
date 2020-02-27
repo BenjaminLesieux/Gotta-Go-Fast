@@ -55,9 +55,7 @@ class Screen:
         self.player = sprite
 
     def add_platform(self, *sprite):
-        self.sprites.add(sprite) if isinstance(sprite, Platform) else GGFError(self, GGFError.WRONG_ARGUMENT,
-                                                                               str(self.__class__)).log()
+        self.sprites.add(sprite) if isinstance(sprite, Platform) else None
 
     def remove_platform(self, *sprite):
-        self.sprites.remove(sprite) if isinstance(sprite, Platform) else GGFError(self, GGFError.WRONG_ARGUMENT,
-                                                                                  str(self.__class__)).log()
+        self.sprites.remove(sprite) if isinstance(sprite, Platform) else None

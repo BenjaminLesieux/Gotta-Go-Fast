@@ -17,7 +17,7 @@ class Player(Sprite):
     def move(self):
         """ Gestion des évènements """
         key = pygame.key.get_pressed()
-        dist = 5  # la distance en 1 frame
+        dist = 6  # la distance en 1 frame
         if key[pygame.K_DOWN]:  # down key
             self.y += dist  # down
         elif key[pygame.K_UP]:  # up key
