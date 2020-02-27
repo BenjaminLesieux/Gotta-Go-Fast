@@ -38,7 +38,7 @@ class Screen:
                     self.playing = False
 
             self.window.flip()
-            self.clock.tick(2000)
+            self.clock.tick(60)
 
     def stop(self):
         self.playing = False
