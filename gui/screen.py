@@ -27,9 +27,12 @@ class Screen:
 
             self.sprites.update()
 
-            self.player.move()
+            for sprite in self.sprites:
+                if isinstance(sprite, Player):
+                    sprite.move()
+                    sprite.draw(self.window_mode)
+
             self.window_mode.blit(pygame.image.load("images/back pix.png").convert_alpha(), [0, 0])
-            self.player.draw(self.window_mode)
             self.draw_sprites()
 
             for event in pygame.event.get():
@@ -54,8 +57,8 @@ class Screen:
     def register_player(self, sprite):
         self.player = sprite
 
-    def add_platform(self, *sprite):
-        self.sprites.add(sprite) if isinstance(sprite, Platform) else None
+    def add_sprite(self, *sprite):
+        self.sprites.add(sprite)
 
-    def remove_platform(self, *sprite):
-        self.sprites.remove(sprite) if isinstance(sprite, Platform) else None
+    def remove_sprite(self, *sprite):
+        self.sprites.remove(sprite)

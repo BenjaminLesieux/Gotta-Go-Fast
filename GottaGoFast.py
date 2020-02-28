@@ -6,11 +6,10 @@ from gui.screen import Screen
 
 screen = Screen((1600, 900))
 
-player = Player((500, 500), "images/left.png")
-platform = Platform((400, 400), True, "images/platforme V1.png")
-platform2 = Platform((600, 400), True, "images/platforme V1.png")
+player = Player((300, 300), "images/face.png")
+plat1 = Platform((400, 400), True, "images/plateforme 1 V2.png")
+plat2 = Platform((400, 500), True, "images/plateforme 2 V2.png")
 
-screen.add_platform(platform, platform2)
-screen.register_player(player)
+screen.add_sprite(player, plat1, plat2)
 
 screen.run()

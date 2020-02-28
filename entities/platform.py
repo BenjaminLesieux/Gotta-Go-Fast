@@ -15,3 +15,6 @@ class Platform(Sprite):
 
     def is_mobile(self):
         return self.mobile
+
+    def move(self):
+        pass
