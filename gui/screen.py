@@ -23,16 +23,16 @@ class Screen:
 
     def run(self):
 
+        for sprite in self.sprites:
+            if isinstance(sprite, Player):
+                self.player = sprite
+
         while self.playing:
 
             self.sprites.update()
 
-            for sprite in self.sprites:
-                if isinstance(sprite, Player):
-                    sprite.move()
-                    sprite.draw(self.window_mode)
-
             self.window_mode.blit(pygame.image.load("images/back pix.png").convert_alpha(), [0, 0])
+            self.player.move()
             self.draw_sprites()
 
             for event in pygame.event.get():
