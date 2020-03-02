@@ -258,8 +258,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.game" />
-      <item itemvalue="Python.ggf" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.ggf" />
     </list>
   </component>
   <component name="SvnConfiguration">
