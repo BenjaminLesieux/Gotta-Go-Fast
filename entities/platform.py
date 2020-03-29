@@ -17,4 +17,5 @@ class Platform(Sprite):
         return self.mobile
 
     def move(self):
-        pass
+        if self.mobile:
+            print("I'm moving")

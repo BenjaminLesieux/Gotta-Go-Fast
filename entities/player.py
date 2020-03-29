@@ -3,10 +3,10 @@ from pygame.sprite import *
 
 class Player(Sprite):
 
-    def __init__(self, position, image_link):
+    def __init__(self, position):
         super().__init__()
         self.position = position
-        self.image = pygame.image.load(image_link).convert_alpha()
+        self.image = pygame.image.load("images/face.png").convert_alpha()
         self.rect = self.image.get_rect(center=position)
         self.x = position[0]
         self.y = position[1]
@@ -15,6 +15,7 @@ class Player(Sprite):
         return self.position
 
     def move(self):
+        print("Je suis pd")
         """ Gestion des évènements """
         key = pygame.key.get_pressed()
         dist = 6  # la distance en 1 frame
