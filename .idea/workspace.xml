@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
+    <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin&#10;&#10;Signed-off-by: stephench420 &lt;benjamin.lesieux@efrei.net&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GottaGoFast.py" beforeDir="false" afterPath="$PROJECT_DIR$/GottaGoFast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/platform.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/platform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/screen.py" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="57" />
+            <state relative-caret-position="450">
+              <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -80,9 +77,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="24" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1353" />
+    <option name="y" value="25" />
     <option name="width" value="1440" />
     <option name="height" value="838" />
   </component>
@@ -118,7 +115,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -249,9 +246,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.game" />
       <item itemvalue="Python.ggf" />
-      <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.test" />
     </list>
   </component>
@@ -343,11 +340,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583136214215</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin&#10;&#10;Signed-off-by: stephench420 &lt;benjamin.lesieux@efrei.net&gt;">
+      <created>1585495709966</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585495709966</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="838" extended-state="6" />
+    <frame x="1636" y="76" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21282594" />
@@ -355,7 +359,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49964765" weight="0.3297587" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48766738" visible="true" weight="0.3632708" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48766738" weight="0.34522292" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49682876" weight="0.39678285" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -616,8 +620,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="57" />
+        <state relative-caret-position="450">
+          <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

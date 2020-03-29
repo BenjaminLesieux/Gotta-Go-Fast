@@ -6,7 +6,7 @@ class GGf:
 
     def __init__(self):
         pygame.init()
-        pygame.display.set_caption("Gotta go fast - Menu")
+        pygame.display.set_caption("Gotta go fast")
         self.mode = pygame.display.set_mode((1280, 720))
         self.font = pygame.font.SysFont(None, 100)
         self.clock = pygame.time.Clock()
@@ -26,8 +26,6 @@ class GGf:
         while True:
             self.mode.blit(self.bg, [0, 0])
             self.draw_text("Gotta go fast", self.font, (109, 7, 26), self.mode, 430, 10)
-
-            alpha = 0
 
             mouse_x, mouse_y = pygame.mouse.get_pos()
 
@@ -76,11 +74,24 @@ class GGf:
             self.clock.tick(60)
 
     def rules(self):
-        print("yass")
+
+        running = True
+
+        while running:
+            self.mode.blit(self.bg, [0, 0])
+            self.draw_text("Options", self.font, (255, 255, 255), self.mode, 500, 10)
+            pygame.display.update()
+            self.clock.tick(60)
 
     def game(self):
 
-        print("yes")
+        running = True
 
+        while running:
+            self.mode.blit(self.bg, [0, 0])
+            self.draw_text('Level 1', self.font, (255, 255, 255), self.mode, 20, 20)
+            pygame.display.update()
+            self.clock.tick(60)
+            running = False
 
 ggf = GGf()
