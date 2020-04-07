@@ -15,13 +15,13 @@ class Player(Sprite):
         self.falling = False
         self.landed = True
         self.power = 0.9
-        self.alpha = -27
+        self.alpha = 27
         self.angle = -self.alpha * pi / 60  # .................calcul de l'angle en RAD, selon alpha
         self.convert = (
                     (38.2 / 1920) / 100)  # ..........Pour un écran 17", 38.2 cm = 1920pix => 1 pix = (38.2/1920)/100 m
         self.g = 9.81  # .............................constante de gravitation
         self.sens = 1  # 1 : droite ; -1 : gauche
-        self.i = 1
+        self.i = 1  # variables itérative arbitraire (remplace la variable temporaire d'une vraie équation de trajectoire)
         self.d0 = self.x
         self.h0 = self.y
 
@@ -55,20 +55,22 @@ class Player(Sprite):
 
     def jump(self, power, angle):
         if self.landed == True:
+            print(self.d0, self.x)
             self.d0 = int(self.x)  # mise à jour des conditions initiales
             self.h0 = int(self.y)  # """
             self.y = self.h0
             self.x = self.d0
             self.i = 1
             self.falling = False
+            print(self.d0, self.x)
             return
         else:
-            while (self.i < 20):
+            while (self.i < 50):
                 self.x = self.sens * self.i * power * cos(
-                    angle) + self.d0  # ..........................equation horaire selon x, avec les differentes variables
+                    angle) + self.d0  # ...........................................equation horaire selon x
                 self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
                     angle) * self.i + self.h0  # .......equation horaire selon y
                 self.i += 1
-                print("oh je saute")
+                print("oh je saute", self.d0, self.x, self.i)
                 self.update_position()
             self.landed = True
