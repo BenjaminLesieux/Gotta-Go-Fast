@@ -14,9 +14,11 @@ class Game:
         for sprite in self.platforms:
             sprite.move()
             sprite.draw(self.screen.mode)
-        self.player.move()
+        falling = self.player.fall()
+        if (falling == False):  # s'il ne tombe pas, il peut bouger
+            self.player.move()
         self.player.draw(self.screen.mode)
-        self.screen.clock.tick(25)
+        self.screen.clock.tick(60)
 
     def render_level(self, link):
         pass
@@ -29,3 +31,4 @@ class Game:
 
     def register_player(self, player):
         self.player = player
+        self.player.surface = self.screen.mode

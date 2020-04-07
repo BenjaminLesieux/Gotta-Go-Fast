@@ -3,6 +3,8 @@ import sys
 from game.Game import Game
 from entities.player import Player
 from entities.platform import Platform
+from pygame.locals import *
+from math import *
 from utils import Utils
 
 
@@ -128,10 +130,10 @@ class GGf:
             for event in pygame.event.get():
                 if event.type == pygame.K_KP_ENTER:
                     break
-                if event.type == pygame.QUIT:
-                    sys.exit(0)
+                if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+                    sys.exit(0)  # si echap ou bouton croix, quitter
 
             pygame.display.update()
-            self.clock.tick(25)
+            self.clock.tick(60)
 
 ggf = GGf()
