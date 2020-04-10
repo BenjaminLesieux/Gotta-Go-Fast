@@ -117,8 +117,7 @@ class GGf:
 
     def game(self):
 
-        self.play.register_platform(Platform((500, 100), True, "images/plateforme 1 V2.png"))
-        self.play.register_platform(Platform((600, 300), False, "images/plateforme 1 V2.png"))
+        self.play.register_platform_by_file("level1.txt")
         self.play.register_player(Player([100, 300]))
 
         while True:
@@ -130,6 +129,9 @@ class GGf:
             for event in pygame.event.get():
                 if event.type == pygame.K_KP_ENTER:
                     break
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
+                    self.play.register_platform("level1.txt", mouse_pos, False)
                 if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                     sys.exit(0)  # si echap ou bouton croix, quitter
 
