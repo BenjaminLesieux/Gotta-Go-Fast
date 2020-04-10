@@ -117,15 +117,13 @@ class GGf:
 
     def game(self):
 
-        self.play.register_platform(Platform((500, 100), True, "images/plateforme 2.png"))
+        self.play.register_platform(Platform((500, 100), False, "images/plateforme 2.png"))
         self.play.register_platform(Platform((600, 300), False, "images/plateforme 2.png"))
         self.play.register_platform(Platform((-20, 690), False, "images/plateforme 2.png"))
         self.play.register_player(Player([100, 300]))
 
         while True:
             self.mode.blit(self.bg, [0, 0])
-            self.draw_text('Level 1', self.font, (255, 255, 255), self.mode, 20, 20)
-
             self.play.process()
 
             for event in pygame.event.get():
@@ -134,7 +132,9 @@ class GGf:
                 if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                     sys.exit(0)  # si echap ou bouton croix, quitter
 
+            self.draw_text('Level 1', self.font, (255, 255, 255), self.mode, 20, 20)
             pygame.display.update()
+
             self.clock.tick(60)
 
 ggf = GGf()
