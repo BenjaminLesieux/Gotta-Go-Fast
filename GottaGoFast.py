@@ -80,7 +80,7 @@ class GGf:
             self.draw_text("Options", self.font, (200, 7, 26), self.mode, 530, 400)
 
             pygame.display.update()
-            self.clock.tick(25)
+            self.clock.tick(60)
 
     def rules(self):
 
@@ -117,8 +117,9 @@ class GGf:
 
     def game(self):
 
-        self.play.register_platform(Platform((500, 100), True, "images/plateforme 1 V2.png"))
-        self.play.register_platform(Platform((600, 300), False, "images/plateforme 1 V2.png"))
+        self.play.register_platform(Platform((500, 100), True, "images/plateforme 2.png"))
+        self.play.register_platform(Platform((600, 300), False, "images/plateforme 2.png"))
+        self.play.register_platform(Platform((-20, 690), False, "images/plateforme 2.png"))
         self.play.register_player(Player([100, 300]))
 
         while True:
