@@ -44,12 +44,7 @@ class Player(Sprite):
     def move(self):
         """ Gestion des évènements """
         key = pygame.key.get_pressed()
-        nb_key = 0
         dist = 6  # la distance en 1 frame
-
-        for i in range(0,len(key)):
-            if (key[i] == 1):
-                nb_key += 1
 
         if (self.landed == False):
             self.jump(self.power, self.angle)
@@ -67,9 +62,8 @@ class Player(Sprite):
             elif key[pygame.K_SPACE]:  # space key
                 self.update_position()
                 self.landed = False
-
-        if (nb_key == 0):
-            self.face = True
+            else:
+                self.face = True
         
         self.animation()    
 
@@ -105,21 +99,31 @@ class Player(Sprite):
         if (self.frame == 12):
             self.frame = 0
 
-        if self.face:
-            self.image = self.list_images[0]
+        if self.landed:
+
+            if self.face:
+                self.image = self.list_images[0]
+
+            else:
+                if (self.sens == 1):
+                    if (self.frame//6 == 0):
+                        self.image = self.list_images[1]
+                    else:
+                        self.image = self.list_images[2]
+                    self.frame += 1
+                
+                elif (self.sens == -1):
+                    if (self.frame//6 == 0):
+                        self.image = self.list_images[3]
+                    else:
+                        self.image = self.list_images[4]
+                    self.frame += 1
+
         else:
+
             if (self.sens == 1):
-                if (self.frame//6 == 0):
-                    self.image = self.list_images[1]
-                else:
-                    self.image = self.list_images[2]
-                self.frame += 1
-            
+                self.image = self.list_images[1]
             elif (self.sens == -1):
-                if (self.frame//6 == 0):
-                    self.image = self.list_images[3]
-                else:
-                    self.image = self.list_images[4]
-                self.frame += 1
+                self.image = self.list_images[3]
 
         #print(self.frame)
