@@ -7,7 +7,11 @@ class Player(Sprite):
     def __init__(self, position):
         super().__init__()
         self.position = position
-        self.list_images = [pygame.image.load("images/face.png").convert_alpha(),pygame.image.load("images/right1.png").convert_alpha(),pygame.image.load("images/right2.png").convert_alpha(),pygame.image.load("images/left1.png").convert_alpha(),pygame.image.load("images/left2.png").convert_alpha()]
+        self.list_images = [pygame.image.load("images/face.png").convert_alpha(),
+                            pygame.image.load("images/right1.png").convert_alpha(),
+                            pygame.image.load("images/right2.png").convert_alpha(),
+                            pygame.image.load("images/left1.png").convert_alpha(),
+                            pygame.image.load("images/left2.png").convert_alpha()]
         self.image = self.list_images[0]
         self.rect = self.image.get_rect(center=position)
         self.surface = None
@@ -16,11 +20,11 @@ class Player(Sprite):
         self.ground = self.rect.bottom
         self.falling = False
         self.landed = True
-        self.power = 0.8
-        self.alpha = 25
+        self.power = 0.9
+        self.alpha = 26
         self.angle = -self.alpha * pi / 60  # .................calcul de l'angle en RAD, selon alpha
         self.convert = (
-                    (38.2 / 1920) / 100)  # ..........Pour un écran 17", 38.2 cm = 1920pix => 1 pix = (38.2/1920)/100 m
+                (38.2 / 1920) / 100)  # ..........Pour un écran 17", 38.2 cm = 1920pix => 1 pix = (38.2/1920)/100 m
         self.g = 9.81  # .............................constante de gravitation
         self.sens = 1  # 1 : droite ; -1 : gauche
         self.i = 1  # variables itérative arbitraire (remplace la variable temporaire d'une vraie équation de trajectoire)
@@ -82,16 +86,14 @@ class Player(Sprite):
             angle) + self.d0  # ...........................................equation horaire selon x
         self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
             angle) * self.i + self.h0  # .......equation horaire selon y
-        self.i += 20
+        self.i += 30
         #print("oh je saute", self.h0, self.y, self.i)
         self.draw(self.surface)
 
-        if (self.i > 800):
+        if (self.i > 910):
             self.landed = True
             self.update_position()
-        """
-        diplay all things 
-        """
+
         return
 
     def animation(self):

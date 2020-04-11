@@ -34,4 +34,4 @@ class GameMenu(Gui):
                     sys.exit(0)
 
             pygame.display.update()
-            self.clock.tick(30)
+            self.clock.tick(60)
