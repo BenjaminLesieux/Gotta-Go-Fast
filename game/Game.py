@@ -1,7 +1,7 @@
 import pygame
 from entities.player import Player
 from entities.platform import Platform
-
+from entities.lava import Lava
 
 class Game:
 
@@ -9,16 +9,25 @@ class Game:
         self.screen = screen
         self.platforms = []
         self.player = None
+        self.lava = None
+        self.state = False
 
     def process(self):
         for sprite in self.platforms:
             sprite.move()
             sprite.draw(self.screen.mode)
-        falling = self.player.fall()
 
-        if not falling:  # s'il ne tombe pas, il peut bouger
+        falling = self.player.fall()
+        if (falling == False):  # s'il ne tombe pas, il peut bouger
             self.player.move()
+
+        if self.state == False:
+            self.state = self.player.can_lava_move()    #Vérification de la hauteur à partir de laquelle la lave monte
+        self.lava.is_moving(self.state)
+        self.lava.move()    
+
         self.player.draw(self.screen.mode)
+        self.lava.draw(self.screen.mode)        # Lave en dernier !
         self.screen.clock.tick(60)
 
     def render_level(self, link):
@@ -31,7 +40,7 @@ class Game:
 
         file.close()
 
-        self.platforms.append(Platform(position, mobile, "images/plateforme 1 V2.png"))
+        self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
 
     def register_platform_by_file(self, level_name):
         level = open(level_name, "r")
@@ -57,11 +66,15 @@ class Game:
 
             print(str(x) + " " + str(y) + " " + str(mobile))
 
-            self.platforms.append(Platform(position, mobile, "images/plateforme 1 V2.png"))
+            self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
 
     def remove_platform(self, *sprite):
         self.platforms.remove(sprite)
 
     def register_player(self, player):
         self.player = player
+        self.player.surface = self.screen.mode
+
+    def render_lava(self):
+        self.lava = Lava()
         self.player.surface = self.screen.mode

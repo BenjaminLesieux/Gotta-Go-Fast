@@ -129,3 +129,11 @@ class Player(Sprite):
                 self.image = self.list_images[3]
 
         #print(self.frame)
+
+    def can_lava_move(self):
+
+        if self.y <= 475.5:             # Valeur à changer pour le début de montée de lave
+            return True
+        else :
+            return False
+        

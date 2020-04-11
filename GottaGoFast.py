@@ -118,7 +118,8 @@ class GGf:
     def game(self):
 
         self.play.register_platform_by_file("level1.txt")
-        self.play.register_player(Player([100, 300]))
+        self.play.register_player(Player([100, 600]))
+        self.play.render_lava()
 
         while True:
             self.mode.blit(self.bg, [0, 0])
