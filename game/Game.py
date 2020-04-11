@@ -51,6 +51,8 @@ class Game:
             while lines[j][i] != "-":
                 i += 1
 
+            # Commentaire pour commit
+
             y = int(lines[j][last + 1:i])
             position = (x, y)
             mobile = True if lines[j][i + 1:] == "True" else False
