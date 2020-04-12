@@ -6,6 +6,8 @@ from entities.platform import Platform
 from pygame.locals import *
 from math import *
 from utils import Utils
+from leveleditor import Level
+from leveleditor import LevelEditor
 
 
 class GGf:
@@ -18,6 +20,8 @@ class GGf:
         self.clock = pygame.time.Clock()
         self.bg = pygame.image.load("images/back.png").convert_alpha()
         self.play = Game(self)
+        self.level = None
+        self.level_selector = LevelEditor(self)
         self.menu()
 
     def draw_text(self, text, font, color, surface, x, y):
@@ -31,7 +35,10 @@ class GGf:
         # pygame.mixer.music.set_volume(0.5)
         # pygame.mixer.music.play(-1)
 
+        self.level_selector.propose_levels()
+
         while True:
+
             self.mode.blit(self.bg, [0, 0])
             self.draw_text("Gotta go fast", self.font, (109, 7, 26), self.mode, 430, 10)
 
@@ -57,7 +64,9 @@ class GGf:
             if play.collidepoint((mouse_x, mouse_y)):
                 highlight = "play"
                 if click:
-                    self.game()
+
+                    while not self.level_selector.has_selected_level():
+                        self.level_selector.process()
 
             if rules.collidepoint((mouse_x, mouse_y)):
                 highlight = "rules"
@@ -117,13 +126,13 @@ class GGf:
 
     def game(self):
 
-        self.play.register_platform_by_file("level1.txt")
+        self.play.register_platform_by_file(self.level.location)
         self.play.register_player(Player([100, 600]))
         self.play.render_lava()
 
         while True:
             self.mode.blit(self.bg, [0, 0])
-            self.draw_text('Level 1', self.font, (255, 255, 255), self.mode, 20, 20)
+            self.draw_text(self.level.name, self.font, (255, 255, 255), self.mode, 20, 20)
 
             self.play.process()
 
@@ -132,11 +141,14 @@ class GGf:
                     break
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
-                    self.play.register_platform("level1.txt", mouse_pos, False)
+                    self.play.register_platform(self.level.location, mouse_pos, False)
                 if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                     sys.exit(0)  # si echap ou bouton croix, quitter
 
             pygame.display.update()
-            self.clock.tick(60)
+            self.clock.tick(25)
+
+    def level_maker(self):
+        pass
 
 ggf = GGf()

@@ -2,6 +2,8 @@ import pygame
 from entities.player import Player
 from entities.platform import Platform
 from entities.lava import Lava
+import os.path
+
 
 class Game:
 
@@ -18,10 +20,11 @@ class Game:
             sprite.draw(self.screen.mode)
 
         falling = self.player.fall()
-        if (falling == False):  # s'il ne tombe pas, il peut bouger
+
+        if falling is False:  # s'il ne tombe pas, il peut bouger
             self.player.move()
 
-        if self.state == False:
+        if self.state is False:
             self.state = self.player.can_lava_move()    #Vérification de la hauteur à partir de laquelle la lave monte
         self.lava.is_moving(self.state)
         self.lava.move()    
@@ -30,11 +33,10 @@ class Game:
         self.lava.draw(self.screen.mode)        # Lave en dernier !
         self.screen.clock.tick(60)
 
-    def render_level(self, link):
-        pass
-
     def register_platform(self, level_name, position, mobile):
-        file = open(level_name, "a")
+
+        file = open(level_name, "a")  # Si non existant, le fichier sera créé
+
         file.write("{" + str(position[0]) + "-" + str(position[1]) + "-" + str(mobile) + "}\n")
         file.write("")
 
@@ -43,7 +45,9 @@ class Game:
         self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
 
     def register_platform_by_file(self, level_name):
-        level = open(level_name, "r")
+        level = open(level_name, "r") if os.path.exists(level_name + ".txt") else open(level_name, "a+")
+        level = open(level_name, "r")  # Pour être sûr de mettre en mode 'read' après la possible création
+
         lines = level.readlines()
 
         for j in range(0, len(lines)):
@@ -62,9 +66,7 @@ class Game:
             # s
             y = int(lines[j][last + 1:i])
             position = (x, y)
-            mobile = True if lines[j][i + 1:] == "True" else False
-
-            print(str(x) + " " + str(y) + " " + str(mobile))
+            mobile = True if lines[j][i + 1:len(lines[j]) - 2] == "True" else False
 
             self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
 
