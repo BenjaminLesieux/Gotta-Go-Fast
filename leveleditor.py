@@ -58,7 +58,7 @@ class LevelEditor:
 
             if highlight == button[1].name:
                 pygame.draw.rect(self.mode, (109, 7, 26), button[0])
-            if highlight == "None":
+            if highlight != button[1].name:
                 pygame.draw.rect(self.mode, (255, 0, 0), button[0])
 
             x = button[2][0] + 50
