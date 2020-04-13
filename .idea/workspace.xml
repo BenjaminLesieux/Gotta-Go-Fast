@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/leveleditor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/levels.txt" afterDir="false" />
+    <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="Correction du bug d'highlighting des boutons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GottaGoFast.py" beforeDir="false" afterPath="$PROJECT_DIR$/GottaGoFast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/game_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/game_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/option_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/option_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1&#10;.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leveleditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/leveleditor.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +23,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-309">
+            <state relative-caret-position="-250">
               <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -33,8 +35,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="209">
+              <caret line="72" column="45" lean-forward="true" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/button.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/game_menu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/option_menu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/gui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -54,20 +104,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/leveleditor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="31" column="91" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="91" />
+            <state relative-caret-position="230">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/levels.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -131,13 +172,16 @@
         <option value="$PROJECT_DIR$/levels.txt" />
         <option value="$PROJECT_DIR$/bitches.txt" />
         <option value="$PROJECT_DIR$/faustinjtm.txt" />
+        <option value="$PROJECT_DIR$/gui/game_menu.py" />
+        <option value="$PROJECT_DIR$/gui/gui.py" />
+        <option value="$PROJECT_DIR$/gui/button.py" />
+        <option value="$PROJECT_DIR$/gui/option_menu.py" />
         <option value="$PROJECT_DIR$/GottaGoFast.py" />
         <option value="$PROJECT_DIR$/leveleditor.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1472" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="837" />
@@ -161,6 +205,11 @@
               <item name="Gotta Go Fast mais en bien" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gotta Go Fast mais en bien" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gotta Go Fast mais en bien" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gotta Go Fast mais en bien" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -483,14 +532,28 @@
       <option name="project" value="LOCAL" />
       <updated>1586621220935</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Ajout d'une selection de niveau, pour l'instant doit s'ajouter à la main dans le fichiers levels.txt en n'oubliant pas de sauter une ligne à la fin">
+      <created>1586703369138</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1586703369138</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Correction du bug d'highlighting des boutons">
+      <created>1586703555508</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1586703555508</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1549" y="23" width="1440" height="837" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18604651" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -560,7 +623,9 @@
     <MESSAGE value="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin&#10;&#10;Signed-off-by: stephench420 &lt;benjamin.lesieux@efrei.net&gt;" />
     <MESSAGE value="Ce serait bien que quelqu'un me dise si le changement des menus s'effectue ou non&#10;&#10;Signed-off-by: stephench420 &lt;benjamin.lesieux@efrei.net&gt;" />
     <MESSAGE value="Quent1 lel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quent1 lel" />
+    <MESSAGE value="Ajout d'une selection de niveau, pour l'instant doit s'ajouter à la main dans le fichiers levels.txt en n'oubliant pas de sauter une ligne à la fin" />
+    <MESSAGE value="Correction du bug d'highlighting des boutons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction du bug d'highlighting des boutons" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -606,13 +671,6 @@
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$Projet_Tranverse_1.coverage" NAME="game Coverage Results" MODIFIED="1580931744961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/level1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/levels.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -620,10 +678,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/level1&#10;.txt" />
     <entry file="file://$PROJECT_DIR$/bitches.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/level1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -634,20 +710,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
+    <entry file="file://$PROJECT_DIR$/gui/button.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="176">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gui/option_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game/Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
+        <state relative-caret-position="-250">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/game_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="72" column="45" lean-forward="true" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -656,8 +762,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/leveleditor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="31" column="91" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="91" />
+        <state relative-caret-position="230">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

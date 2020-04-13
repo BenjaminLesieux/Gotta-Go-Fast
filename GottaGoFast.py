@@ -7,8 +7,11 @@ from pygame.locals import *
 from math import *
 from utils import Utils
 from leveleditor import Level
+from leveleditor import LevelSelector
 from leveleditor import LevelEditor
-
+from gui.game_menu import GameMenu
+from gui.option_menu import OptionMenu
+from gui.button import Button
 
 class GGf:
 
@@ -21,7 +24,9 @@ class GGf:
         self.bg = pygame.image.load("images/back.png").convert_alpha()
         self.play = Game(self)
         self.level = None
-        self.level_selector = LevelEditor(self)
+        self.level_selector = LevelSelector(self)
+        self.game_menu = GameMenu(self)
+        self.option_menu = OptionMenu(self)
         self.menu()
 
     def draw_text(self, text, font, color, surface, x, y):
@@ -42,10 +47,9 @@ class GGf:
             self.mode.blit(self.bg, [0, 0])
             self.draw_text("Gotta go fast", self.font, (109, 7, 26), self.mode, 430, 10)
 
-            mouse_x, mouse_y = pygame.mouse.get_pos()
-
-            play = pygame.Rect(430, 300, 450, 70)
-            rules = pygame.Rect(430, 400, 450, 70)
+            play = Button("Jouer", 450, 70, (430, 300), self)
+            rules = Button("Règles", 450, 70, (430, 400), self)
+            editor = Button("Editeur", 450, 70, (430, 500), self)
             highlight = "None"
             click = False
 
@@ -61,89 +65,26 @@ class GGf:
                     if event.button == 1:
                         click = True
 
-            if play.collidepoint((mouse_x, mouse_y)):
-                highlight = "play"
+            if play.collides():
+                highlight = play.title
                 if click:
 
                     while not self.level_selector.has_selected_level():
                         self.level_selector.process()
 
-            if rules.collidepoint((mouse_x, mouse_y)):
-                highlight = "rules"
+            elif rules.collides():
+                highlight = rules.title
                 if click:
-                    self.rules()
+                    self.option_menu.loop()
 
-            if highlight == "play":
-                pygame.draw.rect(self.mode, (109, 7, 26), play)
-                pygame.draw.rect(self.mode, (255, 0, 0), rules)
-
-            elif highlight == "rules":
-                pygame.draw.rect(self.mode, (255, 0, 0), play)
-                pygame.draw.rect(self.mode, (109, 7, 26), rules)
-
-            elif highlight == "None":
-                pygame.draw.rect(self.mode, (255, 0, 0), play)
-                pygame.draw.rect(self.mode, (255, 0, 0), rules)
-
-            self.draw_text("Jouer", self.font, (200, 7, 26), self.mode, 550, 300)
-            self.draw_text("Options", self.font, (200, 7, 26), self.mode, 530, 400)
-
-            pygame.display.update()
-            self.clock.tick(25)
-
-    def rules(self):
-
-        running = True
-
-        while running:
-            self.mode.blit(self.bg, [0, 0])
-            self.draw_text("Options", self.font, (255, 255, 255), self.mode, 500, 10)
-
-            quit = pygame.Rect(430, 300, 450, 70)
-            click = False
-            mouse_x, mouse_y = pygame.mouse.get_pos()
-            highlight = "None"
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit(0)
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 1:
-                        click = True
-
-            if quit.collidepoint((mouse_x, mouse_y)):
-                highlight = "quit"
+            elif editor.collides():
+                highlight = editor.title
                 if click:
-                    running = False
+                    pass
 
-            if highlight == "quit":
-                pygame.draw.rect(self.mode, (109, 7, 26), quit)
-            elif highlight == "None":
-                pygame.draw.rect(self.mode, (255, 0, 0), quit)
-
-            pygame.display.update()
-            self.clock.tick(25)
-
-    def game(self):
-
-        self.play.register_platform_by_file(self.level.location)
-        self.play.register_player(Player([100, 600]))
-        self.play.render_lava()
-
-        while True:
-            self.mode.blit(self.bg, [0, 0])
-            self.draw_text(self.level.name, self.font, (255, 255, 255), self.mode, 20, 20)
-
-            self.play.process()
-
-            for event in pygame.event.get():
-                if event.type == pygame.K_KP_ENTER:
-                    break
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_pos = pygame.mouse.get_pos()
-                    self.play.register_platform(self.level.location, mouse_pos, False)
-                if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
-                    sys.exit(0)  # si echap ou bouton croix, quitter
+            play.render(highlight)
+            rules.render(highlight)
+            editor.render(highlight)
 
             pygame.display.update()
             self.clock.tick(25)

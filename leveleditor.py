@@ -2,7 +2,7 @@ import pygame
 import sys
 
 
-class LevelEditor:
+class LevelSelector:
 
     def __init__(self, game):
         self.game = game
@@ -54,7 +54,7 @@ class LevelEditor:
                 if click:
                     self.selected_level = button[1]
                     self.game.level = self.selected_level
-                    self.game.game()
+                    self.game.game_menu.loop()
 
             if highlight == button[1].name:
                 pygame.draw.rect(self.mode, (109, 7, 26), button[0])
@@ -75,3 +75,14 @@ class Level:
     def __init__(self, name):
         self.name = name
         self.location = name + ".txt"
+
+
+class LevelEditor:
+
+    def __init(self, name, game):
+        self.name = name
+        self.game = game
+        self.mode = self.game.mode
+
+    def process(self):
+        pass
