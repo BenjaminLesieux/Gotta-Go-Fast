@@ -28,6 +28,7 @@ class LevelSelector:
 
     def process(self):
 
+        self.buttons.clear()
         self.mode.blit(self.bg, [0, 0])
         self.game.draw_text("Select Level", self.game.font, (255, 255, 255), self.mode, 450, 10)
 
@@ -77,12 +78,3 @@ class Level:
         self.location = name + ".txt"
 
 
-class LevelEditor:
-
-    def __init(self, name, game):
-        self.name = name
-        self.game = game
-        self.mode = self.game.mode
-
-    def process(self):
-        pass

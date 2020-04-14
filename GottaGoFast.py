@@ -1,14 +1,7 @@
 import pygame
 import sys
 from game.Game import Game
-from entities.player import Player
-from entities.platform import Platform
-from pygame.locals import *
-from math import *
-from utils import Utils
-from leveleditor import Level
-from leveleditor import LevelSelector
-from leveleditor import LevelEditor
+from gui.levelselector import LevelSelector
 from gui.game_menu import GameMenu
 from gui.option_menu import OptionMenu
 from gui.button import Button
