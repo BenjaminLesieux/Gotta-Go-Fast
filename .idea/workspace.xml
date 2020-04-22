@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/levels.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +43,6 @@
         </map>
       </branch-storage>
     </favorite-branches>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="32" />
-    <option name="width" value="1440" />
-    <option name="height" value="837" />
   </component>
   <component name="ProjectId" id="1XOvJ1RyeXfBkRTAuA9ybmCI4Sq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -238,7 +237,7 @@
       <workItem from="1581523776021" duration="2896000" />
       <workItem from="1586208727547" duration="1094000" />
       <workItem from="1586267102471" duration="6878000" />
-      <workItem from="1587556536611" duration="496000" />
+      <workItem from="1587556536611" duration="2350000" />
     </task>
     <task id="LOCAL-00001" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin">
       <created>1582529065885</created>
@@ -380,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587556950225</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Ya le game over (et 60 fps hehe)">
+      <created>1587557039590</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1587557039590</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,30 +445,30 @@
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587556582157" />
     <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587556582157" />
-    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2" timestamp="1587556948727">
+    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2" timestamp="1587557038677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587556948727" />
+    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587557038677" />
     <state x="694" y="282" key="EnvironmentVariablesDialog" timestamp="1587556582157" />
     <state x="694" y="282" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587556582157" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587556582157" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587556582157" />
-    <state width="938" height="348" key="GridCell.Tab.0.bottom" timestamp="1587556821246">
+    <state width="938" height="277" key="GridCell.Tab.0.bottom" timestamp="1587557760169">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587556821246" />
-    <state width="938" height="348" key="GridCell.Tab.0.center" timestamp="1587556821246">
+    <state width="938" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587557760169" />
+    <state width="938" height="277" key="GridCell.Tab.0.center" timestamp="1587557760168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587556821246" />
-    <state width="938" height="348" key="GridCell.Tab.0.left" timestamp="1587556821246">
+    <state width="938" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587557760168" />
+    <state width="938" height="277" key="GridCell.Tab.0.left" timestamp="1587557760168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587556821246" />
-    <state width="938" height="348" key="GridCell.Tab.0.right" timestamp="1587556821246">
+    <state width="938" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587557760168" />
+    <state width="938" height="277" key="GridCell.Tab.0.right" timestamp="1587557760168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587556821246" />
+    <state width="938" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587557760168" />
     <state width="938" height="348" key="GridCell.Tab.1.bottom" timestamp="1587556821247">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -489,7 +495,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProjetTranverse1$test.coverage" NAME="test Coverage Results" MODIFIED="1581526788278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$game.coverage" NAME="game Coverage Results" MODIFIED="1581356655030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ggf$ggf.coverage" NAME="ggf Coverage Results" MODIFIED="1587556821234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ggf$ggf.coverage" NAME="ggf Coverage Results" MODIFIED="1587557760155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$bin.coverage" NAME="bin Coverage Results" MODIFIED="1581074667779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProjetTranverse1$game.coverage" NAME="game Coverage Results" MODIFIED="1581447233474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ggf$All_trajectories.coverage" NAME="All trajectories Coverage Results" MODIFIED="1586271495509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ProjetTranverse1" />
