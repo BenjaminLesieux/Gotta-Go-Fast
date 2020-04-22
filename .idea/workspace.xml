@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GottaGoFast.py" beforeDir="false" afterPath="$PROJECT_DIR$/GottaGoFast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/game_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/game_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/levelselector.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/levelselector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/option_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/option_menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +238,7 @@
       <workItem from="1581523776021" duration="2896000" />
       <workItem from="1586208727547" duration="1094000" />
       <workItem from="1586267102471" duration="6878000" />
-      <workItem from="1587556536611" duration="254000" />
+      <workItem from="1587556536611" duration="496000" />
     </task>
     <task id="LOCAL-00001" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin">
       <created>1582529065885</created>
@@ -377,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586779648322</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Ya le game over (et 60 fps hehe)">
+      <created>1587556950225</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1587556950225</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,15 +431,18 @@
     <MESSAGE value="Ajout d'une selection de niveau, pour l'instant doit s'ajouter à la main dans le fichiers levels.txt en n'oubliant pas de sauter une ligne à la fin" />
     <MESSAGE value="Correction du bug d'highlighting des boutons" />
     <MESSAGE value="Simplification du code, il est beaucoup plus facile de créer des boutons. Voir option_menu.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simplification du code, il est beaucoup plus facile de créer des boutons. Voir option_menu.py" />
+    <MESSAGE value="Ya le game over (et 60 fps hehe)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya le game over (et 60 fps hehe)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587556582157" />
     <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587556582157" />
-    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2" timestamp="1587556582157" />
-    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587556582157" />
+    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2" timestamp="1587556948727">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="405" y="89" width="1148" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587556948727" />
     <state x="694" y="282" key="EnvironmentVariablesDialog" timestamp="1587556582157" />
     <state x="694" y="282" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587556582157" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587556582157" />
