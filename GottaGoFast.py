@@ -80,7 +80,7 @@ class GGf:
             editor.render(highlight)
 
             pygame.display.update()
-            self.clock.tick(25)
+            self.clock.tick(60)
 
     def level_maker(self):
         pass

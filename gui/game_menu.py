@@ -33,4 +33,4 @@ class GameMenu(Gui):
                     sys.exit(0)  # si echap ou bouton croix, quitter
 
             pygame.display.update()
-            self.game.clock.tick(25)
+            self.game.clock.tick(60)

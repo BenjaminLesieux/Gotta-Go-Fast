@@ -68,7 +68,7 @@ class LevelSelector:
             self.game.draw_text(button[1].name, self.game.font, (100, 7, 26), self.mode, x, y)
 
         pygame.display.update()
-        self.game.clock.tick(25)
+        self.game.clock.tick(60)
 
 
 class Level:

@@ -40,4 +40,4 @@ class OptionMenu(Gui):
             self.back.render(highlight)
 
             pygame.display.update()
-            self.game.clock.tick(25)
+            self.game.clock.tick(60)
