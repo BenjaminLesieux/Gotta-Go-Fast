@@ -25,12 +25,12 @@ class Game:
             self.player.move()
 
         if self.state is False:
-            self.state = self.player.can_lava_move()    #Vérification de la hauteur à partir de laquelle la lave monte
+            self.state = self.player.can_lava_move()  # Vérification de la hauteur à partir de laquelle la lave monte
         self.lava.is_moving(self.state)
-        self.lava.move()    
+        self.lava.move()
 
         self.player.draw(self.screen.mode)
-        self.lava.draw(self.screen.mode)        # Lave en dernier !
+        self.lava.draw(self.screen.mode)  # Lave en dernier !
         self.screen.clock.tick(60)
 
     def register_platform(self, level_name, position, mobile):

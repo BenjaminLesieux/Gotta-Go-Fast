@@ -1,10 +1,11 @@
 import pygame
 import sys
-from game.Game import Game
+from game.game_handler import Game
 from gui.levelselector import LevelSelector
 from gui.game_menu import GameMenu
 from gui.option_menu import OptionMenu
 from gui.button import Button
+
 
 class GGf:
 
@@ -12,7 +13,7 @@ class GGf:
         pygame.init()
         pygame.display.set_caption("Gotta go fast")
         self.mode = pygame.display.set_mode((1280, 720))
-        self.font = pygame.font.SysFont(None, 100)
+        self.font = pygame.font.Font("images/Fipps-Regular.otf", 45)
         self.clock = pygame.time.Clock()
         self.bg = pygame.image.load("images/back.png").convert_alpha()
         self.play = Game(self)
@@ -80,7 +81,7 @@ class GGf:
             editor.render(highlight)
 
             pygame.display.update()
-            self.clock.tick(25)
+            self.clock.tick(60)
 
     def level_maker(self):
         pass

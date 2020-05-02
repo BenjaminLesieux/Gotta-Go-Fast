@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gui/leveleditor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Fipps-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/menu button.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GottaGoFast.py" beforeDir="false" afterPath="$PROJECT_DIR$/GottaGoFast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitches.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bitches.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leveleditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/levelselector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/platform.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/platform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faustinjtm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/faustinjtm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/game_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/game_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/game_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/levels.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+            <state relative-caret-position="123">
+              <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -32,7 +38,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui/button.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="261">
+              <caret line="32" column="87" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="87" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/entities/player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui/game_menu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/gui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -42,10 +84,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/game_menu.py">
+        <entry file="file://$PROJECT_DIR$/game/game_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="304">
+              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/levelselector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -56,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui/option_menu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+            <state relative-caret-position="508">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -66,61 +120,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/gui.py">
+        <entry file="file://$PROJECT_DIR$/levels.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bitches.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/levelselector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gui/leveleditor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faustinjtm.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/level1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="64">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -161,24 +164,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/level1.txt" />
-        <option value="$PROJECT_DIR$/game/Game.py" />
-        <option value="$PROJECT_DIR$/levels.txt" />
         <option value="$PROJECT_DIR$/bitches.txt" />
-        <option value="$PROJECT_DIR$/faustinjtm.txt" />
-        <option value="$PROJECT_DIR$/gui/game_menu.py" />
         <option value="$PROJECT_DIR$/gui/gui.py" />
-        <option value="$PROJECT_DIR$/gui/button.py" />
         <option value="$PROJECT_DIR$/gui/option_menu.py" />
-        <option value="$PROJECT_DIR$/GottaGoFast.py" />
         <option value="$PROJECT_DIR$/leveleditor.py" />
         <option value="$PROJECT_DIR$/gui/levelselector.py" />
         <option value="$PROJECT_DIR$/gui/leveleditor.py" />
+        <option value="$PROJECT_DIR$/level1.txt" />
+        <option value="$PROJECT_DIR$/entities/platform.py" />
+        <option value="$PROJECT_DIR$/game/Game.py" />
+        <option value="$PROJECT_DIR$/faustinjtm.txt" />
+        <option value="$PROJECT_DIR$/levels.txt" />
+        <option value="$PROJECT_DIR$/gui/button.py" />
+        <option value="$PROJECT_DIR$/GottaGoFast.py" />
+        <option value="$PROJECT_DIR$/gui/game_menu.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="32" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1460" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="837" />
   </component>
@@ -189,12 +194,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Gotta Go Fast mais en bien" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gotta Go Fast mais en bien" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gotta Go Fast mais en bien" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gotta Go Fast mais en bien" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gotta Go Fast mais en bien" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gotta Go Fast mais en bien" type="462c0819:PsiDirectoryNode" />
+              <item name="errors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gotta Go Fast mais en bien" type="b2602c69:ProjectViewProjectNode" />
@@ -206,11 +222,15 @@
               <item name="Gotta Go Fast mais en bien" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Gotta Go Fast mais en bien" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gotta Go Fast mais en bien" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -228,8 +248,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gui" />
       <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/gui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -550,14 +570,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586779648322</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Simplification du code, il est beaucoup plus facile de créer des boutons. Voir option_menu.py">
+      <created>1586887946900</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1586887946900</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="837" extended-state="0" />
+    <frame x="1481" y="23" width="1440" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18604651" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18604651" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -676,6 +703,56 @@
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$Projet_Tranverse_1.coverage" NAME="game Coverage Results" MODIFIED="1580931744961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/level1&#10;.txt" />
+    <entry file="file://$PROJECT_DIR$/bitches.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/level1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/leveleditor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tkinter/dnd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="270" column="13" selection-start-line="270" selection-start-column="13" selection-end-line="270" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2019.1/python_stubs/-1199943126/pygame/_freetype.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1824">
+          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entities/platform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faustinjtm.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/levels.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -683,21 +760,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/level1&#10;.txt" />
-    <entry file="file://$PROJECT_DIR$/game/Game.py">
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="176">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/button.py">
+    <entry file="file://$PROJECT_DIR$/images/menu button.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/game_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="304">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -706,49 +788,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/option_menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+        <state relative-caret-position="508">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/gui.py">
+    <entry file="file://$PROJECT_DIR$/gui/levelselector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="96">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitches.txt">
+    <entry file="file://$PROJECT_DIR$/entities/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="36">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faustinjtm.txt">
+    <entry file="file://$PROJECT_DIR$/gui/button.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/level1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/game_menu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="261">
+          <caret line="32" column="87" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="87" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -757,28 +828,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+        <state relative-caret-position="123">
+          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/levelselector.py">
+    <entry file="file://$PROJECT_DIR$/gui/game_menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="336">
+          <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/leveleditor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
