@@ -1,6 +1,6 @@
 import pygame
 import sys
-
+from gui.button import Button
 
 class LevelSelector:
 
@@ -35,7 +35,8 @@ class LevelSelector:
         i = 0
 
         for level in self.levels:
-            self.buttons.append((pygame.Rect(430, 300 + i, 450, 70), level, [430, 300 + i]))
+            b = Button(level.name, 450, 70, (430, 300 + i), self.game)
+            self.buttons.append((b, level, [430, 300 + i]))
             i += 80
 
         click = False
@@ -50,22 +51,14 @@ class LevelSelector:
                     click = True
 
         for button in self.buttons:
-            if button[0].collidepoint((mouse_x, mouse_y)):
+            if button[0].collides():
                 highlight = button[1].name
                 if click:
                     self.selected_level = button[1]
                     self.game.level = self.selected_level
                     self.game.game_menu.loop()
 
-            if highlight == button[1].name:
-                pygame.draw.rect(self.mode, (109, 7, 26), button[0])
-            if highlight != button[1].name:
-                pygame.draw.rect(self.mode, (255, 0, 0), button[0])
-
-            x = button[2][0] + 50
-            y = button[2][1]
-
-            self.game.draw_text(button[1].name, self.game.font, (100, 7, 26), self.mode, x, y)
+            button[0].render(highlight)
 
         pygame.display.update()
         self.game.clock.tick(60)

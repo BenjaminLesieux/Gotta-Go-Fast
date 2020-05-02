@@ -19,7 +19,7 @@ class GameMenu(Gui):
 
         while True:
             self.game.mode.blit(self.game.bg, [0, 0])
-            self.game.draw_text(self.game.level.name, self.game.font, (255, 255, 255), self.game.mode, 20, 20)
+            self.game.draw_text(self.game.level.name, self.game.font, (109, 0, 0), self.game.mode, 20, 20)
 
             self.play.process()
 

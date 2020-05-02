@@ -36,3 +36,6 @@ class Platform(Sprite):
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
+
+    def collides_with(self, player):
+        return True

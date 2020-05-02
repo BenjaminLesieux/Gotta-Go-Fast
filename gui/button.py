@@ -11,9 +11,10 @@ class Button:
         self.position = position
         self.x = position[0]
         self.y = position[1]
+        self.image = pygame.image.load("images/menu button.png").convert_alpha()
         self.game = game
         self.mouse_x, self.mouse_y = pygame.mouse.get_pos()
-        self.value = pygame.Rect(self.x, self.y, width, height)
+        self.value = self.image.get_rect(topleft=(self.x, self.y))
 
     def collides(self):
         if self.value.collidepoint(self.mouse_x, self.mouse_y):
@@ -25,9 +26,13 @@ class Button:
         self.game.draw_text(text, font, color, surface, x, y)
 
     def render(self, highlight):
-        if highlight == self.title:
-            pygame.draw.rect(self.game.mode, (109, 7, 26), self.value)
-        else:
-            pygame.draw.rect(self.game.mode, (255, 0, 0), self.value)
 
-        self.draw_text(self.title, self.game.font, (109, 7, 26), self.game.mode, self.x, self.y)
+        self.game.mode.blit(self.image, (self.x, self.y))
+
+        if highlight == self.title:
+            self.draw_text(self.title, pygame.font.Font("images/Fipps-Regular.otf", 26), (109, 0, 0), self.game.mode,
+                           self.x + 5, self.y)
+
+        else:
+            self.draw_text(self.title, pygame.font.Font("images/Fipps-Regular.otf", 26), (0, 0, 0), self.game.mode,
+                           self.x + 5, self.y)
