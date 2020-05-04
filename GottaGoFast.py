@@ -18,7 +18,7 @@ class GGf:
         self.mode = pygame.display.set_mode((1280, 720))
         self.font = pygame.font.Font("images/Fipps-Regular.otf", 45)
         self.clock = pygame.time.Clock()
-        self.bg = pygame.image.load("images/back.png").convert_alpha()
+        self.bg = pygame.image.load("images/back.png")
         self.play = Game(self)
         self.level = None
         self.level_selector = LevelSelector(self)

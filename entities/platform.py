@@ -9,12 +9,13 @@ class Platform(Sprite):
         self.position = position
         self.mobile = mobile
         self.image = pygame.image.load(image_link)
-        self.rect = self.image.get_rect(center=position)
+        self.rect = self.image.get_rect()
         self.loop = 0
         self.sens = False
         self.x = position[0]
         self.y = position[1]
-        
+        self.rect.topleft = self.position[0], self.position[1]
+
     def get_position(self):
         return self.position
 
@@ -34,7 +35,7 @@ class Platform(Sprite):
                 self.sens = False
             if self.x == self.position[0] - 40:
                 self.sens = True
-        self.rect.center = self.x, self.y
+        self.rect.topleft = self.x, self.y
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
@@ -43,7 +44,5 @@ class Platform(Sprite):
 
         if player.rect.collidepoint(self.rect.topleft) == 1 or player.rect.collidepoint(
                 self.rect.midtop) == 1 or player.rect.collidepoint(self.rect.topright) == 1:
-            print('collision top')
-            time.sleep(0.5)
             return 1
         return 0

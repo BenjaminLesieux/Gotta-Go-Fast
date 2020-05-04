@@ -16,21 +16,22 @@ class Game:
 
     def process(self):
 
-        collide = 0  # pas de collisions
-        falling = False
+        falling = True
         self.player.update()
 
         for sprite in self.platforms:
+            pygame.draw.rect(self.screen.mode, pygame.Color('blue'), self.player.rect, 1)
+            pygame.draw.rect(self.screen.mode, pygame.Color('green'), sprite.rect, 1)
             self.screen.py_sprite.remove(sprite)
             sprite.move()
             self.screen.py_sprite.add(sprite)
             sprite.draw(self.screen.mode)
-            collide = sprite.collides_with(player=self.player)
-        print(collide)
-        falling = self.player.fall(collide)
 
-        if falling is False:  # s'il ne tombe pas, il peut bouger
-            self.player.move()
+            collide = sprite.collides_with(player=self.player)
+            falling = self.player.fall(collide)
+
+            if falling is False:  # s'il ne tombe pas, il peut bouger
+                self.player.move()
 
         if self.state is False:
             self.state = self.player.can_lava_move()  # Vérification de la hauteur à partir de laquelle la lave monte

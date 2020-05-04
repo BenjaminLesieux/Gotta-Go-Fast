@@ -7,13 +7,13 @@ class Player(Sprite):
     def __init__(self, position):
         super().__init__()
         self.position = position
-        self.list_images = [pygame.image.load("images/face.png").convert_alpha(),
-                            pygame.image.load("images/right1.png").convert_alpha(),
-                            pygame.image.load("images/right2.png").convert_alpha(),
-                            pygame.image.load("images/left1.png").convert_alpha(),
-                            pygame.image.load("images/left2.png").convert_alpha()]
+        self.list_images = [pygame.image.load("images/face.png"),
+                            pygame.image.load("images/right1.png"),
+                            pygame.image.load("images/right2.png"),
+                            pygame.image.load("images/left1.png"),
+                            pygame.image.load("images/left2.png")]
         self.image = self.list_images[0]
-        self.rect = self.image.get_rect(topleft=position)
+        self.rect = self.image.get_rect()
         self.surface = None
         self.x = position[0]
         self.y = position[1]
@@ -36,7 +36,7 @@ class Player(Sprite):
         return self.position
 
     def update(self):
-        self.rect.center = self.x, self.y
+        self.rect.topleft = self.x, self.y + 10
         self.position = self.x, self.y
 
     def update_position(self):
@@ -46,7 +46,7 @@ class Player(Sprite):
         self.x = self.d0
         self.position = self.x, self.y
         self.i = 1
-        self.rect.center = self.x, self.y
+        self.rect.topleft = self.x, self.y + 10
 
     def move(self):
         """ Gestion des évènements """
@@ -80,10 +80,9 @@ class Player(Sprite):
     def fall(self, collide):
         if (collide == 0 or collide == 2):
             self.y = self.convert * 0.5 * self.g * self.i * self.i + self.h0
-            self.i += 30
+            self.i += 20
             return True
         self.update_position()
-        print(collide)
         return False
 
     def jump(self, power, angle):
