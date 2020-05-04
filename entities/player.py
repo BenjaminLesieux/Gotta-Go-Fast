@@ -13,7 +13,7 @@ class Player(Sprite):
                             pygame.image.load("images/left1.png").convert_alpha(),
                             pygame.image.load("images/left2.png").convert_alpha()]
         self.image = self.list_images[0]
-        self.rect = self.image.get_rect(center=position)
+        self.rect = self.image.get_rect(topleft=position)
         self.surface = None
         self.x = position[0]
         self.y = position[1]
@@ -36,14 +36,18 @@ class Player(Sprite):
     def get_position(self):
         return self.position
 
+    def update(self):
+        self.rect.center = self.x, self.y
+        self.position = self.x, self.y
+
     def update_position(self):
         self.d0 = int(self.x)  # mise à jour des conditions initiales
         self.h0 = int(self.y)
         self.y = self.h0
         self.x = self.d0
-        self.position[0] = self.x
-        self.position[1] = self.y
+        self.position = self.x, self.y
         self.i = 1
+        self.rect.center = self.x, self.y
 
     def move(self):
         """ Gestion des évènements """
@@ -136,4 +140,9 @@ class Player(Sprite):
             return True
         else :
             return False
-        
+
+    def collide(self, rectangle):
+        if self.rect.colliderect(rectangle.rect):
+            print("stop")
+            return True
+        return False

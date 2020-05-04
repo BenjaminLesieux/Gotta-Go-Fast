@@ -15,9 +15,15 @@ class Game:
         self.state = False
 
     def process(self):
+
+        self.player.update()
+
         for sprite in self.platforms:
+            self.screen.py_sprite.remove(sprite)
+            self.screen.py_sprite.add(sprite)
             sprite.move()
             sprite.draw(self.screen.mode)
+            sprite.collides_with(player=self.player)
 
         falling = self.player.fall()
 
@@ -27,9 +33,10 @@ class Game:
         if self.state is False:
             self.state = self.player.can_lava_move()  # Vérification de la hauteur à partir de laquelle la lave monte
         self.lava.is_moving(self.state)
-        self.lava.move()
+        # self.lava.move()
 
         self.player.draw(self.screen.mode)
+        self.player.update()
         self.lava.draw(self.screen.mode)  # Lave en dernier !
         self.screen.clock.tick(60)
 
@@ -42,7 +49,10 @@ class Game:
 
         file.close()
 
-        self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
+        plat = Platform(position, mobile, "images/plateforme 1.png")
+
+        self.platforms.append(plat)
+        self.screen.py_sprite.add(plat)
 
     def register_platform_by_file(self, level_name):
         level = open(level_name, "r") if os.path.exists(level_name + ".txt") else open(level_name, "a+")
@@ -68,7 +78,10 @@ class Game:
             position = (x, y)
             mobile = True if lines[j][i + 1:len(lines[j]) - 2] == "True" else False
 
-            self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
+            plat = Platform(position, mobile, "images/plateforme 1.png")
+
+            self.platforms.append(plat)
+            self.screen.py_sprite.add(plat)
 
     def remove_platform(self, *sprite):
         self.platforms.remove(sprite)

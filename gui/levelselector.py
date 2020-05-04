@@ -40,7 +40,6 @@ class LevelSelector:
             i += 80
 
         click = False
-        mouse_x, mouse_y = pygame.mouse.get_pos()
         highlight = "None"
 
         for event in pygame.event.get():
