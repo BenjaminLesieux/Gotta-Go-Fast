@@ -1,4 +1,5 @@
 from pygame.sprite import *
+import time
 
 
 class Platform(Sprite):
@@ -40,21 +41,9 @@ class Platform(Sprite):
 
     def collides_with(self, player):
 
-        if player.rect.collidepoint(self.rect.topleft) == 1:
-            print("topleft it is")
-        elif player.rect.collidepoint(self.rect.topright) == 1:
-            print("topright it is")
-        elif player.rect.collidepoint(self.rect.bottomleft) == 1:
-            print("bottomleft it is")
-        elif player.rect.collidepoint(self.rect.bottomright) == 1:
-            print("bottomright it is")
-        elif player.rect.collidepoint(self.rect.midleft) == 1:
-            print("midleft it is")
-        elif player.rect.collidepoint(self.rect.midright) == 1:
-            print("midright it is")
-        elif player.rect.collidepoint(self.rect.midtop) == 1:
-            print("midtop it is")
-        elif player.rect.collidepoint(self.rect.midbottom) == 1:
-            print("midbottom it is")
-
-        return True
+        if player.rect.collidepoint(self.rect.topleft) == 1 or player.rect.collidepoint(
+                self.rect.midtop) == 1 or player.rect.collidepoint(self.rect.topright) == 1:
+            print('collision top')
+            time.sleep(0.5)
+            return 1
+        return 0

@@ -71,17 +71,19 @@ class Player(Sprite):
                 self.landed = False
             else:
                 self.face = True
-        
-        self.animation()    
+
+        self.animation()
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
 
-    def fall(self):
-        if (self.y < 620 and self.landed == True):
+    def fall(self, collide):
+        if (collide == 0 or collide == 2):
             self.y = self.convert * 0.5 * self.g * self.i * self.i + self.h0
             self.i += 30
             return True
+        self.update_position()
+        print(collide)
         return False
 
     def jump(self, power, angle):
@@ -92,10 +94,6 @@ class Player(Sprite):
         self.i += 30
         #print("oh je saute", self.h0, self.y, self.i)
         self.draw(self.surface)
-
-        if (self.i > 910):
-            self.landed = True
-            self.update_position()
 
         return
 
@@ -140,8 +138,3 @@ class Player(Sprite):
         else :
             return False
 
-    def collide(self, rectangle):
-        if self.rect.colliderect(rectangle.rect):
-            print("stop")
-            return True
-        return False

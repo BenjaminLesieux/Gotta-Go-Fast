@@ -5,6 +5,7 @@ from gui.levelselector import LevelSelector
 from gui.game_menu import GameMenu
 from gui.option_menu import OptionMenu
 from gui.button import Button
+from pygame.locals import *
 
 
 class GGf:
@@ -50,17 +51,12 @@ class GGf:
             click = False
 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
+                if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        pygame.quit()
-                        sys.exit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         click = True
-
             if play.collides():
                 highlight = play.title
                 if click:

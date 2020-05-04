@@ -16,16 +16,18 @@ class Game:
 
     def process(self):
 
+        collide = 0  # pas de collisions
+        falling = False
         self.player.update()
 
         for sprite in self.platforms:
             self.screen.py_sprite.remove(sprite)
-            self.screen.py_sprite.add(sprite)
             sprite.move()
+            self.screen.py_sprite.add(sprite)
             sprite.draw(self.screen.mode)
-            sprite.collides_with(player=self.player)
-
-        falling = self.player.fall()
+            collide = sprite.collides_with(player=self.player)
+        print(collide)
+        falling = self.player.fall(collide)
 
         if falling is False:  # s'il ne tombe pas, il peut bouger
             self.player.move()

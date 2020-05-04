@@ -15,7 +15,7 @@ class GameMenu(Gui):
     def loop(self):
         self.play.register_platform_by_file(self.game.level.location)
 
-        player = Player([100, 600])
+        player = Player([100, 450])
 
         self.play.register_player(player)
         self.game.player.add(player)
