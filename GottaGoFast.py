@@ -12,6 +12,8 @@ class GGf:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption("Gotta go fast")
+        self.py_sprite = pygame.sprite.Group()
+        self.player = pygame.sprite.Group()
         self.mode = pygame.display.set_mode((1280, 720))
         self.font = pygame.font.Font("images/Fipps-Regular.otf", 45)
         self.clock = pygame.time.Clock()

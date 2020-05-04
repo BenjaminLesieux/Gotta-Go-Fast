@@ -10,6 +10,7 @@ class Lava(Sprite):
         self.x = 0
         self.y = 720
         self.speed = 0.5
+        self.rect = self.image.get_rect()
 
     def move(self):
 

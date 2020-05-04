@@ -14,13 +14,16 @@ class GameMenu(Gui):
 
     def loop(self):
         self.play.register_platform_by_file(self.game.level.location)
-        self.play.register_player(Player([100, 600]))
+
+        player = Player([100, 600])
+
+        self.play.register_player(player)
+        self.game.player.add(player)
         self.play.render_lava()
 
         while True:
             self.game.mode.blit(self.game.bg, [0, 0])
             self.game.draw_text(self.game.level.name, self.game.font, (109, 0, 0), self.game.mode, 20, 20)
-
             self.play.process()
 
             for event in pygame.event.get():
