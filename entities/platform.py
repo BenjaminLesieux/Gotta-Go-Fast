@@ -33,10 +33,14 @@ class Platform(Sprite):
                 self.sens = False
             if self.x == self.position[0] - 40:
                 self.sens = True
+                
         self.rect.center = self.x, self.y
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
+
+    def move_y(self, delta_y):
+        self.y += delta_y
 
     def collides_with(self, player):
 
