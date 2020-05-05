@@ -13,6 +13,8 @@ class GameMenu(Gui):
         self.game = game
 
     def loop(self):
+
+        self.play.render_background()
         self.play.register_platform_by_file(self.game.level.location)
 
         player = Player([100, 600])
@@ -20,6 +22,7 @@ class GameMenu(Gui):
         self.play.register_player(player)
         self.game.player.add(player)
         self.play.render_lava()
+        
 
         while True:
             self.game.mode.blit(self.game.bg, [0, 0])
@@ -36,4 +39,4 @@ class GameMenu(Gui):
                     sys.exit(0)  # si echap ou bouton croix, quitter
 
             pygame.display.update()
-            self.game.clock.tick(25)
+            self.game.clock.tick(60)
