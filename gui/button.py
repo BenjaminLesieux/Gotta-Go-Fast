@@ -22,6 +22,14 @@ class Button:
 
         return False
 
+    def custom_image(self, link, dimensions):
+        self.image = pygame.image.load(link).convert_alpha()
+
+        if dimensions is not None:
+            self.image = pygame.transform.scale(self.image, dimensions)
+
+        return self
+
     def draw_text(self, text, font, color, surface, x, y):
         self.game.draw_text(text, font, color, surface, x, y)
 

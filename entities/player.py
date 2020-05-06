@@ -31,6 +31,7 @@ class Player(Sprite):
         self.h0 = self.y
         self.frame = 0
         self.face = True
+        self.dead = "None"
 
     def get_position(self):
         return self.position
@@ -69,6 +70,8 @@ class Player(Sprite):
             elif key[pygame.K_SPACE]:  # space key
                 self.update_position()
                 self.landed = False
+            elif key[pygame.K_s]:    #Test pour ecran de fin
+                self.dead = "Win"
             else:
                 self.face = True
 
@@ -95,6 +98,9 @@ class Player(Sprite):
         self.draw(self.surface)
 
         return
+
+    def new_rect(self):
+        self.rect = self.image.get_rect(center=self.position)
 
     def animation(self):
 
@@ -136,4 +142,12 @@ class Player(Sprite):
             return True
         else :
             return False
+    
+    def can_defil(self):
+
+        if self.y <= 475.5:             # Valeur à changer pour le début de montée de lave
+            return True
+        else :
+            return False
+
 

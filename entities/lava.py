@@ -12,10 +12,10 @@ class Lava(Sprite):
         self.speed = 0.5
         self.rect = self.image.get_rect()
 
-    def move(self):
+    def move(self, delta_y):
 
         if self.moving:
-            self.y -= self.speed
+            self.y -= self.speed - delta_y
     
     def is_moving(self, state):
 
