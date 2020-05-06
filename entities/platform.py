@@ -44,13 +44,13 @@ class Platform(Sprite):
 
     def collides_with(self, player, platforms):
         if pygame.sprite.spritecollideany(player, platforms, None) != None:
-            if player.rect.collidepoint(self.rect.topleft) == 1:
-                print('hg')
-            elif player.rect.collidepoint(self.rect.midtop) == 1:
-                print('hm')
-            elif player.rect.collidepoint(self.rect.topright) == 1:
-                print('hd')
-            else:
-                print("top")
+            if player.rect.collidepoint(self.rect.bottomleft) == 1:
+                return 0
+            elif player.rect.collidepoint(self.rect.midbottom) == 1:
+                return 0
+            elif player.rect.collidepoint(self.rect.bottomright) == 1:
+                return 0
+            """else:
+                print("top")"""
             return 1
         return 0

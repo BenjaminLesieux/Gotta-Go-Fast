@@ -1,5 +1,6 @@
 from pygame.sprite import *
 from math import *
+from entities.platform import Platform
 
 
 class Player(Sprite):
@@ -20,15 +21,18 @@ class Player(Sprite):
         self.ground = self.rect.bottom
         self.falling = False
         self.landed = True
-        self.power = 0.9
+        self.power = 0.7
         self.alpha = 26
         self.angle = -self.alpha * pi / 60  # .................calcul de l'angle en RAD, selon alpha
-        self.convert = ((38.2 / 1920) / 100)  # ..........Pour un écran 17", 38.2 cm = 1920pix => 1 pix = (38.2/1920)/100 m
+        self.convert = (
+                    (38.2 / 1920) / 100)  # ..........Pour un écran 17", 38.2 cm = 1920pix => 1 pix = (38.2/1920)/100 m
         self.g = 9.81  # .............................constante de gravitation
         self.sens = 1  # 1 : droite ; -1 : gauche
         self.i = 1  # variables itérative arbitraire (remplace la variable temporaire d'une vraie équation de trajectoire)
         self.d0 = self.x
         self.h0 = self.y
+        self.dist_jump = 30
+        self.dist_fall = 20
         self.frame = 0
         self.face = True
         self.dead = "None"
@@ -37,7 +41,7 @@ class Player(Sprite):
         return self.position
 
     def update(self):
-        self.rect.topleft = self.x, self.y + 10
+        self.rect.topleft = self.x, self.y
         self.position = self.x, self.y
 
     def update_position(self):
@@ -47,15 +51,16 @@ class Player(Sprite):
         self.x = self.d0
         self.position = self.x, self.y
         self.i = 1
-        self.rect.topleft = self.x, self.y + 10
+        self.rect.topleft = self.x, self.y
 
     def move(self):
         """ Gestion des évènements """
+        i = 0
         key = pygame.key.get_pressed()
         dist = 6  # la distance en 1 frame
 
         if (self.landed == False):
-            self.jump(self.power, self.angle)
+            i = self.jump(self.power, self.angle)
 
         else:
             self.face = False
@@ -70,34 +75,37 @@ class Player(Sprite):
             elif key[pygame.K_SPACE]:  # space key
                 self.update_position()
                 self.landed = False
+                i = 30
             elif key[pygame.K_s]:    #Test pour ecran de fin
                 self.dead = "Win"
             else:
                 self.face = True
 
         self.animation()
+        return i
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
 
-    def fall(self, collide):
-        if (collide == 0 or collide == 2):
-            self.y = self.convert * 0.5 * self.g * self.i * self.i + self.h0
-            self.i += 20
-            return True
-        self.update_position()
-        return False
+    def fall(self):
+        self.y = self.convert * 0.5 * self.g * self.i * self.i + self.h0
+        self.i += self.dist_fall
+        return
 
     def jump(self, power, angle):
         self.x = self.sens * self.i * power * cos(
             angle) + self.d0  # ...........................................equation horaire selon x
-        self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
-            angle) * self.i + self.h0  # .......equation horaire selon y
-        self.i += 30
-        #print("oh je saute", self.h0, self.y, self.i)
+        self.y = int(self.convert * 0.5 * self.g * self.i * self.i + power * sin(
+            angle) * self.i + self.h0)  # .......equation horaire selon y
+        self.i += self.dist_jump
+        self.new_rect()
+        self.rect.bottomleft = int(self.x), int(self.y + self.image.get_height() + 5)
+        self.rect.bottomright = int(self.x + self.image.get_width()), int(self.y + self.image.get_height() + 5)
+
+        print("oh je saute", self.h0, self.y, self.i)
         self.draw(self.surface)
 
-        return
+        return self.i
 
     def new_rect(self):
         self.rect = self.image.get_rect(center=self.position)
@@ -138,14 +146,14 @@ class Player(Sprite):
 
     def can_lava_move(self):
 
-        if self.y <= 475.5:             # Valeur à changer pour le début de montée de lave
+        if self.y <= 100:  # Valeur à changer pour le début de montée de lave
             return True
         else :
             return False
     
     def can_defil(self):
 
-        if self.y <= 475.5:             # Valeur à changer pour le début de montée de lave
+        if self.y <= 100:  # Valeur à changer pour le début de montée de lave
             return True
         else :
             return False

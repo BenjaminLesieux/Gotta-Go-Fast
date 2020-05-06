@@ -18,6 +18,7 @@ class Game:
         self.state = False
         self.stop = False
         self.background = None
+        self.i = 0
 
     def process(self):
 
@@ -38,28 +39,36 @@ class Game:
                     sprite.draw(self.screen.mode)
 
             self.background.draw(self.screen.mode)
-            pygame.draw.rect(self.screen.mode, pygame.Color('green'), self.player.rect, 0)
+            # pygame.draw.rect(self.screen.mode, pygame.Color('green'), self.player.rect, 0)
 
             for sprite in self.platforms:
-                pygame.draw.rect(self.screen.mode, pygame.Color('blue'), sprite.rect)
+                #pygame.draw.rect(self.screen.mode, pygame.Color('blue'), sprite.rect)
                 sprite.move()
                 sprite.draw(self.screen.mode)
-                if collide == 0:
+                if collide == 0 and (self.i < self.player.dist_jump or self.i > 100):
                     collide = sprite.collides_with(player=self.player, platforms=self.platforms)
+                    print(collide)
+                    if collide == 1:
+                        self.player.landed = True
+                        self.player.falling = False
+                        self.player.update_position()
+                    elif self.player.landed == True:
+                        self.player.falling = True
 
-            falling = self.player.fall(collide)
-
-            if falling is False:  # s'il ne tombe pas, il peut bouger
-                self.player.move()
+            if self.player.falling == True:
+                print('ah bon')
+                self.player.fall()
+            else:
+                self.i = self.player.move()
             self.player.new_rect()
             if self.state is False:
-                self.state = self.player.can_lava_move()    #Vérification de la hauteur à partir de laquelle la lave monte
+                self.state = self.player.can_lava_move()  # Vérification de la hauteur à partir de laquelle la lave monte
 
             self.lava.is_moving(self.state)
-            self.lava.move(self.background.delta_y)    
+            self.lava.move(self.background.delta_y)
 
             self.player.draw(self.screen.mode)
-            self.lava.draw(self.screen.mode)        # Lave en dernier !
+            self.lava.draw(self.screen.mode)  # Lave en dernier !
             self.end()
             
         else:

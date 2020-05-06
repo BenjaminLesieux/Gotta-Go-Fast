@@ -17,7 +17,7 @@ class GameMenu(Gui):
         self.play.render_background()
         self.play.register_platform_by_file(self.game.level.location)
 
-        player = Player([100, 400])
+        player = Player([100, 350])
 
         self.play.register_player(player)
         self.game.player.add(player)
