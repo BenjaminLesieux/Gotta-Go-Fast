@@ -1,6 +1,8 @@
 import pygame
 import sys
 from gui.button import Button
+from gui.leveleditor import LevelEditor
+
 
 class LevelSelector:
 
@@ -36,7 +38,8 @@ class LevelSelector:
 
         for level in self.levels:
             b = Button(level.name, 450, 70, (430, 300 + i), self.game)
-            self.buttons.append((b, level, [430, 300 + i]))
+            edit = Button("", 40, 40, (900, 300 + i), self.game).custom_image("images/ediiit.png", (50, 50))
+            self.buttons.append((b, level, [430, 300 + i], edit))
             i += 80
 
         click = False
@@ -56,8 +59,15 @@ class LevelSelector:
                     self.selected_level = button[1]
                     self.game.level = self.selected_level
                     self.game.game_menu.loop()
+            if button[3].collides():
+                highlight = button[1].name
+                if click:
+                    self.selected_level = button[1]
+                    self.game.level = self.selected_level
+                    LevelEditor(button[1], self.game.game_menu.play, self.mode, self).process()
 
             button[0].render(highlight)
+            button[3].render(highlight)
 
         pygame.display.update()
         self.game.clock.tick(60)

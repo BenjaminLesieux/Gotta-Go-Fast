@@ -21,7 +21,7 @@ class Game:
 
     def process(self):
 
-        if (self.stop != True):
+        if not self.stop:
 
             self.player.update()
 
