@@ -17,7 +17,7 @@ class GameMenu(Gui):
         self.play.render_background()
         self.play.register_platform_by_file(self.game.level.location)
 
-        player = Player([100, 600])
+        player = Player([100, 400])
 
         self.play.register_player(player)
         self.game.player.add(player)
@@ -36,4 +36,4 @@ class GameMenu(Gui):
                     sys.exit(0)  # si echap ou bouton croix, quitter
 
             pygame.display.update()
-            self.game.clock.tick(30)
+            self.game.clock.tick(60)

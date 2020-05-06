@@ -23,25 +23,31 @@ class Game:
 
         if not self.stop:
 
+            collide = 0
             self.player.update()
 
             if self.player.can_defil():
                 self.background.defil()
+
                 for sprite in self.platforms:
+
                     self.screen.py_sprite.remove(sprite)
-                    self.screen.py_sprite.add(sprite)
                     sprite.move_y(self.background.delta_y)
                     sprite.move()
+                    self.screen.py_sprite.add(sprite)
                     sprite.draw(self.screen.mode)
-                    sprite.collides_with(player=self.player)
 
             self.background.draw(self.screen.mode)
+            pygame.draw.rect(self.screen.mode, pygame.Color('green'), self.player.rect, 0)
 
             for sprite in self.platforms:
+                pygame.draw.rect(self.screen.mode, pygame.Color('blue'), sprite.rect)
                 sprite.move()
                 sprite.draw(self.screen.mode)
+                if collide == 0:
+                    collide = sprite.collides_with(player=self.player, platforms=self.platforms)
 
-            falling = self.player.fall()
+            falling = self.player.fall(collide)
 
             if falling is False:  # s'il ne tombe pas, il peut bouger
                 self.player.move()
