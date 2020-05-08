@@ -1,4 +1,4 @@
-import pygame
+import pygame, time
 from entities.player import Player
 from entities.platform import Platform
 from entities.lava import Lava
@@ -31,7 +31,6 @@ class Game:
                 self.background.defil()
 
                 for sprite in self.platforms:
-
                     self.screen.py_sprite.remove(sprite)
                     sprite.move_y(self.background.delta_y)
                     sprite.move()
@@ -39,15 +38,19 @@ class Game:
                     sprite.draw(self.screen.mode)
 
             self.background.draw(self.screen.mode)
-            # pygame.draw.rect(self.screen.mode, pygame.Color('green'), self.player.rect, 0)
-
+            # pygame.draw.rect(self.screen.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
+            k = 1
             for sprite in self.platforms:
-                #pygame.draw.rect(self.screen.mode, pygame.Color('blue'), sprite.rect)
+                print(k)
+                k += 1
+                # pygame.draw.rect(self.screen.mode, pygame.Color('blue'), sprite.rect)
+                # pygame.draw.line(self.screen.mode, pygame.Color('blue'), (self.player.x, self.player.rect.y) , (self.player.rect.right, self.player.rect.top))
+                # pygame.draw.line(self.screen.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top - 10) , (sprite.rect.right, sprite.rect.top - 10))
+                # pygame.draw.line(self.screen.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top + 10) , (sprite.rect.right, sprite.rect.top + 10))
                 sprite.move()
                 sprite.draw(self.screen.mode)
                 if collide == 0 and (self.i < self.player.dist_jump or self.i > 100):
                     collide = sprite.collides_with(player=self.player, platforms=self.platforms)
-                    print(collide)
                     if collide == 1:
                         self.player.landed = True
                         self.player.falling = False
@@ -56,10 +59,10 @@ class Game:
                         self.player.falling = True
 
             if self.player.falling == True:
-                print('ah bon')
                 self.player.fall()
             else:
                 self.i = self.player.move()
+
             self.player.new_rect()
             if self.state is False:
                 self.state = self.player.can_lava_move()  # Vérification de la hauteur à partir de laquelle la lave monte

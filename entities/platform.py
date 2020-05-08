@@ -1,4 +1,5 @@
 from pygame.sprite import *
+import time
 
 
 class Platform(Sprite):
@@ -43,14 +44,21 @@ class Platform(Sprite):
         self.y += delta_y
 
     def collides_with(self, player, platforms):
-        if pygame.sprite.spritecollideany(player, platforms, None) != None:
-            if player.rect.collidepoint(self.rect.bottomleft) == 1:
-                return 0
-            elif player.rect.collidepoint(self.rect.midbottom) == 1:
-                return 0
-            elif player.rect.collidepoint(self.rect.bottomright) == 1:
-                return 0
-            """else:
-                print("top")"""
+        if pygame.sprite.spritecollideany(player, platforms, None) != None and player.y_1 < player.y:
+            if player.rect.collidepoint(self.rect.topleft) == 1:
+                print("g")
+                if (type(player.y) != int):
+                    player.y = self.rect.top - player.image.get_height() + 1
+                    player.update_position()
+            elif player.rect.collidepoint(self.rect.midtop) == 1:
+                print("m")
+                if (type(player.y) != int):
+                    player.y = self.rect.top - player.image.get_height() + 1
+                    player.update_position()
+            elif player.rect.collidepoint(self.rect.topright) == 1:
+                print("d")
+                if (type(player.y) != int):
+                    player.y = self.rect.top - player.image.get_height() + 1
+                    player.update_position()
             return 1
         return 0

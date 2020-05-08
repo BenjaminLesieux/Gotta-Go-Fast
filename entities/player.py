@@ -18,6 +18,7 @@ class Player(Sprite):
         self.surface = None
         self.x = position[0]
         self.y = position[1]
+        self.y_1 = self.y
         self.ground = self.rect.bottom
         self.falling = False
         self.landed = True
@@ -75,7 +76,7 @@ class Player(Sprite):
             elif key[pygame.K_SPACE]:  # space key
                 self.update_position()
                 self.landed = False
-                i = 30
+                i = self.dist_jump
             elif key[pygame.K_s]:    #Test pour ecran de fin
                 self.dead = "Win"
             else:
@@ -95,14 +96,16 @@ class Player(Sprite):
     def jump(self, power, angle):
         self.x = self.sens * self.i * power * cos(
             angle) + self.d0  # ...........................................equation horaire selon x
-        self.y = int(self.convert * 0.5 * self.g * self.i * self.i + power * sin(
-            angle) * self.i + self.h0)  # .......equation horaire selon y
-        self.i += self.dist_jump
+        self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
+            angle) * self.i + self.h0  # .......equation horaire selon y
+        self.i -= self.dist_jump
+        self.y_1 = self.convert * 0.5 * self.g * self.i * self.i + power * sin(angle) * self.i + self.h0
+        self.i += 2 * self.dist_jump
         self.new_rect()
         self.rect.bottomleft = int(self.x), int(self.y + self.image.get_height() + 5)
         self.rect.bottomright = int(self.x + self.image.get_width()), int(self.y + self.image.get_height() + 5)
 
-        print("oh je saute", self.h0, self.y, self.i)
+        # print("oh je saute", self.x, self.y, self.i)
         self.draw(self.surface)
 
         return self.i
