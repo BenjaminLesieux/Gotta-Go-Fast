@@ -39,17 +39,14 @@ class Game:
 
             self.background.draw(self.screen.mode)
             # pygame.draw.rect(self.screen.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
-            k = 1
             for sprite in self.platforms:
-                print(k)
-                k += 1
                 # pygame.draw.rect(self.screen.mode, pygame.Color('blue'), sprite.rect)
                 # pygame.draw.line(self.screen.mode, pygame.Color('blue'), (self.player.x, self.player.rect.y) , (self.player.rect.right, self.player.rect.top))
                 # pygame.draw.line(self.screen.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top - 10) , (sprite.rect.right, sprite.rect.top - 10))
                 # pygame.draw.line(self.screen.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top + 10) , (sprite.rect.right, sprite.rect.top + 10))
                 sprite.move()
                 sprite.draw(self.screen.mode)
-                if collide == 0 and (self.i < self.player.dist_jump or self.i > 100):
+                if self.i < self.player.dist_jump or self.i > 100:
                     collide = sprite.collides_with(player=self.player, platforms=self.platforms)
                     if collide == 1:
                         self.player.landed = True

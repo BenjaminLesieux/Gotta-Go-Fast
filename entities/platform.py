@@ -46,18 +46,15 @@ class Platform(Sprite):
     def collides_with(self, player, platforms):
         if pygame.sprite.spritecollideany(player, platforms, None) != None and player.y_1 < player.y:
             if player.rect.collidepoint(self.rect.topleft) == 1:
-                print("g")
-                if (type(player.y) != int):
+                if (player.y != self.rect.top - player.image.get_height() + 1):
                     player.y = self.rect.top - player.image.get_height() + 1
                     player.update_position()
             elif player.rect.collidepoint(self.rect.midtop) == 1:
-                print("m")
-                if (type(player.y) != int):
+                if (player.y != self.rect.top - player.image.get_height() + 1):
                     player.y = self.rect.top - player.image.get_height() + 1
                     player.update_position()
             elif player.rect.collidepoint(self.rect.topright) == 1:
-                print("d")
-                if (type(player.y) != int):
+                if (player.y != self.rect.top - player.image.get_height() + 1):
                     player.y = self.rect.top - player.image.get_height() + 1
                     player.update_position()
             return 1
