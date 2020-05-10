@@ -149,14 +149,14 @@ class Player(Sprite):
 
     def can_lava_move(self):
 
-        if self.y <= 100:  # Valeur à changer pour le début de montée de lave
+        if self.y <= 500:  # Valeur à changer pour le début de montée de lave
             return True
         else :
             return False
     
     def can_defil(self):
 
-        if self.y <= 100:  # Valeur à changer pour le début de montée de lave
+        if self.y <= 300:  # Valeur à changer pour le début de montée de lave
             return True
         else :
             return False

@@ -19,15 +19,18 @@ class Game:
         self.stop = False
         self.background = None
         self.i = 0
+        self.lava_delta = 0
 
     def process(self):
 
         if not self.stop:
 
             collide = 0
+            self.lava.new_rect()
             self.player.update()
 
             if self.player.can_defil():
+                self.lava_delta = self.background.delta_y
                 self.background.defil()
 
                 for sprite in self.platforms:
@@ -36,6 +39,8 @@ class Game:
                     sprite.move()
                     self.screen.py_sprite.add(sprite)
                     sprite.draw(self.screen.mode)
+            else:
+                self.lava_delta = 0
 
             self.background.draw(self.screen.mode)
             # pygame.draw.rect(self.screen.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
@@ -65,25 +70,26 @@ class Game:
                 self.state = self.player.can_lava_move()  # Vérification de la hauteur à partir de laquelle la lave monte
 
             self.lava.is_moving(self.state)
-            self.lava.move(self.background.delta_y)
+            self.lava.move(self.lava_delta)
+            self.player.dead = self.lava.collide_with(self.player)
 
             self.player.draw(self.screen.mode)
             self.lava.draw(self.screen.mode)  # Lave en dernier !
             self.end()
             
         else:
+            self.state = False
             self.screen.level_selector.selected_level = None
-            self.type_end()
             self.stop = False
             self.end_screen.loop()
 
         self.screen.clock.tick(60)
 
-    def register_platform(self, level_name, position, mobile):
+    def register_platform(self, level_name, position, mobile, decalage):
 
         file = open(level_name, "a")  # Si non existant, le fichier sera créé
 
-        file.write("{" + str(position[0]) + "/" + str(position[1]-self.background.decalage) + "/" + str(mobile) + "}\n")
+        file.write("{" + str(position[0]) + "/" + str(position[1]-decalage) + "/" + str(mobile) + "}\n")
         file.write("")
 
         file.close()
@@ -133,12 +139,9 @@ class Game:
 
     def end(self):
 
-        if (self.player.dead == "Win") or (self.player.dead == "Lose"):
+        if self.player.dead != "None":
+            if (self.player.dead == "Win"):
+                self.end_screen.state = "Victoire"
+            else:
+                self.end_screen.state = "Game over"
             self.stop = True
-    
-    def type_end(self):
-
-        if (self.player.dead == "Win"):
-            self.state == "Victoire"
-        else:
-            self.state == "Game Over"
