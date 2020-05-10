@@ -46,9 +46,7 @@ class LevelEditor:
             self.game.screen.clock.tick(60)
 
         self.level_selector.selected_level = None
-
-        while not self.level_selector.has_selected_level():
-            self.level_selector.process()
+        self.game.level = None
 
     def render_background(self):
         self.bg = Background()
