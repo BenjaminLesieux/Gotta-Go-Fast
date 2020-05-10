@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level 1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Level 1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/ecran_fin.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/ecran_fin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/arrow.psd" beforeDir="false" afterPath="$PROJECT_DIR$/images/arrow.psd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +251,7 @@
       <workItem from="1588941190375" duration="8610000" />
       <workItem from="1588950083763" duration="549000" />
       <workItem from="1589041076373" duration="2305000" />
-      <workItem from="1589096167465" duration="10555000" />
+      <workItem from="1589096167465" duration="12137000" />
     </task>
     <task id="LOCAL-00001" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin">
       <created>1582529065885</created>
@@ -487,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589121023013</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="That's nice">
+      <created>1589122328790</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1589122328790</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,10 +566,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588843940011" />
-    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2" timestamp="1589121022048">
+    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2" timestamp="1589122327931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589121022048" />
+    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589122327931" />
     <state x="233" y="85" key="DiffContextDialog" timestamp="1589042883047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -569,22 +580,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588843938108" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1589120021722">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1589122922134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589120021722" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1589120021720">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589122922134" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1589122922134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589120021720" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1589120021720">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589122922134" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1589122922134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589120021720" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1589120021721">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589122922134" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1589122922134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589120021721" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589122922134" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1589116722318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -637,7 +648,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProjetTranverse1$test.coverage" NAME="test Coverage Results" MODIFIED="1581526788278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$game.coverage" NAME="game Coverage Results" MODIFIED="1581356655030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ggf$ggf.coverage" NAME="ggf Coverage Results" MODIFIED="1589120021713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ggf$ggf.coverage" NAME="ggf Coverage Results" MODIFIED="1589122922126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$bin.coverage" NAME="bin Coverage Results" MODIFIED="1581074667779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProjetTranverse1$game.coverage" NAME="game Coverage Results" MODIFIED="1581447233474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ggf$All_trajectories.coverage" NAME="All trajectories Coverage Results" MODIFIED="1588844284337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />

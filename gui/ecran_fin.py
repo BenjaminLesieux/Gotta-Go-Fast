@@ -29,7 +29,7 @@ class FinalScreen():
             highlight_l = "None"
 
             self.game.mode.blit(self.game.bg, [0, 0])
-            # self.game.draw_text(self.state, self.game.font, (255, 255, 255), self.game.mode, 500, 10)
+            self.game.draw_text(self.state, self.game.font, (255, 255, 255), self.game.mode, 500, 10)
 
             self.menu = Button("Menu", 450, 70, (430, 400), self.game)
             self.second = Button("Sélection de niveau", 450, 70, (430, 200), self.game)

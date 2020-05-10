@@ -22,8 +22,8 @@ class Player(Sprite):
         self.ground = self.rect.bottom
         self.falling = False
         self.landed = True
-        self.power = 0.7
-        self.alpha = 26
+        self.power = 0.8
+        self.alpha = 26  # 30 = vertical; 0 = horizontal
         self.angle = -self.alpha * pi / 60  # .................calcul de l'angle en RAD, selon alpha
         self.convert = (
                     (38.2 / 1920) / 100)  # ..........Pour un écran 17", 38.2 cm = 1920pix => 1 pix = (38.2/1920)/100 m
