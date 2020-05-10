@@ -51,14 +51,21 @@ class Game:
                 # pygame.draw.line(self.screen.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top + 10) , (sprite.rect.right, sprite.rect.top + 10))
                 sprite.move()
                 sprite.draw(self.screen.mode)
+                """pygame.draw.circle(self.screen.mode, pygame.Color('red'), self.player.rect.midbottom, 3)
+                pygame.draw.circle(self.screen.mode, pygame.Color('red'), self.player.rect.bottomleft, 3)
+                pygame.draw.circle(self.screen.mode, pygame.Color('red'), self.player.rect.bottomright, 3)
+                pygame.draw.circle(self.screen.mode, pygame.Color('blue'), sprite.rect.midtop, 3)
+                pygame.draw.circle(self.screen.mode, pygame.Color('blue'), sprite.rect.topleft, 3)
+                pygame.draw.circle(self.screen.mode, pygame.Color('blue'), sprite.rect.topright, 3)"""
+
                 if self.i < self.player.dist_jump or self.i > 100:
-                    collide = sprite.collides_with(player=self.player, platforms=self.platforms)
-                    if collide == 1:
-                        self.player.landed = True
-                        self.player.falling = False
-                        self.player.update_position()
-                    elif self.player.landed == True:
-                        self.player.falling = True
+                    collide += sprite.collides_with(player=self.player, platforms=self.platforms)
+            if collide >= 1:
+                self.player.landed = True
+                self.player.falling = False
+                self.player.update_position()
+            elif self.player.landed == True:
+                self.player.falling = True
 
             if self.player.falling == True:
                 self.player.fall()
@@ -83,7 +90,7 @@ class Game:
             self.stop = False
             self.end_screen.loop()
 
-        self.screen.clock.tick(60)
+        # self.screen.clock.tick(60)
 
     def register_platform(self, level_name, position, mobile, decalage):
 

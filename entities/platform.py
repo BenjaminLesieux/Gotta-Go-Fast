@@ -45,20 +45,26 @@ class Platform(Sprite):
 
     def collides_with(self, player, platforms):
         if pygame.sprite.spritecollideany(player, platforms, None) != None and player.y_1 < player.y:
-            if player.rect.collidepoint(self.rect.topleft) == 1:
+            # print("yes", end=" ")
+            # print(player.rect.left, self.rect.left - 2/3 * player.image.get_height(), player.rect.right, self.rect.right + 2/3 * player.image.get_height(), player.rect.bottom, self.rect.bottom + 5, player.rect.bottom, self.rect.top - 5)
+            if player.rect.left > self.rect.left - 2 / 3 * player.image.get_height() and player.rect.right < self.rect.right + 2 / 3 * player.image.get_height() and player.rect.bottom < self.rect.bottom + 5 and player.rect.bottom > self.rect.top - 5:
+                print("yes")
+                """if player.rect.collidepoint(self.rect.topleft) == 1 and self.rect.collidepoint(player.rect.bottomright) == 1:
+                    if (player.y != self.rect.top - player.image.get_height() + 1):
+                        player.y = self.rect.top - player.image.get_height() + 1
+                        player.update_position()
+                if player.rect.collidepoint(self.rect.midtop) == 1 and self.rect.collidepoint(player.rect.midbottom) == 1:
+                    if (player.y != self.rect.top - player.image.get_height() + 1):
+                        player.y = self.rect.top - player.image.get_height() + 1
+                        player.update_position()
+                if player.rect.collidepoint(self.rect.topright) == 1 and self.rect.collidepoint(player.rect.bottomleft) == 1:
+                    if (player.y != self.rect.top - player.image.get_height() + 1):
+                        player.y = self.rect.top - player.image.get_height() + 1
+                        player.update_position()"""
                 if (player.y != self.rect.top - player.image.get_height() + 1):
                     player.y = self.rect.top - player.image.get_height() + 1
                     player.update_position()
-            elif player.rect.collidepoint(self.rect.midtop) == 1:
-                if (player.y != self.rect.top - player.image.get_height() + 1):
-                    player.y = self.rect.top - player.image.get_height() + 1
-                    player.update_position()
-            elif player.rect.collidepoint(self.rect.topright) == 1:
-                if (player.y != self.rect.top - player.image.get_height() + 1):
-                    player.y = self.rect.top - player.image.get_height() + 1
-                    player.update_position()
-        
-            return 1
+                return 1
         return 0
 
 """

@@ -59,18 +59,18 @@ class LevelSelector:
                     self.selected_level = button[1]
                     self.game.level = self.selected_level
                     self.game.game_menu.loop()
-            if button[3].collides():
+                """if button[3].collides():
                 highlight = button[1].name
                 if click:
                     self.selected_level = button[1]
                     self.game.level = self.selected_level
-                    LevelEditor(button[1], self.game.game_menu.play, self.mode, self).process()
+                    LevelEditor(button[1], self.game.game_menu.play, self.mode, self).process()"""
 
             button[0].render(highlight)
             button[3].render(highlight)
 
         pygame.display.update()
-        self.game.clock.tick(60)
+        # self.game.clock.tick(60)
 
 
 class Level:

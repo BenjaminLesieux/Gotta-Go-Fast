@@ -67,7 +67,6 @@ class FinalScreen():
             self.second.render(highlight_s)
             self.leave.render(highlight_l)
 
-            self.game.clock.tick(60)
             pygame.display.update()
 
         if choice == 1:

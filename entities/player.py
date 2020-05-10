@@ -32,7 +32,7 @@ class Player(Sprite):
         self.i = 1  # variables itérative arbitraire (remplace la variable temporaire d'une vraie équation de trajectoire)
         self.d0 = self.x
         self.h0 = self.y
-        self.dist_jump = 30
+        self.dist_jump = 20
         self.dist_fall = 20
         self.frame = 0
         self.face = True
@@ -53,6 +53,7 @@ class Player(Sprite):
         self.position = self.x, self.y
         self.i = 1
         self.rect.topleft = self.x, self.y
+        self.new_rect()
 
     def move(self):
         """ Gestion des évènements """
@@ -64,6 +65,8 @@ class Player(Sprite):
             i = self.jump(self.power, self.angle)
 
         else:
+            self.rect.left += 5
+            self.rect.right += 5
             self.face = False
             if key[pygame.K_RIGHT]:  # right key
                 self.x += dist  # right
@@ -106,6 +109,7 @@ class Player(Sprite):
         self.rect.bottomright = int(self.x + self.image.get_width()), int(self.y + self.image.get_height() + 5)
 
         # print("oh je saute", self.x, self.y, self.i)
+        self.update()
         self.draw(self.surface)
 
         return self.i
@@ -149,7 +153,7 @@ class Player(Sprite):
 
     def can_lava_move(self):
 
-        if self.y <= 500:  # Valeur à changer pour le début de montée de lave
+        if self.y <= 300:  # Valeur à changer pour le début de montée de lave
             return True
         else :
             return False
