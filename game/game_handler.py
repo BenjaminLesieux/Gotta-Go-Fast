@@ -35,7 +35,8 @@ class Game:
 
                 for sprite in self.platforms:
                     self.screen.py_sprite.remove(sprite)
-                    sprite.move_y(self.background.delta_y)
+                    if self.background.count < self.background.n_screen:
+                        sprite.move_y(self.background.delta_y)
                     sprite.move()
                     self.screen.py_sprite.add(sprite)
                     sprite.draw(self.screen.mode)
@@ -71,6 +72,7 @@ class Game:
                 self.player.fall()
             else:
                 self.i = self.player.move()
+            self.player.just_falling()
 
             self.player.new_rect()
             if self.state is False:

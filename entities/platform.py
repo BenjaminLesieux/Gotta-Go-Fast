@@ -48,7 +48,7 @@ class Platform(Sprite):
             # print("yes", end=" ")
             # print(player.rect.left, self.rect.left - 2/3 * player.image.get_height(), player.rect.right, self.rect.right + 2/3 * player.image.get_height(), player.rect.bottom, self.rect.bottom + 5, player.rect.bottom, self.rect.top - 5)
             if player.rect.left > self.rect.left - 2 / 3 * player.image.get_height() and player.rect.right < self.rect.right + 2 / 3 * player.image.get_height() and player.rect.bottom < self.rect.bottom + 5 and player.rect.bottom > self.rect.top - 5:
-                print("yes")
+                #print("yes")
                 """if player.rect.collidepoint(self.rect.topleft) == 1 and self.rect.collidepoint(player.rect.bottomright) == 1:
                     if (player.y != self.rect.top - player.image.get_height() + 1):
                         player.y = self.rect.top - player.image.get_height() + 1

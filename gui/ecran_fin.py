@@ -24,9 +24,7 @@ class FinalScreen():
 
         while running :
 
-            highlight_m = "None"
-            highlight_s = "None"
-            highlight_l = "None"
+            highlight = "None"
 
             self.game.mode.blit(self.game.bg, [0, 0])
             # self.game.draw_text(self.state, self.game.font, (255, 255, 255), self.game.mode, 500, 10)
@@ -36,18 +34,18 @@ class FinalScreen():
             self.leave = Button("Quitter", 450, 70, (430, 600), self.game)
             
             if self.menu.collides():
-                highlight_m = "Menu"
+                highlight = "Menu"
                 if click:
                     running = False
 
             elif self.second.collides():
-                highlight_s = "Sélection de niveau"
+                highlight = "Sélection de niveau"
                 if click == True:
                     choice = 1
                     running = False
                     
             elif self.leave.collides():
-                highlight_l = "Quitter"
+                highlight = "Quitter"
                 if click:
                     sys.exit(0)
                     running = False
@@ -63,9 +61,9 @@ class FinalScreen():
                     if event.button == 1:
                         click = True
 
-            self.menu.render(highlight_m)
-            self.second.render(highlight_s)
-            self.leave.render(highlight_l)
+            self.menu.render(highlight)
+            self.second.render(highlight)
+            self.leave.render(highlight)
 
             pygame.display.update()
 

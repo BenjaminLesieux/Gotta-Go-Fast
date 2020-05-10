@@ -37,6 +37,7 @@ class Player(Sprite):
         self.frame = 0
         self.face = True
         self.dead = "None"
+        self.speed = 0
 
     def get_position(self):
         return self.position
@@ -70,10 +71,20 @@ class Player(Sprite):
             self.face = False
             if key[pygame.K_RIGHT]:  # right key
                 self.x += dist  # right
+                if (self.sens == 1):
+                    self.speed += 0.2
+                else:
+                    self.speed = 0
                 self.sens = 1
+                print(self.speed)
 
             elif key[pygame.K_LEFT]:  # left key
                 self.x -= dist  # left
+                if (self.sens == -1):
+                    self.speed += 0.2
+                else:
+                    self.speed = 0
+                print(self.speed)
                 self.sens = -1
 
             elif key[pygame.K_SPACE]:  # space key
@@ -153,7 +164,7 @@ class Player(Sprite):
 
     def can_lava_move(self):
 
-        if self.y <= 300:  # Valeur à changer pour le début de montée de lave
+        if self.y <= 500:  # Valeur à changer pour le début de montée de lave
             return True
         else :
             return False
@@ -165,4 +176,11 @@ class Player(Sprite):
         else :
             return False
 
+    def just_falling(self):
 
+        if (self.falling == True):
+            print(self.speed)
+            if self.sens == 1:
+                self.x += self.speed
+            else:
+                self.x -= self.speed
