@@ -33,7 +33,7 @@ class GGf:
         surface.blit(textobj, textrect)
 
     def menu(self):
-        # pygame.mixer.music.load('pioneer-to-the-falls.mp3')
+        # pygame.mixer.music.load('images/05 Mammoth.m4p')
         # pygame.mixer.music.set_volume(0.5)
         # pygame.mixer.music.play(-1)
 

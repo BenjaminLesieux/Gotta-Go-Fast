@@ -44,7 +44,8 @@ class OptionMenu(Gui):
                 self.le_help.custom_image("images/helple.png", (200, 200))
                 self.le_help.move_to((800, 200))
             if self.game_help.collides():
-                pass
+                self.game_help.custom_image("images/trophy.png", (100, 100))
+                self.game_help.move_to((800, 300))
 
             self.back.render(highlight)
             self.le_help.render(highlight)

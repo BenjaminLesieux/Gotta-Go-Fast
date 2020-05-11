@@ -23,7 +23,7 @@ class Background():
         if self.count < self.n_screen:       
             self.pos_1 += 15
             self.pos_2 += 15
-            self.decalage += 15
+            self.decalage += self.delta_y
 
             if self.pos_1 > self.pos_2:
                 if self.pos_1 >= 900:
