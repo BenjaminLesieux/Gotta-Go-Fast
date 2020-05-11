@@ -6,13 +6,13 @@ from gui.leveleditor import LevelEditor
 
 class LevelSelector:
 
-    def __init__(self, game):
-        self.game = game
-        self.mode = game.mode
+    def __init__(self, ggf):
+        self.ggf = ggf
+        self.mode = ggf.mode
         self.levels = []
         self.selected_level = None
-        self.game.level = self.selected_level
-        self.bg = self.game.bg
+        self.ggf.level = self.selected_level
+        self.bg = self.ggf.bg
         self.buttons = []
 
     def register_level(self, level):
@@ -32,13 +32,13 @@ class LevelSelector:
 
         self.buttons.clear()
         self.mode.blit(self.bg, [0, 0])
-        self.game.draw_text("Select Level", self.game.font, (255, 255, 255), self.mode, 450, 10)
+        self.ggf.draw_text("Select Level", self.ggf.font, (255, 255, 255), self.mode, 450, 10)
 
         i = 0
 
         for level in self.levels:
-            b = Button(level.name, 450, 70, (430, 300 + i), self.game)
-            edit = Button("", 40, 40, (900, 300 + i), self.game).custom_image("images/ediiit.png", (50, 50))
+            b = Button(level.name, 450, 70, (430, 300 + i), self.ggf)
+            edit = Button("", 40, 40, (900, 300 + i), self.ggf).custom_image("images/ediiit.png", (50, 50))
             self.buttons.append((b, level, [430, 300 + i], edit))
             i += 80
 
@@ -57,14 +57,14 @@ class LevelSelector:
                 highlight = button[1].name
                 if click:
                     self.selected_level = button[1]
-                    self.game.level = self.selected_level
-                    self.game.game_menu.loop()
+                    self.ggf.level = self.selected_level
+                    self.ggf.game_menu.loop()
                 """if button[3].collides():
                 highlight = button[1].name
                 if click:
                     self.selected_level = button[1]
-                    self.game.level = self.selected_level
-                    LevelEditor(button[1], self.game.game_menu.play, self.mode, self).process()"""
+                    self.ggf.level = self.selected_level
+                    LevelEditor(button[1], self.ggf.game_menu.play, self.mode, self).process()"""
 
             button[0].render(highlight)
             button[3].render(highlight)
