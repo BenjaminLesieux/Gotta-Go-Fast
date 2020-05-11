@@ -27,8 +27,8 @@ class FinalScreen:
             self.ggf.mode.blit(self.ggf.bg, [0, 0])
             self.ggf.draw_text(self.state, self.ggf.font, (255, 255, 255), self.ggf.mode, 500, 10)
 
-            self.menu = Button("Menu", 450, 70, (430, 400), self.ggf)
-            self.leave = Button("Quitter", 450, 70, (430, 600), self.ggf)
+            self.menu = Button("Menu", 450, 70, (430, 200), self.ggf)
+            self.leave = Button("Quitter", 450, 70, (430, 300), self.ggf)
 
             if self.menu.collides():
                 highlight = "Menu"

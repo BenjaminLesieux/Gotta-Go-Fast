@@ -48,7 +48,6 @@ class GGf:
 
             play = Button("Jouer", 450, 70, (430, 300), self)
             rules = Button("Règles", 450, 70, (430, 400), self)
-            editor = Button("Editeur", 450, 70, (430, 500), self)
             highlight = "None"
             click = False
 
@@ -71,14 +70,9 @@ class GGf:
                 if click:
                     self.option_menu.loop()
 
-            elif editor.collides():
-                highlight = editor.title
-                if click:
-                    pass
 
             play.render(highlight)
             rules.render(highlight)
-            editor.render(highlight)
 
             pygame.display.update()
             self.clock.tick(60)
