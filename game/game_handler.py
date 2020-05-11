@@ -19,6 +19,8 @@ class Game:
         self.i = 0
         self.lava_delta = 0
         self.end_menu = None
+        self.w_pos = (-100,0)
+        self.trophy = None
 
     def set_end_menu(self, end_menu):
         self.end_menu = end_menu
@@ -85,6 +87,7 @@ class Game:
             self.player.dead = self.lava.collide_with(self.player)
 
             self.player.draw(self.ggf.mode)
+            self.trophy.set_winnable(True, self.ggf.mode)
             self.lava.draw(self.ggf.mode)  # Lave en dernier !
             self.end()
 
@@ -107,6 +110,10 @@ class Game:
         return plat
 
     def register_platform_by_file(self, level_name):
+
+        ymax = 10000
+        
+
         level = open(level_name, "r") if os.path.exists(level_name + ".txt") else open(level_name, "a+")
         level = open(level_name, "r")  # Pour être sûr de mettre en mode 'read' après la possible création
 
@@ -127,10 +134,17 @@ class Game:
                 i += 1
             # s
             y = int(lines[j][last + 1:i])
+
+            if (y < ymax):
+                ymax = y
+                self.w_pos = j
+
             position = (x, y)
             mobile = True if lines[j][i + 1:len(lines[j]) - 2] == "True" else False
 
             self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
+
+        self.trophy = self.platforms[self.w_pos]
 
     def remove_platform(self, *sprite):
         self.platforms.remove(sprite)
