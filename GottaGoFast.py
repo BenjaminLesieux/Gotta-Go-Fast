@@ -44,7 +44,7 @@ class GGf:
             self.mode.blit(self.bg, [0, 0])
             self.draw_text("Gotta go fast", self.font, (109, 7, 26), self.mode, 430, 10)
             self.level_selector.selected_level = None
-            self.game_menu.play.platforms = []
+            self.game_menu.game_handler.platforms = []
 
             play = Button("Jouer", 450, 70, (430, 300), self)
             rules = Button("Règles", 450, 70, (430, 400), self)
