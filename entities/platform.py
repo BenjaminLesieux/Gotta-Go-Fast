@@ -16,14 +16,15 @@ class Platform(Sprite):
         self.winnable = False
         self.x = position[0]
         self.y = position[1]
+        self.trophy = None
 
     def is_winnable(self):
         return self.winnable
 
     def set_winnable(self, boolean, surface):
         self.winnable = boolean
-        trophy = Trophy(self)
-        trophy.draw(surface)
+        self.trophy = Trophy(self)
+        self.trophy.draw(surface)
 
         
     def get_position(self):

@@ -21,6 +21,7 @@ class Game:
         self.end_menu = None
         self.w_pos = (-100,0)
         self.trophy = None
+        self.p_trophy = None
 
     def set_end_menu(self, end_menu):
         self.end_menu = end_menu
@@ -32,6 +33,8 @@ class Game:
             collide = 0
             self.lava.new_rect()
             self.player.update()
+            self.p_trophy.set_winnable(True, self.ggf.mode)
+            self.trophy = self.p_trophy.trophy
 
             if self.player.can_defil():
                 self.lava_delta = self.background.delta_y
@@ -84,10 +87,9 @@ class Game:
 
             self.lava.is_moving(self.state)
             self.lava.move(self.lava_delta)
-            self.player.dead = self.lava.collide_with(self.player)
-
+            self.type_end()
+            self.trophy.draw(self.ggf.mode)
             self.player.draw(self.ggf.mode)
-            self.trophy.set_winnable(True, self.ggf.mode)
             self.lava.draw(self.ggf.mode)  # Lave en dernier !
             self.end()
 
@@ -144,7 +146,7 @@ class Game:
 
             self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
 
-        self.trophy = self.platforms[self.w_pos]
+        self.p_trophy = self.platforms[self.w_pos]
 
     def remove_platform(self, *sprite):
         self.platforms.remove(sprite)
@@ -160,6 +162,13 @@ class Game:
     def render_background(self):
         self.background = Background()
         self.background.surface = self.ggf.mode
+
+    def type_end(self):
+
+        if self.trophy.collide_with(self.player) == "Win":
+            self.player.dead = "Win"
+        elif self.lava.collide_with(self.player) == "Lose":
+            self.player.dead = "Lose"
 
     def end(self):
 
