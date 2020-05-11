@@ -33,7 +33,7 @@ class Game:
             collide = 0
             self.lava.new_rect()
             self.player.update()
-            self.p_trophy.set_winnable(True, self.ggf.mode)
+            self.p_trophy.set_winnable(self.ggf.mode)
             self.trophy = self.p_trophy.trophy
 
             if self.player.can_defil():
