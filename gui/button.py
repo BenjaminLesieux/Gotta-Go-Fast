@@ -4,7 +4,7 @@ import sys
 
 class Button:
 
-    def __init__(self, title, width, height, position, game):
+    def __init__(self, title, width, height, position, ggf):
         self.title = title
         self.width = width
         self.height = height
@@ -12,7 +12,7 @@ class Button:
         self.x = position[0]
         self.y = position[1]
         self.image = pygame.image.load("images/menu button.png").convert_alpha()
-        self.game = game
+        self.ggf = ggf
         self.mouse_x, self.mouse_y = pygame.mouse.get_pos()
         self.value = self.image.get_rect(topleft=(self.x, self.y))
 
@@ -31,16 +31,16 @@ class Button:
         return self
 
     def draw_text(self, text, font, color, surface, x, y):
-        self.game.draw_text(text, font, color, surface, x, y)
+        self.ggf.draw_text(text, font, color, surface, x, y)
 
     def render(self, highlight):
 
-        self.game.mode.blit(self.image, (self.x, self.y))
+        self.ggf.mode.blit(self.image, (self.x, self.y))
 
         if highlight == self.title:
-            self.draw_text(self.title, pygame.font.Font("images/Fipps-Regular.otf", 26), (109, 0, 0), self.game.mode,
+            self.draw_text(self.title, pygame.font.Font("images/Fipps-Regular.otf", 26), (109, 0, 0), self.ggf.mode,
                            self.x + 5, self.y)
 
         else:
-            self.draw_text(self.title, pygame.font.Font("images/Fipps-Regular.otf", 26), (0, 0, 0), self.game.mode,
+            self.draw_text(self.title, pygame.font.Font("images/Fipps-Regular.otf", 26), (0, 0, 0), self.ggf.mode,
                            self.x + 5, self.y)

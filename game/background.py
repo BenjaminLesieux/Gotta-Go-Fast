@@ -1,7 +1,7 @@
 import pygame
 from pygame.sprite import *
 
-class Background:
+class Background():
 
     #Classe de défillement du fond d'écran, uniquement verticalement
 
@@ -12,23 +12,28 @@ class Background:
         self.pos_1 = -300
         self.pos_2 = -1500
         self.limit = [900, -300]     # bas, haut
-        self.vitesse = 2
         self.delta_y = 5
         self.decalage = 0
+        self.count = 1
+        self.n_screen = 3
+        self.d = 15
 
     def defil(self):
-            
-        self.pos_1 += 25
-        self.pos_2 += 25
-        self.decalage += self.delta_y
 
-        if self.pos_1 > self.pos_2:
-            if self.pos_1 >= 900:
-                    self.pos_1 = -1500
-            
-        else:
-            if self.pos_2 >= 900:
-                self.pos_2 = -1500
+        if self.count < self.n_screen:       
+            self.pos_1 += 15
+            self.pos_2 += 15
+            self.decalage += 15
+
+            if self.pos_1 > self.pos_2:
+                if self.pos_1 >= 900:
+                        self.pos_1 = -1500
+                        self.count += 1
+                
+            else:
+                if self.pos_2 >= 900:
+                    self.pos_2 = -1500
+                    self.count += 1
     
     def draw(self, surface):
         surface.blit(self.bck_ground[0], (0, self.pos_1))

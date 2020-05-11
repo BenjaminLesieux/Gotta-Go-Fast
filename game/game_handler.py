@@ -3,23 +3,25 @@ from entities.player import Player
 from entities.platform import Platform
 from entities.lava import Lava
 from game.background import Background
-from gui.ecran_fin import FinalScreen
 import os.path
 
 
 class Game:
 
-    def __init__(self, screen):
-        self.screen = screen
+    def __init__(self, ggf):
+        self.ggf = ggf
         self.platforms = []
         self.player = None
-        self.end_screen = FinalScreen(self.screen)
         self.lava = None
         self.state = False
         self.stop = False
         self.background = None
         self.i = 0
         self.lava_delta = 0
+        self.end_menu = None
+
+    def set_end_menu(self, end_menu):
+        self.end_menu = end_menu
 
     def process(self):
 
@@ -34,29 +36,30 @@ class Game:
                 self.background.defil()
 
                 for sprite in self.platforms:
-                    self.screen.py_sprite.remove(sprite)
-                    sprite.move_y(self.background.delta_y)
+                    self.ggf.py_sprite.remove(sprite)
+                    if self.background.count < self.background.n_screen:
+                        sprite.move_y(self.background.delta_y)
                     sprite.move()
-                    self.screen.py_sprite.add(sprite)
-                    sprite.draw(self.screen.mode)
+                    self.ggf.py_sprite.add(sprite)
+                    sprite.draw(self.ggf.mode)
             else:
                 self.lava_delta = 0
 
-            self.background.draw(self.screen.mode)
-            # pygame.draw.rect(self.screen.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
+            self.background.draw(self.ggf.mode)
+            # pygame.draw.rect(self.ggf.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
             for sprite in self.platforms:
-                # pygame.draw.rect(self.screen.mode, pygame.Color('blue'), sprite.rect)
-                # pygame.draw.line(self.screen.mode, pygame.Color('blue'), (self.player.x, self.player.rect.y) , (self.player.rect.right, self.player.rect.top))
-                # pygame.draw.line(self.screen.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top - 10) , (sprite.rect.right, sprite.rect.top - 10))
-                # pygame.draw.line(self.screen.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top + 10) , (sprite.rect.right, sprite.rect.top + 10))
+                # pygame.draw.rect(self.ggf.mode, pygame.Color('blue'), sprite.rect)
+                # pygame.draw.line(self.ggf.mode, pygame.Color('blue'), (self.player.x, self.player.rect.y) , (self.player.rect.right, self.player.rect.top))
+                # pygame.draw.line(self.ggf.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top - 10) , (sprite.rect.right, sprite.rect.top - 10))
+                # pygame.draw.line(self.ggf.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top + 10) , (sprite.rect.right, sprite.rect.top + 10))
                 sprite.move()
-                sprite.draw(self.screen.mode)
-                """pygame.draw.circle(self.screen.mode, pygame.Color('red'), self.player.rect.midbottom, 3)
-                pygame.draw.circle(self.screen.mode, pygame.Color('red'), self.player.rect.bottomleft, 3)
-                pygame.draw.circle(self.screen.mode, pygame.Color('red'), self.player.rect.bottomright, 3)
-                pygame.draw.circle(self.screen.mode, pygame.Color('blue'), sprite.rect.midtop, 3)
-                pygame.draw.circle(self.screen.mode, pygame.Color('blue'), sprite.rect.topleft, 3)
-                pygame.draw.circle(self.screen.mode, pygame.Color('blue'), sprite.rect.topright, 3)"""
+                sprite.draw(self.ggf.mode)
+                """pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.midbottom, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.bottomleft, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.bottomright, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.midtop, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.topleft, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.topright, 3)"""
 
                 if self.i < self.player.dist_jump or self.i > 100:
                     collide += sprite.collides_with(player=self.player, platforms=self.platforms)
@@ -71,6 +74,7 @@ class Game:
                 self.player.fall()
             else:
                 self.i = self.player.move()
+            self.player.just_falling()
 
             self.player.new_rect()
             if self.state is False:
@@ -80,15 +84,10 @@ class Game:
             self.lava.move(self.lava_delta)
             self.player.dead = self.lava.collide_with(self.player)
 
-            self.player.draw(self.screen.mode)
-            self.lava.draw(self.screen.mode)  # Lave en dernier !
+            self.player.draw(self.ggf.mode)
+            self.lava.draw(self.ggf.mode)  # Lave en dernier !
             self.end()
-            
-        else:
-            self.state = False
-            self.screen.level_selector.selected_level = None
-            self.stop = False
-            self.end_screen.loop()
+
 
         # self.screen.clock.tick(60)
 
@@ -134,21 +133,22 @@ class Game:
 
     def register_player(self, player):
         self.player = player
-        self.player.surface = self.screen.mode
+        self.player.surface = self.ggf.mode
 
     def render_lava(self):
         self.lava = Lava()
-        self.player.surface = self.screen.mode
+        self.player.surface = self.ggf.mode
 
     def render_background(self):
         self.background = Background()
-        self.background.surface = self.screen.mode
+        self.background.surface = self.ggf.mode
 
     def end(self):
 
         if self.player.dead != "None":
             if (self.player.dead == "Win"):
-                self.end_screen.state = "Victoire"
+                self.end_menu.state = "Victoire"
+                self.end_menu.activated = True
             else:
-                self.end_screen.state = "Game over"
-            self.stop = True
+                self.end_menu.state = "Game over"
+                self.end_menu.activated = True
