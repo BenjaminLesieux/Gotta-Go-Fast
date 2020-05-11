@@ -13,14 +13,15 @@ class LevelEditor:
         self.bg = None
 
     def process(self):
-               
+        print("Editing levels")
         pro = True
         self.game_handler.register_platform_by_file(self.level.location)
         self.render_background()
 
         while pro:
-            
+
             self.bg.draw(self.mode)
+
             for plat in self.game_handler.platforms:
                 if plat.is_mobile():
                     plat.move()
@@ -47,6 +48,7 @@ class LevelEditor:
 
         self.level_selector.selected_level = None
         self.game_handler.level = None
+        self.game_handler.platforms = []
 
     def render_background(self):
         self.bg = Background()

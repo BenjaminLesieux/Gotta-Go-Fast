@@ -100,7 +100,11 @@ class Game:
 
         file.close()
 
-        self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
+        plat = Platform(position, mobile, "images/plateforme 1.png")
+
+        self.platforms.append(plat)
+
+        return plat
 
     def register_platform_by_file(self, level_name):
         level = open(level_name, "r") if os.path.exists(level_name + ".txt") else open(level_name, "a+")

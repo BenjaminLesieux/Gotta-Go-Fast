@@ -22,8 +22,13 @@ class Button:
 
         return False
 
+    def move_to(self, position):
+        self.x = position[0]
+        self.y = position[1]
+
     def custom_image(self, link, dimensions):
         self.image = pygame.image.load(link).convert_alpha()
+        self.title = ""
 
         if dimensions is not None:
             self.image = pygame.transform.scale(self.image, dimensions)
