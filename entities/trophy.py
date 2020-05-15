@@ -11,7 +11,7 @@ class Trophy(Sprite):
         self.rect = self.image.get_rect(center = (self.x,self.y))
 
     def draw(self, surface):
-        #rint(self.x, ', ', self.y)
+        #print(self.x, ', ', self.y)
         #pygame.draw.rect(surface, pygame.Color('blue'), self.rect)
         surface.blit(self.image, (self.x-31.5, self.y-25))
     

@@ -69,6 +69,8 @@ class Platform(Sprite):
                         player.update_position()"""
                 if (player.y != self.rect.top - player.image.get_height() + 1):
                     player.y = self.rect.top - player.image.get_height() + 1
+                    #print(self.rect.top - player.image.get_height() + 1, ",", player.y)
+                    player.landed = False
                     player.update_position()
                 return 1
         return 0

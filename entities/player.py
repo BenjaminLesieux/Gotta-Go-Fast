@@ -22,7 +22,7 @@ class Player(Sprite):
         self.ground = self.rect.bottom
         self.falling = False
         self.landed = True
-        self.power = 0.8
+        self.power = 7
         self.alpha = 26  # 30 = vertical; 0 = horizontal
         self.angle = -self.alpha * pi / 60  # .................calcul de l'angle en RAD, selon alpha
         self.convert = (
@@ -56,14 +56,16 @@ class Player(Sprite):
         self.rect.topleft = self.x, self.y
         self.new_rect()
 
-    def move(self):
+    def move(self, decalage):
         """ Gestion des évènements """
         i = 0
         key = pygame.key.get_pressed()
         dist = 6  # la distance en 1 frame
-
+        #print(decalage)
+        
         if (self.landed == False):
             i = self.jump(self.power, self.angle)
+            self.y += decalage**2 + decalage
 
         else:
             self.rect.left += 5
@@ -76,7 +78,7 @@ class Player(Sprite):
                 else:
                     self.speed = 0
                 self.sens = 1
-                print(self.speed)
+                #print(self.speed)
 
             elif key[pygame.K_LEFT]:  # left key
                 self.x -= dist  # left
@@ -84,17 +86,24 @@ class Player(Sprite):
                     self.speed += 0.2
                 else:
                     self.speed = 0
-                print(self.speed)
+                #print(self.speed)
                 self.sens = -1
 
             elif key[pygame.K_SPACE]:  # space key
                 self.update_position()
                 self.landed = False
                 i = self.dist_jump
-            elif key[pygame.K_s]:    #Test pour ecran de fin
-                self.dead = "Win"
             else:
+                self.speed = 0
                 self.face = True
+
+        if self.x < 0:
+            self.x = 0
+        elif self.x > 1280-73:
+            self.x = 1200-73
+        elif self.y > 720:
+            self.dead = "Lose"
+            print(self.dead)
 
         self.animation()
         return i
@@ -105,13 +114,12 @@ class Player(Sprite):
     def fall(self):
         self.y = self.convert * 0.5 * self.g * self.i * self.i + self.h0
         self.i += self.dist_fall
-        return
 
     def jump(self, power, angle):
         self.x = self.sens * self.i * power * cos(
             angle) + self.d0  # ...........................................equation horaire selon x
         self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
-            angle) * self.i + self.h0  # .......equation horaire selon y
+            angle) * self.i + self.h0 # .......equation horaire selon y
         self.i -= self.dist_jump
         self.y_1 = self.convert * 0.5 * self.g * self.i * self.i + power * sin(angle) * self.i + self.h0
         self.i += 2 * self.dist_jump
@@ -121,7 +129,6 @@ class Player(Sprite):
 
         # print("oh je saute", self.x, self.y, self.i)
         self.update()
-        self.draw(self.surface)
 
         return self.i
 
@@ -179,8 +186,10 @@ class Player(Sprite):
     def just_falling(self):
 
         if (self.falling == True):
-            print(self.speed)
+            #print("prout")
             if self.sens == 1:
                 self.x += self.speed
             else:
                 self.x -= self.speed
+        #else:
+            #print("Oof")

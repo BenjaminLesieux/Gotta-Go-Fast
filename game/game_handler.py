@@ -22,6 +22,7 @@ class Game:
         self.w_pos = (-100,0)
         self.trophy = None
         self.p_trophy = None
+        self.p_delta = 0
 
     def set_end_menu(self, end_menu):
         self.end_menu = end_menu
@@ -49,7 +50,7 @@ class Game:
                     sprite.move()
                     self.ggf.py_sprite.add(sprite)
                     sprite.draw(self.ggf.mode)
-            else:
+            else:      
                 self.lava_delta = 0
 
             self.background.draw(self.ggf.mode)
@@ -80,7 +81,7 @@ class Game:
             if self.player.falling == True:
                 self.player.fall()
             else:
-                self.i = self.player.move()
+                self.i = self.player.move(self.lava_delta)
             self.player.just_falling()
 
             self.player.new_rect()
@@ -179,6 +180,7 @@ class Game:
     def end(self):
 
         if self.player.dead != "None":
+            self.state = False
             if (self.player.dead == "Win"):
                 self.end_menu.state = "Victoire"
                 self.end_menu.activated = True

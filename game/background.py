@@ -7,7 +7,7 @@ class Background():
 
     def __init__(self):
         
-        self.bck_ground = [pygame.transform.scale(pygame.image.load("images/back.png"),(1280, 1200)), pygame.transform.scale(pygame.image.load("images/back.png"),(1280, 1200))]
+        self.bck_ground = [pygame.transform.scale(pygame.image.load("images/Background1.jpg"),(1280, 1200)), pygame.transform.scale(pygame.image.load("images/Background2.jpg"),(1280, 1200))]
 
         self.pos_1 = -300
         self.pos_2 = -1500
@@ -16,13 +16,12 @@ class Background():
         self.decalage = 0
         self.count = 1
         self.n_screen = 3
-        self.d = 15
 
     def defil(self):
 
         if self.count < self.n_screen:       
-            self.pos_1 += 15
-            self.pos_2 += 15
+            self.pos_1 += 8
+            self.pos_2 += 8
             self.decalage += self.delta_y
 
             if self.pos_1 > self.pos_2:

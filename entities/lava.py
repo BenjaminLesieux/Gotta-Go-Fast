@@ -28,6 +28,7 @@ class Lava(Sprite):
             self.moving = True
 
     def draw(self, surface):
+        #pygame.draw.rect(surface, pygame.Color('blue'), self.rect)
         surface.blit(self.image, (self.x, self.y))
 
     def new_rect(self):
