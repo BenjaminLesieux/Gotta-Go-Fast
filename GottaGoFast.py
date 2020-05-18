@@ -13,6 +13,7 @@ class GGf:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption("Gotta go fast")
+        pygame.display.set_icon(pygame.image.load("images/logo.png"))
         self.py_sprite = pygame.sprite.Group()
         self.player = pygame.sprite.Group()
         self.mode = pygame.display.set_mode((1280, 720))
@@ -33,9 +34,9 @@ class GGf:
         surface.blit(textobj, textrect)
 
     def menu(self):
-        # pygame.mixer.music.load('images/05 Mammoth.m4p')
-        # pygame.mixer.music.set_volume(0.5)
-        # pygame.mixer.music.play(-1)
+        pygame.mixer.music.load('images/idée-menu-non-mixée.ogg')
+        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.play(-1)
 
         self.level_selector.propose_levels()
 
@@ -69,7 +70,6 @@ class GGf:
                 highlight = rules.title
                 if click:
                     self.option_menu.loop()
-
 
             play.render(highlight)
             rules.render(highlight)

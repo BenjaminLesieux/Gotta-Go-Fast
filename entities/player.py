@@ -22,7 +22,7 @@ class Player(Sprite):
         self.ground = self.rect.bottom
         self.falling = False
         self.landed = True
-        self.power = 7
+        self.power = 0.8
         self.alpha = 26  # 30 = vertical; 0 = horizontal
         self.angle = -self.alpha * pi / 60  # .................calcul de l'angle en RAD, selon alpha
         self.convert = (

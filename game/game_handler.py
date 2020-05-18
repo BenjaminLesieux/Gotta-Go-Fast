@@ -22,7 +22,6 @@ class Game:
         self.w_pos = (-100,0)
         self.trophy = None
         self.p_trophy = None
-        self.p_delta = 0
 
     def set_end_menu(self, end_menu):
         self.end_menu = end_menu
@@ -50,7 +49,7 @@ class Game:
                     sprite.move()
                     self.ggf.py_sprite.add(sprite)
                     sprite.draw(self.ggf.mode)
-            else:      
+            else:
                 self.lava_delta = 0
 
             self.background.draw(self.ggf.mode)
@@ -81,7 +80,7 @@ class Game:
             if self.player.falling == True:
                 self.player.fall()
             else:
-                self.i = self.player.move(self.lava_delta)
+                self.i = self.player.move(self.background.delta_y)
             self.player.just_falling()
 
             self.player.new_rect()
@@ -101,16 +100,24 @@ class Game:
 
         # self.screen.clock.tick(60)
 
-    def register_platform(self, level_name, position, mobile, decalage):
+    def register_platform(self, level_name, position, mobile, decalage, ptype):
 
         file = open(level_name, "a")  # Si non existant, le fichier sera créé
 
-        file.write("{" + str(position[0]) + "/" + str(position[1]-decalage) + "/" + str(mobile) + "}\n")
+        file.write(
+            "{" + str(position[0]) + "/" + str(position[1] - decalage) + "/" + str(ptype) + "/" + str(mobile) + "}\n")
         file.write("")
 
         file.close()
 
-        plat = Platform(position, mobile, "images/plateforme 1.png")
+        plat = None
+
+        if ptype == 1:
+            plat = Platform(position, mobile, "images/plateforme 1.png")
+        elif ptype == 2:
+            plat = Platform(position, mobile, "images/plateforme 2.png")
+        elif ptype == 3:
+            plat = Platform(position, mobile, "images/plateforme 3.png")
 
         self.platforms.append(plat)
 
@@ -142,14 +149,28 @@ class Game:
             # s
             y = int(lines[j][last + 1:i])
 
+            while lines[j][i] != "/":
+                i += 1
+
+            ptype = int(lines[j][i + 1])
+
             if (y < ymax):
                 ymax = y
                 self.w_pos = j
 
             position = (x, y)
-            mobile = True if lines[j][i + 1:len(lines[j]) - 2] == "True" else False
+            mobile = True if lines[j][i + 3:len(lines[j]) - 2] == "True" else False
 
-            self.platforms.append(Platform(position, mobile, "images/plateforme 1.png"))
+            plat = None
+
+            if ptype == 1:
+                plat = Platform(position, mobile, "images/plateforme 1.png")
+            elif ptype == 2:
+                plat = Platform(position, mobile, "images/plateforme 2.png")
+            elif ptype == 3:
+                plat = Platform(position, mobile, "images/plateforme 3.png")
+
+            self.platforms.append(plat)
 
         if len(self.platforms) > 0:
             self.p_trophy = self.platforms[self.w_pos]
@@ -180,7 +201,6 @@ class Game:
     def end(self):
 
         if self.player.dead != "None":
-            self.state = False
             if (self.player.dead == "Win"):
                 self.end_menu.state = "Victoire"
                 self.end_menu.activated = True

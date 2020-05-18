@@ -24,6 +24,9 @@ class OptionMenu(Gui):
             self.le_help = Button("Aide - Level Editor", 450, 100, (450, 200), self.ggf)
             self.game_help = Button("Aide - Jeu", 450, 100, (450, 300), self.ggf)
 
+            lhelp = False
+            ghelp = False
+
             click = False
             mouse_x, mouse_y = pygame.mouse.get_pos()
             highlight = "None"
@@ -41,15 +44,23 @@ class OptionMenu(Gui):
                 if click:
                     running = False
             if self.le_help.collides():
-                self.le_help.custom_image("images/helple.png", (200, 200))
-                self.le_help.move_to((800, 200))
+                lhelp = True
+                self.le_help.custom_image("images/leveleditorhelp.png", (700, 700))
+                self.le_help.move_to((300, 95))
             if self.game_help.collides():
-                self.game_help.custom_image("images/trophy.png", (100, 100))
-                self.game_help.move_to((800, 300))
+                ghelp = True
+                self.game_help.custom_image("images/gamehelp.png", (700, 700))
+                self.game_help.move_to((300, 150))
 
             self.back.render(highlight)
-            self.le_help.render(highlight)
-            self.game_help.render(highlight)
+
+            if not ghelp and not lhelp:
+                self.le_help.render(highlight)
+                self.game_help.render(highlight)
+            elif ghelp:
+                self.game_help.render(highlight)
+            elif lhelp:
+                self.le_help.render(highlight)
 
             pygame.display.update()
             self.ggf.clock.tick(60)
