@@ -1,7 +1,6 @@
 import pygame
 import sys
 
-
 class Button:
 
     def __init__(self, title, width, height, position, ggf):

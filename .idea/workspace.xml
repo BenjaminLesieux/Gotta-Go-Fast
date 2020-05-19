@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GottaGoFast.py" beforeDir="false" afterPath="$PROJECT_DIR$/GottaGoFast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/lava.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/lava.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/button.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/levelselector.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/levelselector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/option_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/option_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/text_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/text_box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/05 Mammoth.m4p" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +262,7 @@
       <workItem from="1588950083763" duration="549000" />
       <workItem from="1589041076373" duration="2305000" />
       <workItem from="1589096167465" duration="9789000" />
-      <workItem from="1589880633241" duration="1996000" />
+      <workItem from="1589880633241" duration="2663000" />
     </task>
     <task id="LOCAL-00001" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin">
       <created>1582529065885</created>
@@ -549,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589880723112</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Text box yeet">
+      <created>1589883404763</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1589883404763</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +615,8 @@
     <MESSAGE value="mdr wallah TOUTES les variables c mieux" />
     <MESSAGE value="je vous aime" />
     <MESSAGE value="version nouvelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="version nouvelle" />
+    <MESSAGE value="Text box yeet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Text box yeet" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -622,10 +625,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588843940011" />
-    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2" timestamp="1589880721636">
+    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2" timestamp="1589883402463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589880721636" />
+    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589883402463" />
     <state x="233" y="85" key="DiffContextDialog" timestamp="1589042883047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -674,10 +677,10 @@
     <state x="672" y="235" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589106760894" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1588752616123" />
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588752616123" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589120831743">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589884941563">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589120831743" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589884941563" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589096177080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
