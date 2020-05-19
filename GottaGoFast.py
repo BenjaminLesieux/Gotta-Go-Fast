@@ -40,7 +40,7 @@ class GGf:
         pygame.mixer.music.play(-1)
 
         self.level_selector.propose_levels()
-        box = TextBox(self.mode, 100, 100, 200, 50, '')
+        box = TextBox(self.mode, 100, 100, 400, 50, 'enter text here...')
         while True:
 
             self.mode.blit(self.bg, [0, 0])

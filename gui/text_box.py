@@ -2,7 +2,7 @@ import pygame
 
 
 class TextBox:
-    def __init__(self, surface, x, y, width, height, text=''):
+    def __init__(self, surface, x, y, width, height, passive_text=''):
         self.surface = surface
         self.x = x
         self.y = y
@@ -16,22 +16,25 @@ class TextBox:
         self.black = (0, 0, 0)
         self.active_color = (220, 220, 220)
         self.active = False
-        self.text = text
+        self.passive_text = passive_text
+        self.text = ''
         self.caps = False
         self.font = pygame.font.Font('images/Fipps-Regular.otf', height // 2)
+        self.passive_font = pygame.font.Font('images/Fipps-Regular.otf', height // 3)
 
     def draw(self, window):
         if self.active == False:
             self.image.fill(self.black)
             pygame.draw.rect(self.image, self.color, (1, 1, self.width - 2, self.height - 2))
             text = self.font.render(self.text, False, (109, 0, 0))
+            if len(self.text) == 0:
+                passive_text = self.passive_font.render(self.passive_text, False, (220, 220, 220))
+                self.image.blit(passive_text, (4, 10))
             self.image.blit(text, (4, -5))
         else:
             self.image.fill(self.black)
             pygame.draw.rect(self.image, self.active_color, (1, 1, self.width - 2, self.height - 2))
             text = self.font.render(self.text, False, (109, 0, 0))
-
-            text_height = text.get_height()
             text_width = text.get_width()
             if text_width < self.width - 2:
                 self.image.blit(text, (4, -5))

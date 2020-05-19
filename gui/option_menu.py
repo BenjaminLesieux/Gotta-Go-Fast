@@ -63,4 +63,4 @@ class OptionMenu(Gui):
                 self.le_help.render(highlight)
 
             pygame.display.update()
-            self.ggf.clock.tick(60)
+            # self.ggf.clock.tick(60)
