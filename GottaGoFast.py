@@ -5,6 +5,7 @@ from gui.levelselector import LevelSelector
 from gui.game_menu import GameMenu
 from gui.option_menu import OptionMenu
 from gui.button import Button
+from gui.text_box import TextBox
 from pygame.locals import *
 
 
@@ -39,7 +40,7 @@ class GGf:
         pygame.mixer.music.play(-1)
 
         self.level_selector.propose_levels()
-
+        box = TextBox(self.mode, 100, 100, 200, 50, '')
         while True:
 
             self.mode.blit(self.bg, [0, 0])
@@ -57,8 +58,17 @@ class GGf:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
+                    box.verifClick(pygame.mouse.get_pos())
                     if event.button == 1:
                         click = True
+                """if event.type == pygame.KEYDOWN:
+                    if box.active:
+                        if event.key == K_LSHIFT and event.type != pygame.KEYUP:
+                            box.caps = True
+                        box.addText(event.key)
+                if  event.type == pygame.KEYUP and event.key == K_LSHIFT:
+                    box.caps = False
+            box.draw(self.mode)"""
             if play.collides():
                 highlight = play.title
                 if click:
