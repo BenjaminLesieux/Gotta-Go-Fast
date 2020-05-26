@@ -71,7 +71,6 @@ class LevelSelector:
             button[3].render(highlight)
 
         pygame.display.update()
-        # self.game.clock.tick(60)
 
 
 class Level:
