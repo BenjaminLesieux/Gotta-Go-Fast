@@ -20,7 +20,9 @@ class GGf:
         self.mode = pygame.display.set_mode((1280, 720))
         self.font = pygame.font.Font("images/Fipps-Regular.otf", 45)
         self.clock = pygame.time.Clock()
-        self.bg = pygame.image.load("images/back.png")
+        self.bg = pygame.image.load("images/GGf.jpg")
+        self.win = pygame.transform.scale(pygame.image.load("images/You Win !.png"), (384, 216))
+        self.lose = pygame.transform.scale(pygame.image.load("images/game over.png"), (384, 216))
         self.play = Game(self)
         self.level = None
         self.level_selector = LevelSelector(self)
@@ -36,11 +38,11 @@ class GGf:
 
     def menu(self):
         pygame.mixer.music.load('images/idée-menu-non-mixée.ogg')
-        pygame.mixer.music.set_volume(0.2)
+        pygame.mixer.music.set_volume(0.1)
         pygame.mixer.music.play(-1)
 
         self.level_selector.propose_levels()
-        # box = TextBox(self.mode, 100, 100, 400, 50, 'enter text here...')
+        box = TextBox(self.mode, 100, 100, 400, 50, 'enter text here...')
         while True:
 
             self.mode.blit(self.bg, [0, 0])
@@ -58,15 +60,15 @@ class GGf:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    #box.verifClick(pygame.mouse.get_pos())
+                    box.verifClick(pygame.mouse.get_pos())
                     if event.button == 1:
                         click = True
                 """if event.type == pygame.KEYDOWN:
                     if box.active:
-                        if event.key == K_LSHIFT:
+                        if event.key == K_LSHIFT and event.type != pygame.KEYUP:
                             box.caps = True
                         box.addText(event.key)
-                if  event.type == pygame.KEYUP and event.key == K_LSHIFT and box.active:
+                if  event.type == pygame.KEYUP and event.key == K_LSHIFT:
                     box.caps = False
             box.draw(self.mode)"""
             if play.collides():
