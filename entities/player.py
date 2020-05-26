@@ -61,8 +61,7 @@ class Player(Sprite):
         i = 0
         key = pygame.key.get_pressed()
         dist = 6  # la distance en 1 frame
-        #print(decalage)
-        
+
         if (self.landed == False):
             i = self.jump(self.power, self.angle)
             self.y += decalage**2 + decalage
@@ -79,7 +78,7 @@ class Player(Sprite):
                     self.speed = 0
                 self.sens = 1
 
-            elif key[pygame.K_LEFT] or key[pygame.K_q]:  # left key
+            elif key[pygame.K_LEFT] or key[pygame.K_a]:  # left key
                 self.x -= dist  # left
                 if (self.sens == -1):
                     self.speed += 0.2
@@ -119,8 +118,10 @@ class Player(Sprite):
         self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
             angle) * self.i + self.h0 # .......equation horaire selon y
         self.i -= self.dist_jump
+        print(self.y, end=", ")
         self.y_1 = self.convert * 0.5 * self.g * self.i * self.i + power * sin(angle) * self.i + self.h0
         self.i += 2 * self.dist_jump
+        print(self.y_1, end=" / ")
         self.new_rect()
         self.rect.bottomleft = int(self.x), int(self.y + self.image.get_height() + 5)
         self.rect.bottomright = int(self.x + self.image.get_width()), int(self.y + self.image.get_height() + 5)
