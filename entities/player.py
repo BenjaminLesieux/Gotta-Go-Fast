@@ -61,29 +61,33 @@ class Player(Sprite):
         i = 0
         key = pygame.key.get_pressed()
         dist = 6  # la distance en 1 frame
-
+        #print(decalage)
+        
         if (self.landed == False):
             i = self.jump(self.power, self.angle)
-            self.y += decalage**2 + decalage
+            if self.can_defil():
+                self.y += decalage**2 + decalage
 
         else:
             self.rect.left += 5
             self.rect.right += 5
             self.face = False
-            if key[pygame.K_RIGHT] or key[pygame.K_d]:  # right key
+            if key[pygame.K_RIGHT]:  # right key
                 self.x += dist  # right
-                if (self.sens == 1):
+                if (self.sens == 1 and self.speed == 6):
                     self.speed += 0.2
                 else:
                     self.speed = 0
                 self.sens = 1
+                #print(self.speed)
 
-            elif key[pygame.K_LEFT] or key[pygame.K_a]:  # left key
+            elif key[pygame.K_LEFT]:  # left key
                 self.x -= dist  # left
-                if (self.sens == -1):
+                if (self.sens == -1 and self.speed == 6):
                     self.speed += 0.2
                 else:
                     self.speed = 0
+                #print(self.speed)
                 self.sens = -1
 
             elif key[pygame.K_SPACE]:  # space key
@@ -91,7 +95,6 @@ class Player(Sprite):
                 self.landed = False
                 i = self.dist_jump
             else:
-                self.speed = 0
                 self.face = True
 
         if self.x < 0:
@@ -118,13 +121,13 @@ class Player(Sprite):
         self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
             angle) * self.i + self.h0 # .......equation horaire selon y
         self.i -= self.dist_jump
-        print(self.y, end=", ")
         self.y_1 = self.convert * 0.5 * self.g * self.i * self.i + power * sin(angle) * self.i + self.h0
         self.i += 2 * self.dist_jump
-        print(self.y_1, end=" / ")
         self.new_rect()
         self.rect.bottomleft = int(self.x), int(self.y + self.image.get_height() + 5)
         self.rect.bottomright = int(self.x + self.image.get_width()), int(self.y + self.image.get_height() + 5)
+
+        # print("oh je saute", self.x, self.y, self.i)
         self.update()
 
         return self.i
@@ -181,8 +184,12 @@ class Player(Sprite):
             return False
 
     def just_falling(self):
+
         if (self.falling == True):
+            #print("prout")
             if self.sens == 1:
                 self.x += self.speed
             else:
                 self.x -= self.speed
+        #else:
+            #print("Oof")

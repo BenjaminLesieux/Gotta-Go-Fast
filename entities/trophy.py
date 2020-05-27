@@ -6,7 +6,7 @@ class Trophy(Sprite):
     def __init__(self, platform):
         self.x = platform.x + 42
         self.y = int((platform.y + platform.rect.center[1])/2)-29
-        self.image = pygame.image.load("images/trophy.png").convert_alpha()
+        self.image = pygame.image.load("images/casque.png").convert_alpha()
         self.platform = platform
         self.rect = self.image.get_rect(center = (self.x,self.y))
 
@@ -20,7 +20,8 @@ class Trophy(Sprite):
 
     def collide_with(self, player):
 
-        if self.rect.colliderect(player.rect):
+        if (player.y - self.y+51 < 10) and self.rect.colliderect(player.rect):
+            print(self.y+51, player.y)
             return "Win"
         else:
             return "None"
