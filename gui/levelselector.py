@@ -90,7 +90,7 @@ class LevelSelector:
                     LevelEditor(button[1], self.ggf.game_menu.game_handler, self.mode, self).process()
             if button[4].collides() and not self.has_selected_level():
                 highlight = button[1].name
-                if click:
+                if click and len(self.levels) > 1:
                     self.remove_level(button[1])
             if add.collides():
 
@@ -110,9 +110,6 @@ class LevelSelector:
                         self.new_level = False
                         break
                     self.text = True if not self.new_level else False
-
-            print(len(self.levels))
-
 
             button[0].render(highlight)
             button[3].render(highlight)

@@ -30,27 +30,50 @@ class LevelEditor:
 
             self.bg.draw(self.mode)
 
-            self.p1_button = Button("Type 1", 200, 200, (1100, 100),
-                                    self.game_handler.ggf).custom_image("images/plateforme 1.png", (40, 40))
-            self.p2_button = Button("Type 2", 200, 200, (1100, 200),
-                                    self.game_handler.ggf).custom_image("images/plateforme 2.png", (40, 40))
-            self.p3_button = Button("Type 3", 200, 200, (1100, 300),
-                                    self.game_handler.ggf).custom_image("images/plateforme 3.png", (40, 40))
-            self.exit_button = Button("Quitter", 50, 50, (100, 100),
-                                      self.game_handler.ggf).custom_image("images/menu button.png", (50, 50))
+            if self.p_type == 1:
+                self.p1_button = Button("Type 1", 200, 200, (1100, 100),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 yellow.png", (200, 50))
+                self.p2_button = Button("Type 2", 200, 200, (1100, 200),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (200, 50))
+                self.p3_button = Button("Type 3", 200, 200, (1100, 300),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (200, 50))
+            elif self.p_type == 2:
+                self.p1_button = Button("Type 1", 200, 200, (1100, 100),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (200, 50))
+                self.p2_button = Button("Type 2", 200, 200, (1100, 200),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 yellow.png", (200, 50))
+                self.p3_button = Button("Type 3", 200, 200, (1100, 300),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (200, 50))
+            elif self.p_type == 3:
+                self.p1_button = Button("Type 1", 200, 200, (1100, 100),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (200, 50))
+                self.p2_button = Button("Type 2", 200, 200, (1100, 200),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (200, 50))
+                self.p3_button = Button("Type 3", 200, 200, (1100, 300),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 yellow.png", (200, 50))
+
+            self.exit_button = Button("Quitter", 10, 10, (10, 10),
+                                      self.game_handler.ggf).custom_image("images/getback.png", (50, 50))
 
             place = True
             highlight = "None"
 
             if self.p1_button.collides():
                 place = False
+                self.p1_button = Button("Type 1", 200, 200, (1090, 100),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (200, 50))
                 if click: self.p_type = 1
             elif self.p2_button.collides():
                 place = False
+                self.p2_button = Button("Type 2", 200, 200, (1090, 200),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (200, 50))
                 if click: self.p_type = 2
             elif self.p3_button.collides():
                 place = False
-                if click: self.p_type = 3
+                self.p3_button = Button("Type 3", 200, 200, (1090, 300),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (200, 50))
+                if click:
+                    self.p_type = 3
             elif self.exit_button.collides():
                 highlight = self.exit_button.title
                 place = False
