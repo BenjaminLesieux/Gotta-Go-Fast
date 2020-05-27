@@ -78,6 +78,12 @@ class Player(Sprite):
                 elif (self.sens == -1):
                     self.speed = 0
                 self.sens = 1
+                
+                if key[pygame.K_SPACE]:
+                    self.update_position()
+                    self.landed = False
+                    i = self.dist_jump
+                
 
             elif key[pygame.K_LEFT] or key[pygame.K_d]:  # left key
                 self.x -= dist  # left
@@ -87,12 +93,19 @@ class Player(Sprite):
                     self.speed = 0
                 self.sens = -1
 
+                if key[pygame.K_SPACE]:
+                    self.update_position()
+                    self.landed = False
+                    i = self.dist_jump
+                
+                
             elif key[pygame.K_SPACE]:  # space key
                 self.update_position()
                 self.landed = False
                 i = self.dist_jump
             else:                       #Si il ne se passe rien
                 self.face = True
+                self.sens = 0
                 if self.landed == True:
                     self.speed = 0
 
