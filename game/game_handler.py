@@ -27,7 +27,7 @@ class Game:
         self.end_menu = end_menu
 
     def process(self):
-
+        
         if not self.stop:
 
             collide = 0
@@ -53,13 +53,23 @@ class Game:
                 self.lava_delta = 0
 
             self.background.draw(self.ggf.mode)
+            # pygame.draw.rect(self.ggf.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
             for sprite in self.platforms:
+                # pygame.draw.rect(self.ggf.mode, pygame.Color('blue'), sprite.rect)
+                # pygame.draw.line(self.ggf.mode, pygame.Color('blue'), (self.player.x, self.player.rect.y) , (self.player.rect.right, self.player.rect.top))
+                # pygame.draw.line(self.ggf.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top - 10) , (sprite.rect.right, sprite.rect.top - 10))
+                # pygame.draw.line(self.ggf.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top + 10) , (sprite.rect.right, sprite.rect.top + 10))
                 sprite.move()
-                print("oui", self.player.y)
                 sprite.draw(self.ggf.mode)
-                if self.i < self.player.dist_jump or self.i > 3 * self.player.dist_jump:
-                    collide += sprite.collides_with(player=self.player, platforms=self.platforms)
+                """pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.midbottom, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.bottomleft, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.bottomright, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.midtop, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.topleft, 3)
+                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.topright, 3)"""
 
+                if self.i < self.player.dist_jump or self.i > 100:
+                    collide += sprite.collides_with(player=self.player, platforms=self.platforms)
             if collide >= 1:
                 self.player.landed = True
                 self.player.falling = False
@@ -191,6 +201,8 @@ class Game:
     def end(self):
 
         if self.player.dead != "None":
+            self.state = False
+            self.lava.moving = False
             if (self.player.dead == "Win"):
                 self.end_menu.state = "Victoire"
                 self.end_menu.activated = True
