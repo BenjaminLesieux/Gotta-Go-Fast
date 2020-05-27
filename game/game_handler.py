@@ -116,10 +116,10 @@ class Game:
     def register_platform_by_file(self, level_name):
 
         ymax = 10000
-        
 
-        level = open(level_name, "r") if os.path.exists(level_name + ".txt") else open(level_name, "a+")
-        level = open(level_name, "r")  # Pour être sûr de mettre en mode 'read' après la possible création
+        level = open(level_name + ".txt", "r") if os.path.exists(level_name + ".txt") else open(level_name + ".txt",
+                                                                                                "a+")
+        level = open(level_name + ".txt", "r")  # Pour être sûr de mettre en mode 'read' après la possible création
 
         lines = level.readlines()
 
