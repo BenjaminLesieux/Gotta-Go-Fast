@@ -61,12 +61,14 @@ class LevelEditor:
                     if event.button == 1:
                         click = True
                         if place:
-                            self.game_handler.register_platform(self.level.location, mouse_pos, False, self.bg.decalage,
+                            self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, False,
+                                                                self.bg.decalage,
                                                                 self.p_type)
                     elif event.button == 3:
                         click = True
                         if place:
-                            self.game_handler.register_platform(self.level.location, mouse_pos, True, self.bg.decalage,
+                            self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, True,
+                                                                self.bg.decalage,
                                                                 self.p_type)
                 elif event.type == pygame.QUIT:
                     pro = False
