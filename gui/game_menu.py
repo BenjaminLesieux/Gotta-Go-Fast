@@ -13,30 +13,25 @@ class GameMenu(Gui):
         self.ggf = ggf
         self.end_menu = FinalScreen(ggf)
         self.game_handler.set_end_menu(end_menu=self.end_menu)
+        self.player = None
 
     def loop(self):
 
-        self.game_handler.render_background()
-        self.game_handler.register_platform_by_file(self.ggf.level.location)
-
-        player = Player([100, 500])
-
-        self.game_handler.register_player(player)
-        self.ggf.player.add(player)
-        self.game_handler.render_lava()
+        self.load()
 
         self.end_menu.activated = False
+        self.end_menu.game = True
 
-        playing = True
-
-        while playing:
-
-            player.dead = "None"
+        while self.end_menu.game:
+            print(self.end_menu.game)
+            self.player.dead = "None"
 
             if self.end_menu.is_activated():
                 self.end_menu.process()
-                playing = False
-            else:
+                if self.end_menu.game:
+                    self.load()
+
+            elif self.end_menu.game:
                 self.ggf.mode.blit(self.ggf.bg, [0, 0])
                 self.ggf.draw_text(self.ggf.level.name, self.ggf.font, (109, 0, 0), self.ggf.mode, 20, 20)
                 self.game_handler.process()
@@ -48,3 +43,16 @@ class GameMenu(Gui):
                         sys.exit(0)  # si echap ou bouton croix, quitter
 
                 pygame.display.update()
+
+    def load(self):
+
+        self.game_handler.render_background()
+        self.game_handler.platforms = []
+        self.game_handler.register_platform_by_file(self.ggf.level.location)
+
+        self.player = Player([100, 500])
+
+        self.game_handler.register_player(self.player)
+        self.ggf.player.add(self.player)
+        self.game_handler.render_lava()
+        
