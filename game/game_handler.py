@@ -52,7 +52,8 @@ class Game:
             else:
                 self.lava_delta = 0
             self.background.draw(self.ggf.mode)
-            # pygame.draw.rect(self.ggf.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
+            print(self.player.y_1, self.player.y)
+
             for sprite in self.platforms:
                 sprite.move()
                 sprite.draw(self.ggf.mode)
