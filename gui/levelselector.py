@@ -45,7 +45,7 @@ class LevelSelector:
         for level in self.levels:
             b = Button(level.name, 450, 70, (430, 300 + i), self.ggf)
             edit = Button("", 40, 40, (900, 305 + i), self.ggf).custom_image("images/Edit.png", (50, 50))
-            delete = Button("", 40, 40, (300, 310 + i), self.ggf).custom_image("images/RedCross.png", (50, 50))
+            delete = Button("", 40, 40, (350, 310 + i), self.ggf).custom_image("images/RedCross.png", (50, 50))
             self.buttons.append((b, level, [430, 300 + i], edit, delete))
             i += 80
 
@@ -53,8 +53,6 @@ class LevelSelector:
 
         click = False
         highlight = "None"
-
-        print(self.new_level)
 
 
         for event in pygame.event.get():
@@ -90,7 +88,6 @@ class LevelSelector:
                     self.selected_level = button[1]
                     self.ggf.level = self.selected_level
                     LevelEditor(button[1], self.ggf.game_menu.game_handler, self.mode, self).process()
-                    print("yey")
             if button[4].collides() and not self.has_selected_level():
                 highlight = button[1].name
                 if click:
@@ -99,10 +96,8 @@ class LevelSelector:
                 highlight = ""
                 if click:
                     self.text = True if not self.new_level else False
-                    print("t " + str(self.text))
 
                     if self.new_level is True:
-                        print(self.new_level_name)
                         level = Level(self.new_level_name)
                         self.register_level(level)
                         self.levels.append(level)

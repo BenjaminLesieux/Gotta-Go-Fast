@@ -13,7 +13,6 @@ class Lava(Sprite):
         self.rect = self.image.get_rect()
 
     def move(self, delta_y):
-
         if self.moving:
             if self.y < 700:
                 self.y -= (self.speed - 0.5*delta_y)
@@ -21,21 +20,18 @@ class Lava(Sprite):
                 self.y -= self.speed
     
     def is_moving(self, state):
-
         if (self.y == 0 or state == False):
             self.moving = False
         else:
             self.moving = True
 
     def draw(self, surface):
-        #pygame.draw.rect(surface, pygame.Color('blue'), self.rect)
         surface.blit(self.image, (self.x, self.y))
 
     def new_rect(self):
         self.rect = self.image.get_rect(topleft = (self.x,self.y))
     
     def collide_with(self, player):
-
         if self.rect.colliderect(player.rect):
             return "Lose"
         else:
