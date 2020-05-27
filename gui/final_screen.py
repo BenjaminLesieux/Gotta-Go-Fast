@@ -18,17 +18,19 @@ class FinalScreen:
     def process(self):
         running = True
         click = False
-        choice = 0
 
         while running:
 
             highlight = "None"
 
             self.ggf.mode.blit(self.ggf.bg, [0, 0])
-            self.ggf.draw_text(self.state, self.ggf.font, (255, 255, 255), self.ggf.mode, 500, 10)
+            if self.state == "Victoire":
+                self.ggf.mode.blit(self.ggf.win, [448, 10])
+            elif self.state == "Game over":
+                self.ggf.mode.blit(self.ggf.lose, [448, 10])
 
-            self.menu = Button("Menu", 450, 70, (430, 200), self.ggf)
-            self.leave = Button("Quitter", 450, 70, (430, 300), self.ggf)
+            self.menu = Button("Menu", 450, 70, (430, 350), self.ggf)
+            self.leave = Button("Quitter", 450, 70, (430, 450), self.ggf)
 
             if self.menu.collides():
                 highlight = "Menu"

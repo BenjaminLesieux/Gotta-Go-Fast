@@ -94,7 +94,7 @@ class Player(Sprite):
                 self.update_position()
                 self.landed = False
                 i = self.dist_jump
-            else:
+            else:                       #Si il ne se passe rien
                 self.face = True
 
         if self.x < 0:
