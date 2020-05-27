@@ -51,22 +51,11 @@ class Game:
                     sprite.draw(self.ggf.mode)
             else:
                 self.lava_delta = 0
-
             self.background.draw(self.ggf.mode)
             # pygame.draw.rect(self.ggf.mode, pygame.Color('green'), (self.player.x, sprite.rect.left - self.player.image.get_width()), 0)
             for sprite in self.platforms:
-                # pygame.draw.rect(self.ggf.mode, pygame.Color('blue'), sprite.rect)
-                # pygame.draw.line(self.ggf.mode, pygame.Color('blue'), (self.player.x, self.player.rect.y) , (self.player.rect.right, self.player.rect.top))
-                # pygame.draw.line(self.ggf.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top - 10) , (sprite.rect.right, sprite.rect.top - 10))
-                # pygame.draw.line(self.ggf.mode, pygame.Color('green'), (sprite.rect.left, sprite.rect.top + 10) , (sprite.rect.right, sprite.rect.top + 10))
                 sprite.move()
                 sprite.draw(self.ggf.mode)
-                """pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.midbottom, 3)
-                pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.bottomleft, 3)
-                pygame.draw.circle(self.ggf.mode, pygame.Color('red'), self.player.rect.bottomright, 3)
-                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.midtop, 3)
-                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.topleft, 3)
-                pygame.draw.circle(self.ggf.mode, pygame.Color('blue'), sprite.rect.topright, 3)"""
 
                 if self.i < self.player.dist_jump or self.i > 100:
                     collide += sprite.collides_with(player=self.player, platforms=self.platforms)

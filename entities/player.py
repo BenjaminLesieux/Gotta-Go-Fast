@@ -51,9 +51,9 @@ class Player(Sprite):
         self.h0 = int(self.y)
         self.y = self.h0
         self.x = self.d0
-        self.position = self.x, self.y
+        self.y_1 = self.y - 1
         self.i = 1
-        self.rect.topleft = self.x, self.y
+        self.update()
         self.new_rect()
 
     def move(self, decalage):
@@ -61,8 +61,7 @@ class Player(Sprite):
         i = 0
         key = pygame.key.get_pressed()
         dist = 6  # la distance en 1 frame
-        #print(decalage)
-        
+
         if (self.landed == False):
             i = self.jump(self.power, self.angle)
             if self.can_defil():
@@ -72,22 +71,20 @@ class Player(Sprite):
             self.rect.left += 5
             self.rect.right += 5
             self.face = False
-            if key[pygame.K_RIGHT]:  # right key
+            if key[pygame.K_RIGHT] or key[pygame.K_a]:  # right key
                 self.x += dist  # right
-                if (self.sens == 1 and self.speed == 6):
+                if (self.sens == 1 and self.speed < 6):
                     self.speed += 0.2
-                else:
+                elif (self.sens == -1):
                     self.speed = 0
                 self.sens = 1
-                #print(self.speed)
 
-            elif key[pygame.K_LEFT]:  # left key
+            elif key[pygame.K_LEFT] or key[pygame.K_d]:  # left key
                 self.x -= dist  # left
-                if (self.sens == -1 and self.speed == 6):
+                if (self.sens == -1 and self.speed < 6):
                     self.speed += 0.2
-                else:
+                elif (self.sens == 1):
                     self.speed = 0
-                #print(self.speed)
                 self.sens = -1
 
             elif key[pygame.K_SPACE]:  # space key
@@ -96,6 +93,8 @@ class Player(Sprite):
                 i = self.dist_jump
             else:                       #Si il ne se passe rien
                 self.face = True
+                if self.landed == True:
+                    self.speed = 0
 
         if self.x < 0:
             self.x = 0
@@ -103,7 +102,6 @@ class Player(Sprite):
             self.x = 1200-73
         elif self.y > 720:
             self.dead = "Lose"
-            print(self.dead)
 
         self.animation()
         return i

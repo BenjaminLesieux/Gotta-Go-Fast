@@ -69,14 +69,7 @@ class Platform(Sprite):
                         player.update_position()"""
                 if (player.y != self.rect.top - player.image.get_height() + 1):
                     player.y = self.rect.top - player.image.get_height() + 1
-                    #print(self.rect.top - player.image.get_height() + 1, ",", player.y)
-                    player.landed = False
+                    player.landed = True
                     player.update_position()
                 return 1
         return 0
-
-"""
-            elif player.rect.collidepoint(self.rect.bottomright) == 1 or player.rect.collidepoint(self.rect.bottomleft) == 1 or player.rect.collidepoint(self.rect.midbottom) == 1:
-                player.y -= 20
-                player.landed = True
-"""
