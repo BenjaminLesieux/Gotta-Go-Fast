@@ -16,6 +16,7 @@ class LevelEditor:
         self.p1_button = None
         self.p2_button = None
         self.p3_button = None
+        self.exit_button = None
 
     def process(self):
         print("Editing levels")
@@ -35,8 +36,11 @@ class LevelEditor:
                                     self.game_handler.ggf).custom_image("images/plateforme 2.png", (40, 40))
             self.p3_button = Button("Type 3", 200, 200, (1100, 300),
                                     self.game_handler.ggf).custom_image("images/plateforme 3.png", (40, 40))
+            self.exit_button = Button("Quitter", 50, 50, (100, 100),
+                                      self.game_handler.ggf).custom_image("images/menu button.png", (50, 50))
 
             place = True
+            highlight = "None"
 
             if self.p1_button.collides():
                 place = False
@@ -47,6 +51,10 @@ class LevelEditor:
             elif self.p3_button.collides():
                 place = False
                 if click: self.p_type = 3
+            elif self.exit_button.collides():
+                highlight = self.exit_button.title
+                place = False
+                if click: pro = False
 
             click = False
 
@@ -82,6 +90,7 @@ class LevelEditor:
             self.p1_button.render("")
             self.p2_button.render("")
             self.p3_button.render("")
+            self.exit_button.render(highlight)
             pygame.display.update()
             self.game_handler.ggf.clock.tick(60)
 

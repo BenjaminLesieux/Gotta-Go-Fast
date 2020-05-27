@@ -93,16 +93,25 @@ class LevelSelector:
                 if click:
                     self.remove_level(button[1])
             if add.collides():
+
+                if len(self.levels) == 4:
+                    self.ggf.draw_text("Trop de niveaux",
+                                       self.ggf.font, (255, 9, 28), self.mode, 350, 600)
+                    break
+
                 highlight = ""
                 if click:
-                    self.text = True if not self.new_level else False
-
                     if self.new_level is True:
                         level = Level(self.new_level_name)
                         self.register_level(level)
                         self.levels.append(level)
                         self.box.text = ""
+                        self.new_level_name = ""
+                        self.new_level = False
                         break
+                    self.text = True if not self.new_level else False
+
+            print(len(self.levels))
 
 
             button[0].render(highlight)
