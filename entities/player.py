@@ -74,20 +74,20 @@ class Player(Sprite):
             self.face = False
             if key[pygame.K_RIGHT]:  # right key
                 self.x += dist  # right
-                if (self.sens == 1 and self.speed == 6):
+                if (self.sens == 1 and self.speed < 6):
                     self.speed += 0.2
-                else:
+                elif(self.sens == -1):
                     self.speed = 0
                 self.sens = 1
-                #print(self.speed)
+                print(self.speed)
 
             elif key[pygame.K_LEFT]:  # left key
                 self.x -= dist  # left
-                if (self.sens == -1 and self.speed == 6):
+                if (self.sens == -1 and self.speed < 6):
                     self.speed += 0.2
-                else:
+                elif(self.sens == 1):
                     self.speed = 0
-                #print(self.speed)
+                print(self.speed)
                 self.sens = -1
 
             elif key[pygame.K_SPACE]:  # space key
