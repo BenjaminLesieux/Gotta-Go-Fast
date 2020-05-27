@@ -94,7 +94,7 @@ class Player(Sprite):
                 self.update_position()
                 self.landed = False
                 i = self.dist_jump
-            else:
+            else:                       #Si il ne se passe rien
                 self.face = True
 
         if self.x < 0:
@@ -178,7 +178,7 @@ class Player(Sprite):
     
     def can_defil(self):
 
-        if self.y <= 300:  # Valeur à changer pour le début de montée de lave
+        if self.y <= 300:  # Valeur à changer pour le début du fond d'écran
             return True
         else :
             return False
