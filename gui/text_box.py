@@ -52,6 +52,8 @@ class TextBox:
     def addText(self, key):
         if self.caps == True:
             key = key - 32
+        elif key == 13:
+            self.active = False
         try:
             if (64 < key and key < 91) or (96 < key and key < 123) or (47 < key and key < 58):
                 letter = chr(key)
