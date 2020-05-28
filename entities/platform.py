@@ -30,7 +30,6 @@ class Platform(Sprite):
     def move(self):
 
         if self.mobile:
-
             if self.sens:
                 self.x += 5
             else:

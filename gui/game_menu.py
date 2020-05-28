@@ -32,7 +32,7 @@ class GameMenu(Gui):
 
             elif self.end_menu.game:
                 self.ggf.mode.blit(self.ggf.bg, [0, 0])
-                self.ggf.draw_text(self.ggf.level.name, self.ggf.font, (109, 0, 0), self.ggf.mode, 20, 20)
+                self.ggf.draw_text(self.ggf.level.name, self.ggf.font, (200, 0, 0), self.ggf.mode, 20, 20)
                 self.game_handler.process()
 
                 for event in pygame.event.get():
