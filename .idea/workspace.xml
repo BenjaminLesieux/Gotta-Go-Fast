@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GottaGoFast.py" beforeDir="false" afterPath="$PROJECT_DIR$/GottaGoFast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/platform.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/platform.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/game_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/game_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/levelselector.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/levelselector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/option_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/option_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/gamehelp.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/gamehelp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/leveleditorhelp.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/leveleditorhelp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/levels.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,14 +255,7 @@
       <workItem from="1589880633241" duration="4536000" />
       <workItem from="1590485754733" duration="5203000" />
       <workItem from="1590653936841" duration="1475000" />
-      <workItem from="1590656650329" duration="13776000" />
-    </task>
-    <task id="LOCAL-00002" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin">
-      <created>1582529716420</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1582529716420</updated>
+      <workItem from="1590656650329" duration="14441000" />
     </task>
     <task id="LOCAL-00003" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin">
       <created>1582530017380</created>
@@ -608,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590669521799</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="C plu bo">
+      <created>1590672923142</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1590672923142</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +668,8 @@
     <MESSAGE value="On peut supprimer des niveaux, on peut en créer mais il y a encore des bugs" />
     <MESSAGE value="Level editor marche" />
     <MESSAGE value="Level editor marche mieux" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level editor marche mieux" />
+    <MESSAGE value="C plu bo" />
+    <option name="LAST_COMMIT_MESSAGE" value="C plu bo" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -685,10 +678,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588843940011" />
-    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2" timestamp="1590669520077">
+    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2" timestamp="1590672921017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590669520077" />
+    <state x="405" y="89" width="1148" height="895" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590672921017" />
     <state x="233" y="85" key="DiffContextDialog" timestamp="1589042883047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -737,10 +730,10 @@
     <state x="672" y="235" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589106760894" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1588752616123" />
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588752616123" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1590672859288">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1590673492726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590672859288" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590673492726" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1590656651295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
