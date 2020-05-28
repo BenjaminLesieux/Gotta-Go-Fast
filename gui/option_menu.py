@@ -18,11 +18,11 @@ class OptionMenu(Gui):
 
         while running:
             self.ggf.mode.blit(self.ggf.bg, [0, 0])
-            self.draw_text("Options", self.ggf.font, (255, 255, 255), self.ggf.mode, 500, 10)
+            self.draw_text("Options", self.ggf.font, (255, 255, 255), self.ggf.mode, 530, 10)
 
-            self.back = Button("Retour", 450, 100, (450, 100), self.ggf)
-            self.le_help = Button("Aide - Level Editor", 450, 100, (450, 200), self.ggf)
-            self.game_help = Button("Aide - Jeu", 450, 100, (450, 300), self.ggf)
+            self.back = Button("Retour", 450, 100, (450, 200), self.ggf)
+            self.le_help = Button("Aide - Level Editor", 450, 100, (450, 300), self.ggf)
+            self.game_help = Button("Aide - Jeu", 450, 100, (450, 400), self.ggf)
 
             lhelp = False
             ghelp = False

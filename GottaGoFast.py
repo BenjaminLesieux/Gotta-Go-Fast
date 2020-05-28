@@ -15,10 +15,12 @@ class GGf:
         pygame.init()
         pygame.display.set_caption("Gotta go fast")
         pygame.display.set_icon(pygame.image.load("images/logo.png"))
+        self.title = pygame.image.load("images/Gotta Go Fast.png")
         self.py_sprite = pygame.sprite.Group()
         self.player = pygame.sprite.Group()
         self.mode = pygame.display.set_mode((1280, 720))
         self.font = pygame.font.Font("images/Fipps-Regular.otf", 45)
+        self.font_title = pygame.font.Font("images/Fipps-Regular.otf", 70)
         self.clock = pygame.time.Clock()
         self.bg = pygame.image.load("images/GGf.jpg")
         self.win = pygame.transform.scale(pygame.image.load("images/You Win !.png"), (384, 216))
@@ -45,7 +47,7 @@ class GGf:
         while True:
 
             self.mode.blit(self.bg, [0, 0])
-            self.draw_text("Gotta go fast", self.font, (109, 7, 26), self.mode, 430, 10)
+            self.mode.blit(self.title, [30, 20])
             self.level_selector.selected_level = None
             self.play.platforms = []
 

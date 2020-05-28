@@ -37,19 +37,18 @@ class LevelSelector:
 
         self.buttons.clear()
         self.mode.blit(self.bg, [0, 0])
-        self.ggf.draw_text("Select Level", self.ggf.font, (255, 255, 255), self.mode, 450, 10)
+        self.ggf.draw_text("Select Level", self.ggf.font, (255, 255, 255), self.mode, 420, 10)
 
         i = 0
 
-
         for level in self.levels:
-            b = Button(level.name, 450, 70, (430, 300 + i), self.ggf)
-            edit = Button("", 40, 40, (900, 305 + i), self.ggf).custom_image("images/Edit.png", (50, 50))
-            delete = Button("", 40, 40, (350, 310 + i), self.ggf).custom_image("images/RedCross.png", (50, 50))
-            self.buttons.append((b, level, [430, 300 + i], edit, delete))
-            i += 80
+            b = Button(level.name, 450, 70, (430, 250 + i), self.ggf)
+            edit = Button("", 40, 40, (900, 255 + i), self.ggf).custom_image("images/Edit.png", (50, 50))
+            delete = Button("", 40, 40, (350, 260 + i), self.ggf).custom_image("images/RedCross.png", (50, 50))
+            self.buttons.append((b, level, [430, 200 + i], edit, delete))
+            i += 100
 
-        add = Button("", 40, 40, (630, 300 + i), self.ggf).custom_image("images/AddCross.png", (50, 50))
+        add = Button("", 40, 40, (630, 250 + i), self.ggf).custom_image("images/AddCross.png", (50, 50))
 
         click = False
         highlight = "None"
