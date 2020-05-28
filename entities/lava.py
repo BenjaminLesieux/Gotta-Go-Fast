@@ -1,6 +1,6 @@
-from pygame.sprite import *
+import pygame
 
-class Lava(Sprite):
+class Lava():
 
     def __init__(self):
         super().__init__()
@@ -14,8 +14,8 @@ class Lava(Sprite):
 
     def move(self, delta_y):
         if self.moving:
-            if self.y < 700:
-                self.y -= (self.speed - 0.5*delta_y)
+            if self.y < 500:
+                self.y -= (self.speed - 0.3*delta_y)
             else :
                 self.y -= self.speed
     

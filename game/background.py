@@ -20,8 +20,8 @@ class Background():
     def defil(self):
 
         if self.count < self.n_screen:       
-            self.pos_1 += 8
-            self.pos_2 += 8
+            self.pos_1 += 4
+            self.pos_2 += 4
             self.decalage += self.delta_y
 
             if self.pos_1 > self.pos_2:

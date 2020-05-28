@@ -10,6 +10,8 @@ class FinalScreen:
         self.activated = False
         self.menu = None
         self.leave = None
+        self.retry = None
+        self.game = False
         self.state = "None"
 
     def is_activated(self):
@@ -29,14 +31,23 @@ class FinalScreen:
             elif self.state == "Game over":
                 self.ggf.mode.blit(self.ggf.lose, [448, 10])
 
-            self.menu = Button("Menu", 450, 70, (430, 350), self.ggf)
-            self.leave = Button("Quitter", 450, 70, (430, 450), self.ggf)
+            self.retry = Button("Réessayer", 450, 70, (430, 350), self.ggf)
+            self.menu = Button("Menu", 450, 70, (430, 450), self.ggf)
+            self.leave = Button("Quitter", 450, 70, (430, 550), self.ggf)
 
             if self.menu.collides():
                 highlight = "Menu"
                 if click:
                     running = False
                     self.activated = False
+                    self.game = False
+                    
+            elif self.retry.collides():
+                highlight = "Réessayer"
+                if click:
+                    self.activated = False
+                    self.game = True
+                    running = False
 
             elif self.leave.collides():
                 highlight = "Quitter"
@@ -48,10 +59,11 @@ class FinalScreen:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit(0)
-                if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.type == pygame.MOUSEBUTTONUP:
                     if event.button == 1:
                         click = True
 
+            self.retry.render(highlight)
             self.menu.render(highlight)
             self.leave.render(highlight)
             pygame.display.update()
