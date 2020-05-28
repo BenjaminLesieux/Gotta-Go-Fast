@@ -72,8 +72,8 @@ class Game:
             else:
                 self.i = self.player.move(self.background.delta_y)
             self.player.just_falling()
-
             self.player.new_rect()
+
             if self.state is False:
                 self.state = self.player.can_lava_move()  # Vérification de la hauteur à partir de laquelle la lave monte
 

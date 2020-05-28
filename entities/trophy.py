@@ -11,8 +11,6 @@ class Trophy(Sprite):
         self.rect = self.image.get_rect(center = (self.x,self.y))
 
     def draw(self, surface):
-        #print(self.x, ', ', self.y)
-        #pygame.draw.rect(surface, pygame.Color('blue'), self.rect)
         surface.blit(self.image, (self.x-31.5, self.y-25))
     
     def new_rect(self):
@@ -21,7 +19,6 @@ class Trophy(Sprite):
     def collide_with(self, player):
 
         if (player.y - self.y+51 < 10) and self.rect.colliderect(player.rect):
-            print(self.y+51, player.y)
             return "Win"
         else:
             return "None"

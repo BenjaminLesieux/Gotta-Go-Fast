@@ -65,7 +65,7 @@ class Player(Sprite):
         if (self.landed == False):
             i = self.jump(self.power, self.angle)
             if self.can_defil():
-                print("oui")
+                print(decalage)
                 self.y += decalage
 
         else:
