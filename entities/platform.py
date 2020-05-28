@@ -52,9 +52,7 @@ class Platform(Sprite):
     def collides_with(self, player, platforms):
         if pygame.sprite.spritecollideany(player, platforms, None) != None and player.y_1 < player.y:
             if player.rect.left > self.rect.left - 2 / 3 * player.image.get_width() and player.rect.right < self.rect.right + 2 / 3 * player.image.get_width() and player.rect.bottom < self.rect.bottom + 5 and player.rect.bottom > self.rect.top - 5:
-                print("oui")
                 if (player.y != self.rect.top - player.image.get_height() + 1):
-                    print("non")
                     player.y = self.rect.top - player.image.get_height() + 1
                     player.landed = True
                     player.update_position()

@@ -40,7 +40,7 @@ class Game:
 
             if self.player.can_defil():
                 self.lava_delta = self.background.delta_y
-                self.background.defil()
+                self.background.defil("up")
 
                 for sprite in self.platforms:
                     self.ggf.py_sprite.remove(sprite)
@@ -52,7 +52,6 @@ class Game:
             else:
                 self.lava_delta = 0
             self.background.draw(self.ggf.mode)
-            print(self.player.y_1, self.player.y)
 
             for sprite in self.platforms:
                 sprite.move()
@@ -60,6 +59,7 @@ class Game:
 
                 if self.i < self.player.dist_jump or self.i > 100:
                     collide += sprite.collides_with(player=self.player, platforms=self.platforms)
+
             if collide >= 1:
                 self.player.landed = True
                 self.player.falling = False
@@ -87,8 +87,6 @@ class Game:
             self.lava.draw(self.ggf.mode)  # Lave en dernier !
             self.end()
 
-
-        # self.screen.clock.tick(60)
 
     def register_platform(self, level_name, position, mobile, decalage, ptype):
 

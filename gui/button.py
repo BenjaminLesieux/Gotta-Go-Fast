@@ -12,13 +12,12 @@ class Button:
         self.y = position[1]
         self.image = pygame.image.load("images/menu button.png").convert_alpha()
         self.ggf = ggf
-        self.mouse_x, self.mouse_y = pygame.mouse.get_pos()
+        (self.mouse_x, self.mouse_y) = pygame.mouse.get_pos()
         self.value = self.image.get_rect(topleft=(self.x, self.y))
 
     def collides(self):
-        if self.value.collidepoint(self.mouse_x, self.mouse_y):
+        if self.mouse_x > self.x and self.mouse_x < self.x + self.image.get_width() and self.mouse_y > self.y and self.mouse_y < self.y + self.image.get_height():
             return True
-
         return False
 
     def move_to(self, position):

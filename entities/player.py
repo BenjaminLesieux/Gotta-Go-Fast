@@ -65,27 +65,28 @@ class Player(Sprite):
         if (self.landed == False):
             i = self.jump(self.power, self.angle)
             if self.can_defil():
-                self.y += decalage**2 + decalage
+                print("oui")
+                self.y += decalage
 
         else:
             self.rect.left += 5
             self.rect.right += 5
             self.face = False
-            if key[pygame.K_RIGHT] or key[pygame.K_a]:  # right key
+            if key[pygame.K_RIGHT] or key[pygame.K_d]:  # right key
                 self.x += dist  # right
                 if (self.sens == 1 and self.speed < 6):
                     self.speed += 0.2
                 elif (self.sens == -1):
                     self.speed = 0
                 self.sens = 1
-                
+
                 if key[pygame.K_SPACE]:
                     self.update_position()
                     self.landed = False
                     i = self.dist_jump
-                
 
-            elif key[pygame.K_LEFT] or key[pygame.K_d]:  # left key
+
+            elif key[pygame.K_LEFT] or key[pygame.K_a]:  # left key
                 self.x -= dist  # left
                 if (self.sens == -1 and self.speed < 6):
                     self.speed += 0.2
@@ -103,17 +104,13 @@ class Player(Sprite):
                 self.update_position()
                 self.landed = False
                 i = self.dist_jump
-            else:                       #Si il ne se passe rien
+            else:  # S'il ne se passe rien
                 self.face = True
                 self.sens = 0
                 if self.landed == True:
                     self.speed = 0
 
-        if self.x < 0:
-            self.x = 0
-        elif self.x > 1280-73:
-            self.x = 1200-73
-        elif self.y > 720:
+        if self.y > 720:
             self.dead = "Lose"
 
         self.animation()
@@ -130,7 +127,7 @@ class Player(Sprite):
         self.x = self.sens * self.i * power * cos(
             angle) + self.d0  # ...........................................equation horaire selon x
         self.y = self.convert * 0.5 * self.g * self.i * self.i + power * sin(
-            angle) * self.i + self.h0 # .......equation horaire selon y
+            angle) * self.i + self.h0  # .......equation horaire selon y
         self.i -= self.dist_jump
         self.y_1 = self.convert * 0.5 * self.g * self.i * self.i + power * sin(angle) * self.i + self.h0
         self.i += 2 * self.dist_jump
@@ -138,7 +135,6 @@ class Player(Sprite):
         self.rect.bottomleft = int(self.x), int(self.y + self.image.get_height() + 5)
         self.rect.bottomright = int(self.x + self.image.get_width()), int(self.y + self.image.get_height() + 5)
 
-        # print("oh je saute", self.x, self.y, self.i)
         self.update()
 
         return self.i
@@ -178,13 +174,11 @@ class Player(Sprite):
             elif (self.sens == -1):
                 self.image = self.list_images[3]
 
-        #print(self.frame)
-
     def can_lava_move(self):
 
         if self.y <= 500:  # Valeur à changer pour le début de montée de lave
             return True
-        else :
+        else:
             return False
     
     def can_defil(self):
@@ -197,10 +191,7 @@ class Player(Sprite):
     def just_falling(self):
 
         if (self.falling == True):
-            #print("prout")
             if self.sens == 1:
                 self.x += self.speed
             else:
                 self.x -= self.speed
-        #else:
-            #print("Oof")

@@ -50,50 +50,53 @@ class TextBox:
             self.active = False
 
     def addText(self, key):
+
         if self.caps == True:
             key = key - 32
         elif key == 13:
             self.active = False
         try:
-            if (64 < key and key < 91) or (96 < key and key < 123) or (47 < key and key < 58):
-                letter = chr(key)
-                if letter == 'q':
-                    letter = 'a'
-                elif letter == 'w':
-                    letter = 'z'
-                elif letter == ';':
-                    letter = 'm'
-                elif letter == 'a':
-                    letter = 'q'
-                elif letter == 'z':
-                    letter = 'w'
-                elif letter == 'Q':
-                    letter = 'A'
-                elif letter == 'W':
-                    letter = 'Z'
-                elif letter == ':':
-                    letter = 'M'
-                elif letter == 'A':
-                    letter = 'Q'
-                elif letter == 'Z':
-                    letter = 'W'
-                text = list(self.text)
-                text.append(letter)
-                self.text = "".join(text)
+            if key != 109 and key != 77:
+                if key == 59 or key == 27 or (64 < key and key < 91) or (96 < key and key < 123) or (
+                        47 < key and key < 58):
+                    letter = chr(key)
+                    if letter == 'q':
+                        letter = 'a'
+                    elif letter == 'w':
+                        letter = 'z'
+                    elif key == 59:
+                        letter = 'm'
+                    elif letter == 'a':
+                        letter = 'q'
+                    elif letter == 'z':
+                        letter = 'w'
+                    elif letter == 'Q':
+                        letter = 'A'
+                    elif letter == 'W':
+                        letter = 'Z'
+                    elif key == 27:
+                        letter = 'M'
+                    elif letter == 'A':
+                        letter = 'Q'
+                    elif letter == 'Z':
+                        letter = 'W'
+                    text = list(self.text)
+                    text.append(letter)
+                    self.text = "".join(text)
 
-            elif key == 8:  # backspace
-                text = list(self.text)
-                text.pop()
-                self.text = "".join(text)
+                elif key == 8:  # backspace
+                    text = list(self.text)
+                    text.pop()
+                    self.text = "".join(text)
 
-            elif key == 32:
-                text = list(self.text)
-                text.append(' ')
-                self.text = "".join(text)
+                elif key == 32:  # space
+                    text = list(self.text)
+                    text.append(' ')
+                    self.text = "".join(text)
 
 
         except:
-            print("oui")
+            print("Error")
 
     def getText(self):
         return self.text

@@ -16,14 +16,18 @@ class LevelEditor:
         self.p1_button = None
         self.p2_button = None
         self.p3_button = None
+        self.decalage = 0
+        self.left_click = pygame.image.load("images/left_click.png")
+        self.right_click = pygame.image.load("images/right_click.png")
+        self.delete = pygame.image.load("images/delete.png").convert_alpha()
         self.exit_button = None
 
     def process(self):
         print("Editing levels")
+        count = 0
         pro = True
         self.game_handler.register_platform_by_file(self.level.location)
         self.render_background()
-
         click = False
 
         while pro:
@@ -31,47 +35,47 @@ class LevelEditor:
             self.bg.draw(self.mode)
 
             if self.p_type == 1:
-                self.p1_button = Button("Type 1", 200, 200, (1100, 100),
-                                        self.game_handler.ggf).custom_image("images/plateforme 1 yellow.png", (200, 50))
-                self.p2_button = Button("Type 2", 200, 200, (1100, 200),
-                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (200, 50))
-                self.p3_button = Button("Type 3", 200, 200, (1100, 300),
-                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (200, 50))
+                self.p1_button = Button("Type 1", 160, 36, (50, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 yellow.png", (160, 36))
+                self.p2_button = Button("Type 2", 250, 36, (230, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (250, 36))
+                self.p3_button = Button("Type 3", 500, 36, (500, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (500, 36))
             elif self.p_type == 2:
-                self.p1_button = Button("Type 1", 200, 200, (1100, 100),
-                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (200, 50))
-                self.p2_button = Button("Type 2", 200, 200, (1100, 200),
-                                        self.game_handler.ggf).custom_image("images/plateforme 2 yellow.png", (200, 50))
-                self.p3_button = Button("Type 3", 200, 200, (1100, 300),
-                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (200, 50))
+                self.p1_button = Button("Type 1", 160, 36, (50, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (160, 36))
+                self.p2_button = Button("Type 2", 250, 36, (230, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 yellow.png", (250, 36))
+                self.p3_button = Button("Type 3", 500, 36, (500, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (500, 36))
             elif self.p_type == 3:
-                self.p1_button = Button("Type 1", 200, 200, (1100, 100),
-                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (200, 50))
-                self.p2_button = Button("Type 2", 200, 200, (1100, 200),
-                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (200, 50))
-                self.p3_button = Button("Type 3", 200, 200, (1100, 300),
-                                        self.game_handler.ggf).custom_image("images/plateforme 3 yellow.png", (200, 50))
+                self.p1_button = Button("Type 1", 160, 36, (50, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (160, 36))
+                self.p2_button = Button("Type 2", 250, 36, (230, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (250, 36))
+                self.p3_button = Button("Type 3", 500, 36, (500, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 yellow.png", (500, 36))
 
             self.exit_button = Button("Quitter", 10, 10, (10, 10),
-                                      self.game_handler.ggf).custom_image("images/getback.png", (50, 50))
+                                      self.game_handler.ggf).custom_image("images/getback.png", (75, 75))
 
             place = True
             highlight = "None"
 
             if self.p1_button.collides():
                 place = False
-                self.p1_button = Button("Type 1", 200, 200, (1090, 100),
-                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (200, 50))
+                self.p1_button = Button("Type 1", 160, 36, (50, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 1 white.png", (160, 36))
                 if click: self.p_type = 1
             elif self.p2_button.collides():
                 place = False
-                self.p2_button = Button("Type 2", 200, 200, (1090, 200),
-                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (200, 50))
+                self.p2_button = Button("Type 2", 250, 36, (230, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 2 white.png", (250, 36))
                 if click: self.p_type = 2
             elif self.p3_button.collides():
                 place = False
-                self.p3_button = Button("Type 3", 200, 200, (1090, 300),
-                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (200, 50))
+                self.p3_button = Button("Type 3", 500, 36, (500, 655 + self.decalage),
+                                        self.game_handler.ggf).custom_image("images/plateforme 3 white.png", (500, 36))
                 if click:
                     self.p_type = 3
             elif self.exit_button.collides():
@@ -91,7 +95,7 @@ class LevelEditor:
                     mouse_pos = pygame.mouse.get_pos()
                     if event.button == 1:
                         click = True
-                        if place:
+                        if place and mouse_pos[1] < 590:
                             self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, False,
                                                                 self.bg.decalage,
                                                                 self.p_type)
@@ -105,14 +109,33 @@ class LevelEditor:
                     pro = False
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_UP:
-                        self.bg.defil()
+                        count += 1
+                        self.bg.defil("up")
                         if self.bg.count < self.bg.n_screen:
                             for plat in self.game_handler.platforms:
                                 plat.move_y(self.bg.delta_y)
+                    if event.key == pygame.K_DOWN and count > 0:
+                        count -= 1
+                        self.bg.defil("down")
+                        if self.bg.count < self.bg.n_screen:
+                            for plat in self.game_handler.platforms:
+                                plat.move_y(-self.bg.delta_y)
 
+            pygame.draw.rect(self.mode, (255, 255, 255), ((0, 620 + self.decalage), (1280, 720)), 0)
+            self.mode.blit(self.left_click, (1030, 625 + self.decalage))
+            self.mode.blit(self.right_click, (1100, 625 + self.decalage))
+            self.mode.blit(self.delete, (1170, 650 + self.decalage))
             self.p1_button.render("")
             self.p2_button.render("")
             self.p3_button.render("")
+
+            if pygame.mouse.get_pos()[1] >= 600:
+                if self.decalage > 0:
+                    self.decalage -= 20
+
+            else:
+                if self.decalage < 120:
+                    self.decalage += 10
             self.exit_button.render(highlight)
             pygame.display.update()
             self.game_handler.ggf.clock.tick(60)

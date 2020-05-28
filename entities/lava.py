@@ -29,7 +29,7 @@ class Lava():
         surface.blit(self.image, (self.x, self.y))
 
     def new_rect(self):
-        self.rect = self.image.get_rect(topleft = (self.x,self.y))
+        self.rect = self.image.get_rect(topleft=(self.x, self.y))
     
     def collide_with(self, player):
         if self.rect.colliderect(player.rect):
