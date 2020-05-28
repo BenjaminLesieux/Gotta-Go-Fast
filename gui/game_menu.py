@@ -23,7 +23,6 @@ class GameMenu(Gui):
         self.end_menu.game = True
 
         while self.end_menu.game:
-            print(self.end_menu.game)
             self.player.dead = "None"
 
             if self.end_menu.is_activated():

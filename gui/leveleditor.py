@@ -31,7 +31,6 @@ class LevelEditor:
         click = False
 
         while pro:
-
             self.bg.draw(self.mode)
 
             if self.p_type == 1:
