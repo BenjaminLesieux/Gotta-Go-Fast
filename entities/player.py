@@ -1,6 +1,5 @@
 from pygame.sprite import *
 from math import *
-from entities.platform import Platform
 
 
 class Player(Sprite):
@@ -63,6 +62,7 @@ class Player(Sprite):
         dist = 6  # la distance en 1 frame
 
         if (self.landed == False):
+            self.angle = -self.alpha * pi / 60
             i = self.jump(self.power, self.angle)
             if self.can_defil():
                 self.h0 += decalage
@@ -84,6 +84,16 @@ class Player(Sprite):
                     self.landed = False
                     i = self.dist_jump
 
+                elif key[pygame.K_UP] or key[pygame.K_w]:
+                    if self.alpha < 28:
+                        self.alpha += 0.2
+                        self.power += 0.004
+
+                elif key[pygame.K_DOWN] or key[pygame.K_s]:
+                    if self.alpha > 20:
+                        self.alpha -= 0.2
+                        self.power -= 0.004
+
 
             elif key[pygame.K_LEFT] or key[pygame.K_a]:  # left key
                 self.x -= dist  # left
@@ -97,12 +107,37 @@ class Player(Sprite):
                     self.update_position()
                     self.landed = False
                     i = self.dist_jump
-                
-                
+
+                elif key[pygame.K_UP] or key[pygame.K_w]:
+                    if self.alpha < 28:
+                        self.alpha += 0.2
+                        self.power += 0.004
+                    print(self.power)
+
+                elif key[pygame.K_DOWN] or key[pygame.K_s]:
+                    if self.alpha > 20:
+                        self.alpha -= 0.2
+                        self.power -= 0.004
+                    print(self.power)
+
+
             elif key[pygame.K_SPACE]:  # space key
                 self.update_position()
                 self.landed = False
                 i = self.dist_jump
+
+            elif key[pygame.K_UP] or key[pygame.K_w]:
+                if self.alpha < 28:
+                    self.alpha += 0.2
+                    self.power += 0.004
+                print(self.power)
+
+            elif key[pygame.K_DOWN] or key[pygame.K_s]:
+                if self.alpha > 20:
+                    self.alpha -= 0.2
+                    self.power -= 0.004
+                print(self.power)
+
             else:  # S'il ne se passe rien
                 self.face = True
                 self.sens = 0

@@ -5,7 +5,6 @@ from gui.levelselector import LevelSelector
 from gui.game_menu import GameMenu
 from gui.option_menu import OptionMenu
 from gui.button import Button
-from gui.text_box import TextBox
 from pygame.locals import *
 
 
@@ -30,6 +29,7 @@ class GGf:
         self.level_selector = LevelSelector(self)
         self.game_menu = GameMenu(self)
         self.option_menu = OptionMenu(self)
+        self.timer = 0
         self.menu()
 
     def draw_text(self, text, font, color, surface, x, y):
@@ -53,13 +53,15 @@ class GGf:
 
             play = Button("Jouer", 450, 70, (430, 300), self)
             rules = Button("Règles", 450, 70, (430, 400), self)
+            leave = Button("Quitter", 450, 70, (430, 500), self)
+
             highlight = "None"
             click = False
 
             for event in pygame.event.get():
-                if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+                if event.type == QUIT:
                     pygame.quit()
-                    sys.exit()
+                    sys.exit(0)
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         click = True
@@ -75,8 +77,15 @@ class GGf:
                 if click:
                     self.option_menu.loop()
 
+            elif leave.collides():
+                highlight = leave.title
+                if click:
+                    pygame.quit()
+                    sys.exit(0)
+
             play.render(highlight)
             rules.render(highlight)
+            leave.render(highlight)
 
             pygame.display.update()
             self.clock.tick(60)

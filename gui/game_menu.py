@@ -15,7 +15,7 @@ class GameMenu(Gui):
         self.game_handler.set_end_menu(end_menu=self.end_menu)
         self.player = None
 
-    def loop(self):
+    def loop(self, level_name):
 
         self.load()
 
@@ -26,7 +26,7 @@ class GameMenu(Gui):
             self.player.dead = "None"
 
             if self.end_menu.is_activated():
-                self.end_menu.process()
+                self.end_menu.process(level_name)
                 if self.end_menu.game:
                     self.load()
 

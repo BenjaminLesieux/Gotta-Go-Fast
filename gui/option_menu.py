@@ -28,7 +28,6 @@ class OptionMenu(Gui):
             ghelp = False
 
             click = False
-            mouse_x, mouse_y = pygame.mouse.get_pos()
             highlight = "None"
 
             for event in pygame.event.get():
@@ -63,4 +62,3 @@ class OptionMenu(Gui):
                 self.le_help.render(highlight)
 
             pygame.display.update()
-            # self.ggf.clock.tick(60)

@@ -80,7 +80,7 @@ class LevelSelector:
                 if click:
                     self.selected_level = button[1]
                     self.ggf.level = self.selected_level
-                    self.ggf.game_menu.loop()
+                    self.ggf.game_menu.loop(self.selected_level.name)
             if button[3].collides():
                 highlight = button[1].name
                 if click:

@@ -9,18 +9,18 @@ class Lava():
         self.image = pygame.image.load("images/lave_2.png").convert_alpha()
         self.x = -1 / 3 * self.image.get_width()
         self.y = 700
-        self.speed = 0.5
+        self.speed = 0.8
         self.rect = self.image.get_rect()
 
     def move(self, delta_y):
         if self.moving:
             if self.y < 700:
-                self.y -= (self.speed - 0.20*delta_y)
+                self.y -= (self.speed - 0.40 * delta_y)
             else :
                 self.y -= self.speed
     
     def is_moving(self, state):
-        if (self.y == 0 or state == False):
+        if (state == False):
             self.moving = False
         else:
             self.moving = True

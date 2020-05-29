@@ -22,12 +22,16 @@ class Game:
         self.w_pos = (-100,0)
         self.trophy = None
         self.p_trophy = None
+        self.start_time = 0
 
     def set_end_menu(self, end_menu):
         self.end_menu = end_menu
 
     def process(self):
-        
+        if self.start_time == 0:
+            self.start_time = time.time()
+            self.ggf.timer = 0
+
         if not self.stop:
 
             collide = 0
@@ -117,6 +121,13 @@ class Game:
 
         level = open(level_name + ".txt", "r") if os.path.exists(level_name + ".txt") else open(level_name + ".txt",
                                                                                                 "a+")
+        if os.path.exists("high scores/" + level_name + ".txt"):
+            level_hs = open("high scores/" + level_name + ".txt", "r")
+        else:
+            level_hs = open("high scores/" + level_name + ".txt", "w+")
+            for i in range(0, 3):
+                level_hs.write("999.99\n")
+        level_hs.close()
         level = open(level_name + ".txt", "r")  # Pour être sûr de mettre en mode 'read' après la possible création
 
         lines = level.readlines()
@@ -189,6 +200,9 @@ class Game:
     def end(self):
 
         if self.player.dead != "None":
+            if self.ggf.timer == 0:
+                self.ggf.timer = time.time() - self.start_time
+                self.start_time = 0
             self.state = False
             self.lava.moving = False
             if (self.player.dead == "Win"):

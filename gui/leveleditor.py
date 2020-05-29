@@ -95,7 +95,7 @@ class LevelEditor:
                     mouse_pos = pygame.mouse.get_pos()
                     if event.button == 1:
                         click = True
-                        if place and mouse_pos[1] < 590:
+                        if place and mouse_pos[1] < 630:
                             self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, False,
                                                                 self.bg.decalage,
                                                                 self.p_type)
@@ -121,25 +121,23 @@ class LevelEditor:
                             for plat in self.game_handler.platforms:
                                 plat.move_y(-self.bg.delta_y)
 
-            
-            self.mode.blit(self.banderole, (0, 570 + self.decalage))
-            self.mode.blit(self.left_click, (1030, 625 + self.decalage))
-            self.mode.blit(self.right_click, (1100, 625 + self.decalage))
-            self.mode.blit(self.delete, (1170, 650 + self.decalage))
+            self.mode.blit(self.banderole, (0, 600 + self.decalage))
+            self.mode.blit(self.left_click, (1030, 645 + self.decalage))
+            self.mode.blit(self.right_click, (1100, 645 + self.decalage))
+            self.mode.blit(self.delete, (1170, 670 + self.decalage))
             self.p1_button.render("")
             self.p2_button.render("")
             self.p3_button.render("")
 
-            if pygame.mouse.get_pos()[1] >= 600:
+            if pygame.mouse.get_pos()[1] >= 620 + self.decalage / 2:
                 if self.decalage > 0:
                     self.decalage -= 20
 
             else:
-                if self.decalage < 120:
+                if self.decalage < 100:
                     self.decalage += 10
             self.exit_button.render(highlight)
             pygame.display.update()
-            self.game_handler.ggf.clock.tick(60)
 
         self.level_selector.selected_level = None
         self.game_handler.level = None
