@@ -16,6 +16,7 @@ class LevelEditor:
         self.p1_button = None
         self.p2_button = None
         self.p3_button = None
+        self.banderole = pygame.image.load("images/banderole plateforme.png")
         self.decalage = 0
         self.left_click = pygame.image.load("images/left_click.png")
         self.right_click = pygame.image.load("images/right_click.png")
@@ -120,7 +121,8 @@ class LevelEditor:
                             for plat in self.game_handler.platforms:
                                 plat.move_y(-self.bg.delta_y)
 
-            pygame.draw.rect(self.mode, (255, 255, 255), ((0, 620 + self.decalage), (1280, 720)), 0)
+            
+            self.mode.blit(self.banderole, (0, 570 + self.decalage))
             self.mode.blit(self.left_click, (1030, 625 + self.decalage))
             self.mode.blit(self.right_click, (1100, 625 + self.decalage))
             self.mode.blit(self.delete, (1170, 650 + self.decalage))
