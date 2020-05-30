@@ -50,11 +50,15 @@ class TextBox:
             self.active = False
 
     def addText(self, key):
-
+        if (key > 47 and key < 58) or (key > 255 and key < 266):
+            self.caps = False
+            if (key > 255 and key < 266):
+                key = key - 208
         if self.caps == True:
             key = key - 32
         elif key == 13:
             self.active = False
+
         try:
             if key != 109 and key != 77:
                 if key == 59 or key == 27 or (64 < key and key < 91) or (96 < key and key < 123) or (

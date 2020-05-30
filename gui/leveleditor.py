@@ -12,7 +12,7 @@ class LevelEditor:
         self.level_selector = level_selector
         self.mode = mode
         self.bg = None
-        self.p_type = 1  # 1 type 1 - 2 type 2 - 3 type 3
+        self.p_type = 1
         self.p1_button = None
         self.p2_button = None
         self.p3_button = None

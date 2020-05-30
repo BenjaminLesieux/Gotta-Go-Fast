@@ -84,7 +84,9 @@ class FinalScreen:
                 self.ggf.mode.blit(self.ggf.win, [448, 10])
             elif self.state == "Game over":
                 self.ggf.mode.blit(self.ggf.lose, [448, 10])
-
+            self.time = self.time.replace(self.time[6:len(self.time)], "")
+            self.ggf.draw_text(str(self.time) + "s", pygame.font.Font("images/Fipps-Regular.otf", 35), (255, 255, 255),
+                               self.ggf.mode, 30, 20)
             self.ggf.draw_text("Meilleurs scores : ", self.time_font, (255, 255, 255), self.ggf.mode, 430, 250)
             self.ggf.draw_text(self.times[0] + "s  " + new[0], self.time_font, (255, 255, 255), self.ggf.mode, 430, 300)
             self.ggf.draw_text(self.times[1] + "s  " + new[1], self.time_font, (255, 255, 255), self.ggf.mode, 430, 350)
@@ -98,7 +100,7 @@ class FinalScreen:
                     running = False
                     self.activated = False
                     self.game = False
-                    
+
             elif self.retry.collides():
                 highlight = "Réessayer"
                 if click:

@@ -23,6 +23,7 @@ class Game:
         self.trophy = None
         self.p_trophy = None
         self.start_time = 0
+        self.count = ""
 
     def set_end_menu(self, end_menu):
         self.end_menu = end_menu
@@ -89,6 +90,11 @@ class Game:
                 self.trophy.draw(self.ggf.mode)
             self.player.draw(self.ggf.mode)
             self.lava.draw(self.ggf.mode)  # Lave en dernier !
+            self.count = str(time.time() - self.start_time)
+            self.count = self.count.replace(self.count[6:len(self.count)], "")
+
+            self.ggf.draw_text(self.count + "s", pygame.font.Font("images/Fipps-Regular.otf", 35), (255, 255, 255),
+                               self.ggf.mode, 30, 20)
             self.end()
 
 
