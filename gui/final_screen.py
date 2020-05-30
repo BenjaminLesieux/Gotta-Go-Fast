@@ -32,8 +32,7 @@ class FinalScreen:
     def update_scores(self, new_score):
         for i in range(0, 3):
             self.times[i] = self.times[i].replace('\n', '')
-
-            if new_score <= self.times[i]:
+            if float(new_score) <= float(self.times[i]):
                 if i == 0:
                     tmp = self.times[0]
                     self.times[0] = new_score

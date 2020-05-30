@@ -113,31 +113,28 @@ class Player(Sprite):
                     if self.alpha < 28:
                         self.alpha += 0.2
                         self.power += 0.004
-                    print(self.power)
 
                 elif key[pygame.K_DOWN] or key[pygame.K_s]:
                     if self.alpha > 20:
                         self.alpha -= 0.2
                         self.power -= 0.004
-                    print(self.power)
 
 
             elif key[pygame.K_SPACE]:
                 self.update_position()
                 self.landed = False
+                self.power = 0.8
                 i = self.dist_jump
 
             elif key[pygame.K_UP] or key[pygame.K_w]:
                 if self.alpha < 28:
                     self.alpha += 0.2
                     self.power += 0.004
-                print(self.power)
 
             elif key[pygame.K_DOWN] or key[pygame.K_s]:
                 if self.alpha > 20:
                     self.alpha -= 0.2
                     self.power -= 0.004
-                print(self.power)
 
             else:  # S'il ne se passe rien
                 self.face = True

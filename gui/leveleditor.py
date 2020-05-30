@@ -95,7 +95,12 @@ class LevelEditor:
                     mouse_pos = pygame.mouse.get_pos()
                     if event.button == 1:
                         click = True
+
                         if place and mouse_pos[1] < 630:
+                            level_hs = open("high scores/" + self.level.name + ".txt", "w+")
+                            for i in range(0, 3):
+                                level_hs.write("999.99\n")
+                            level_hs.close()
                             self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, False,
                                                                 self.bg.decalage,
                                                                 self.p_type)
