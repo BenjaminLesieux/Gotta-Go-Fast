@@ -3,6 +3,7 @@ import sys
 from game.background import *
 from gui.button import Button
 
+
 class LevelEditor:
 
     def __init__(self, level, game_handler, mode, level_selector):
@@ -23,13 +24,17 @@ class LevelEditor:
         self.delete = pygame.image.load("images/delete.png").convert_alpha()
         self.exit_button = None
 
+    """
+    :desc - Processing 
+    """
     def process(self):
         print("Editing levels")
-        count = 0
-        pro = True
-        self.game_handler.register_platform_by_file(self.level.location)
-        self.render_background()
-        click = False
+        count = 0  # Pour le décalage du background
+        pro = True  # Condition d'arrêt de la boucle
+        self.game_handler.register_platform_by_file(
+            self.level.location)  # Chargement des plateformes à partir du fichier du niveau
+        self.render_background()  # Affiche le background
+        click = False  # Si le joueur clique sur sa souris
 
         while pro:
             self.bg.draw(self.mode)
@@ -59,11 +64,11 @@ class LevelEditor:
             self.exit_button = Button("Quitter", 10, 10, (10, 10),
                                       self.game_handler.ggf).custom_image("images/getback.png", (75, 75))
 
-            place = True
+            place = True  # Si on peut placer une plateforme
             highlight = "None"
-            plat_del = None
-            i = 0
-            index = 0
+            plat_del = None  # La plateforme à supprimer
+            i = 0  # Compteur
+            index = 0  # Index de la plateforme à supprimer
 
             if self.p1_button.collides():
                 place = False
@@ -88,7 +93,7 @@ class LevelEditor:
 
             click = False
 
-            for plat in self.game_handler.platforms:
+            for plat in self.game_handler.platforms:  # Intéractions avec les plateformes
                 if plat.is_mobile():
                     plat.move()
                 if plat.collides():
@@ -163,6 +168,9 @@ class LevelEditor:
         self.game_handler.level = None
         self.game_handler.platforms = []
 
+    """
+    :desc - Créé un background qui bouge 
+    """
     def render_background(self):
         self.bg = Background()
         self.bg.surface = self.mode

@@ -6,6 +6,7 @@ from entities.platform import Platform
 from gui.button import Button
 from gui.final_screen import FinalScreen
 
+
 class GameMenu(Gui):
 
     def __init__(self, ggf):

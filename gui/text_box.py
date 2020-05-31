@@ -22,6 +22,10 @@ class TextBox:
         self.font = pygame.font.Font('images/Fipps-Regular.otf', height // 2)
         self.passive_font = pygame.font.Font('images/Fipps-Regular.otf', height // 3)
 
+    """
+    :param window - une surface sur laquelle dessiner 
+    :desc - dessine la textbox à l'écran
+    """
     def draw(self, window):
         if self.active == False:
             self.image.fill(self.black)
@@ -43,12 +47,20 @@ class TextBox:
 
         window.blit(self.image, self.pos)
 
+    """
+    :param pos - position du clic
+    :desc - vérifie si l'on clique sur la textbox 
+    """
     def verifClick(self, pos):
         if pos[0] > self.x and pos[0] < self.x + self.width and pos[1] > self.y and pos[1] < self.y + self.height:
             self.active = True
         else:
             self.active = False
 
+    """
+    :param key - la touche pressée 
+    :desc - Ajoute du texte dans la textbox 
+    """
     def addText(self, key):
         if (key > 47 and key < 58) or (key > 255 and key < 266):
             self.caps = False
@@ -97,9 +109,7 @@ class TextBox:
                     text = list(self.text)
                     text.append(' ')
                     self.text = "".join(text)
-
-
-        except:
+        except ValueError:
             print("Error")
 
     """

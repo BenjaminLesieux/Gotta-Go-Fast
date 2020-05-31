@@ -20,16 +20,26 @@ class LevelSelector:
         self.text = self.box.active
         self.new_level = False
 
+    """
+    :desc - Ajout d'un niveau dans la liste des niveaux
+    """
     def register_level(self, level):
         registered = open("levels.txt", "a+")
         registered.write(level.name + "\n")
 
+    """
+    :desc - Charge les niveaux 
+    """
     def propose_levels(self):
         registered = open("levels.txt", "r")
 
         for line in registered.readlines():
             self.levels.append(Level(line[0:len(line) - 1]))
 
+    """
+    :return True si un niveau a été selectionné, False sinon
+    :type boolean
+    """
     def has_selected_level(self):
         return self.selected_level is not None
 
@@ -39,10 +49,9 @@ class LevelSelector:
         self.mode.blit(self.bg, [0, 0])
         self.ggf.draw_text("Select Level", self.ggf.font, (255, 255, 255), self.mode, 450, 10)
 
-        i = 0
+        i = 0  # compteur
 
-
-        for level in self.levels:
+        for level in self.levels:  # Intéractions avec les niveaux
             b = Button(level.name, 450, 70, (430, 300 + i), self.ggf)
             edit = Button("", 40, 40, (900, 305 + i), self.ggf).custom_image("images/Edit.png", (50, 50))
             delete = Button("", 40, 40, (350, 310 + i), self.ggf).custom_image("images/RedCross.png", (50, 50))
@@ -127,12 +136,16 @@ class LevelSelector:
 
         return True
 
+    """
+    :desc - Retire un niveau de la liste des niveaux
+    """
     def remove_level(self, level):
         self.levels.remove(level)
         f = open("levels.txt", "w")
 
         for l in self.levels:
             f.write(l.name + "\n")
+
 
 class Level:
 
