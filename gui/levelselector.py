@@ -4,6 +4,8 @@ from gui.button import Button
 from gui.leveleditor import LevelEditor
 from gui.text_box import TextBox
 
+pygame.mixer.init(44100, -16,2,2048)
+clic = pygame.mixer.Sound("images/clic.ogg")
 
 class LevelSelector:
 
@@ -71,6 +73,7 @@ class LevelSelector:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
+                    clic.play()
                     self.box.verifClick(pygame.mouse.get_pos())
             if event.type == pygame.KEYDOWN and self.text:
                 if self.box.active:

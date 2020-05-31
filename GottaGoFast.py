@@ -7,6 +7,8 @@ from gui.option_menu import OptionMenu
 from gui.button import Button
 from pygame.locals import *
 
+pygame.mixer.init(44100, -16,2,2048)
+clic = pygame.mixer.Sound("images/clic.ogg")
 
 class GGf:
 
@@ -65,6 +67,7 @@ class GGf:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         click = True
+                        clic.play()
             if play.collides():
                 highlight = play.title
                 if click:

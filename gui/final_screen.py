@@ -2,6 +2,8 @@ import pygame
 import sys
 from gui.button import Button
 
+pygame.mixer.init(44100, -16,2,2048)
+clic = pygame.mixer.Sound("images/clic.ogg")
 
 class FinalScreen:
 
@@ -131,6 +133,7 @@ class FinalScreen:
                 if event.type == pygame.MOUSEBUTTONUP:
                     if event.button == 1:
                         click = True
+                        clic.play()
 
             self.retry.render(highlight)
             self.menu.render(highlight)

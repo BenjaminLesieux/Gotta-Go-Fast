@@ -1,5 +1,7 @@
 from pygame.sprite import *
 
+pygame.mixer.init(44100, -16,2,2048)
+trophy = pygame.mixer.Sound("images/fly.ogg")
 
 class Trophy(Sprite):
 
@@ -29,6 +31,7 @@ class Trophy(Sprite):
     def collide_with(self, player):
 
         if (player.y - self.y+51 < 10) and self.rect.colliderect(player.rect):
+            trophy.play()
             return "Win"
         else:
             return "None"

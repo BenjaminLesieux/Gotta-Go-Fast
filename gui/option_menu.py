@@ -3,6 +3,8 @@ from gui.gui import Gui
 import pygame
 import sys
 
+pygame.mixer.init(44100, -16,2,2048)
+clic = pygame.mixer.Sound("images/clic.ogg")
 
 class OptionMenu(Gui):
 
@@ -36,6 +38,7 @@ class OptionMenu(Gui):
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         click = True
+                        clic.play()
 
             if self.back.collides():
                 highlight = "Retour"

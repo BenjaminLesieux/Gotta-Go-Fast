@@ -1,6 +1,11 @@
 from pygame.sprite import *
 from math import *
 
+pygame.mixer.init(44100, -16,2,2048)
+jump = pygame.mixer.Sound("images/Jump.ogg")
+walk = pygame.mixer.Sound("images/Walk.ogg")
+walk.set_volume(0.05)
+jump.set_volume(0.1)
 
 class Player(Sprite):
 
@@ -79,11 +84,12 @@ class Player(Sprite):
                 elif (self.sens == -1):
                     self.speed = 0
                 self.sens = 1
-
+                walk.play()
                 if key[pygame.K_SPACE]:
                     self.update_position()
                     self.landed = False
                     i = self.dist_jump
+                    jump.play()
 
                 elif key[pygame.K_UP] or key[pygame.K_w]:
                     if self.alpha < 28:
@@ -103,11 +109,13 @@ class Player(Sprite):
                 elif (self.sens == 1):
                     self.speed = 0
                 self.sens = -1
+                walk.play()
 
                 if key[pygame.K_SPACE]:
                     self.update_position()
                     self.landed = False
                     i = self.dist_jump
+                    jump.play()
 
                 elif key[pygame.K_UP] or key[pygame.K_w]:
                     if self.alpha < 28:
@@ -125,6 +133,7 @@ class Player(Sprite):
                 self.landed = False
                 self.power = 0.8
                 i = self.dist_jump
+                jump.play()
 
             elif key[pygame.K_UP] or key[pygame.K_w]:
                 if self.alpha < 28:
