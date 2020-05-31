@@ -1,6 +1,7 @@
 import pygame
 import sys
 from gui.button import Button
+from game.game_handler import Game
 
 pygame.mixer.init(44100, -16,2,2048)
 clic = pygame.mixer.Sound("images/clic.ogg")

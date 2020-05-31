@@ -3,6 +3,7 @@ import sys
 from gui.button import Button
 from gui.leveleditor import LevelEditor
 from gui.text_box import TextBox
+from gui.final_screen import FinalScreen
 
 pygame.mixer.init(44100, -16,2,2048)
 clic = pygame.mixer.Sound("images/clic.ogg")

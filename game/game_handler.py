@@ -19,7 +19,7 @@ class Game:
         self.i = 0
         self.lava_delta = 0
         self.end_menu = None
-        self.w_pos = (-100,0)
+        self.w_pos = (-100, 0)
         self.trophy = None
         self.p_trophy = None
         self.start_time = 0
