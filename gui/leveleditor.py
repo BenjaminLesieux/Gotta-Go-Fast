@@ -61,6 +61,9 @@ class LevelEditor:
 
             place = True
             highlight = "None"
+            plat_del = None
+            i = 0
+            index = 0
 
             if self.p1_button.collides():
                 place = False
@@ -88,6 +91,11 @@ class LevelEditor:
             for plat in self.game_handler.platforms:
                 if plat.is_mobile():
                     plat.move()
+                if plat.collides():
+                    plat_del = plat
+                    index = i
+                    print(index)
+                i += 1
                 plat.draw(self.mode)
 
             for event in pygame.event.get():
@@ -110,9 +118,16 @@ class LevelEditor:
                             self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, True,
                                                                 self.bg.decalage,
                                                                 self.p_type)
-                elif event.type == pygame.QUIT:
+                if event.type == pygame.QUIT:
                     pro = False
-                elif event.type == pygame.KEYDOWN:
+                if event.type == pygame.KEYDOWN:
+
+                    if event.key == pygame.K_BACKSPACE:
+
+                        if plat_del is not None:
+                            self.game_handler.rewrite_file(self.level, plat_del)
+                            self.game_handler.platforms.pop(index)
+
                     if event.key == pygame.K_UP:
                         count += 1
                         self.bg.defil("up")

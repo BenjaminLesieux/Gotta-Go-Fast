@@ -1,5 +1,6 @@
 from pygame.sprite import *
 import time
+import pygame
 from entities.trophy import Trophy
 
 
@@ -13,6 +14,7 @@ class Platform(Sprite):
         self.rect = self.image.get_rect(center=position)
         self.loop = 0
         self.sens = False
+        self.mouse_x, self.mouse_y = pygame.mouse.get_pos()
         self.x = position[0]
         self.y = position[1]
         self.trophy = None
@@ -57,3 +59,7 @@ class Platform(Sprite):
                     player.update_position()
                 return 1
         return 0
+
+    def collides(self):
+        self.mouse_x, self.mouse_y = pygame.mouse.get_pos()
+        return self.mouse_x > self.x and self.mouse_x < self.x + self.image.get_width() and self.mouse_y > self.y and self.mouse_y < self.y + self.image.get_height()

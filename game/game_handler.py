@@ -180,6 +180,57 @@ class Game:
         if len(self.platforms) > 0:
             self.p_trophy = self.platforms[self.w_pos]
 
+    def rewrite_file(self, level_name, platform):
+
+        level = open(level_name.name + ".txt", "r")  # Pour être sûr de mettre en mode 'read' après la possible création
+
+        lines = level.readlines()
+        num_line = 0
+        ymax = 0
+
+        for j in range(0, len(lines)):
+            i = 1
+
+            while lines[j][i] != "/":
+                i += 1
+
+            last = i
+            x = int(lines[j][1:i])
+
+            i += 1
+
+            while lines[j][i] != "/":
+                i += 1
+            # s
+            y = int(lines[j][last + 1:i])
+
+            while lines[j][i] != "/":
+                i += 1
+
+            ptype = int(lines[j][i + 1])
+
+            if y < ymax:
+                ymax = y
+                self.w_pos = j
+
+            position = (x, y)
+            mobile = True if lines[j][i + 3:len(lines[j]) - 2] == "True" else False
+
+            if position == platform.position:
+                num_line = j
+                break
+
+        level.close()
+
+        lines.pop(num_line)
+
+        level = open(level_name.name + ".txt", "w+")
+
+        for line in lines:
+            level.write(line)
+
+        level.close()
+
     def remove_platform(self, *sprite):
         self.platforms.remove(sprite)
 

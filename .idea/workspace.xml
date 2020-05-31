@@ -3,21 +3,114 @@
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="We are reaching the end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GottaGoFast.py" beforeDir="false" afterPath="$PROJECT_DIR$/GottaGoFast.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Niveau 1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Niveau 1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Niveau 2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Niveau 2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Niveau 3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Niveau 3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/platform.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/platform.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/game_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/game_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/final_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/final_screen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/leveleditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/leveleditor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/levelselector.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/levelselector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/high scores/Demo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/high scores/Niveau Final.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/high scores/Niveau 1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/high scores/Niveau 1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/high scores/Niveau 2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/high scores/Niveau 2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/high scores/Niveau 3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/high scores/Niveau 3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/levels.txt" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/venv/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/entities/platform.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/game_handler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3664">
+              <caret line="234" selection-start-line="234" selection-end-line="234" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Niveau 1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ben.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Niveau Final.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Niveau 2.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Niveau 3.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/entities/player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2720">
+              <caret line="171" column="21" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/AddCross.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,8 +149,68 @@
       </branch-storage>
     </favorite-branches>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/GottaGoFast.py" />
+        <option value="$PROJECT_DIR$/entities/platform.py" />
+        <option value="$PROJECT_DIR$/game/game_handler.py" />
+        <option value="$PROJECT_DIR$/gui/leveleditor.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="47" />
+    <option name="y" value="50" />
+    <option name="width" value="1346" />
+    <option name="height" value="785" />
+  </component>
   <component name="ProjectId" id="1XOvJ1RyeXfBkRTAuA9ybmCI4Sq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gottagofaster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gottagofaster" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gottagofaster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gottagofaster" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gottagofaster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gottagofaster" type="462c0819:PsiDirectoryNode" />
+              <item name="errors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gottagofaster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gottagofaster" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gottagofaster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gottagofaster" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gottagofaster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gottagofaster" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -67,7 +220,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TP 4/Listes" />
+    <property name="last_opened_file_path" value="$USER_HOME$/TP 4/Listes" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -80,6 +233,18 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Python.ggf">
     <configuration name="All trajectories" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -614,6 +779,30 @@
     <option name="localTasksCounter" value="56" />
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="839" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10359408" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3293011" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4918957" weight="0.23427041" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39919356" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5081043" side_tool="true" visible="true" weight="0.23427041" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -633,6 +822,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -770,5 +965,116 @@
     <SUITE FILE_PATH="coverage/ProjetTranverse1$game.coverage" NAME="game Coverage Results" MODIFIED="1581447233474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ggf$All_trajectories.coverage" NAME="All trajectories Coverage Results" MODIFIED="1588844284337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$Projet_Tranverse_1.coverage" NAME="game Coverage Results" MODIFIED="1580931744961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gui/levelselector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/back.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/text_box.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/levels.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/button.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" selection-start-line="17" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/leveleditor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1936">
+          <caret line="124" column="1" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entities/platform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/game_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3664">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Niveau Final.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Niveau 2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GottaGoFast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Niveau 3.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entities/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="171" column="21" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/AddCross.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Niveau 1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ben.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

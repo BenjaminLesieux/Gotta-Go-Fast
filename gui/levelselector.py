@@ -37,22 +37,23 @@ class LevelSelector:
 
         self.buttons.clear()
         self.mode.blit(self.bg, [0, 0])
-        self.ggf.draw_text("Select Level", self.ggf.font, (255, 255, 255), self.mode, 420, 10)
+        self.ggf.draw_text("Select Level", self.ggf.font, (255, 255, 255), self.mode, 450, 10)
 
         i = 0
 
-        for level in self.levels:
-            b = Button(level.name, 450, 70, (430, 250 + i), self.ggf)
-            edit = Button("", 40, 40, (900, 255 + i), self.ggf).custom_image("images/Edit.png", (50, 50))
-            delete = Button("", 40, 40, (350, 260 + i), self.ggf).custom_image("images/RedCross.png", (50, 50))
-            self.buttons.append((b, level, [430, 200 + i], edit, delete))
-            i += 100
 
-        add = Button("", 40, 40, (630, 250 + i), self.ggf).custom_image("images/AddCross.png", (50, 50))
+        for level in self.levels:
+            b = Button(level.name, 450, 70, (430, 300 + i), self.ggf)
+            edit = Button("", 40, 40, (900, 305 + i), self.ggf).custom_image("images/Edit.png", (50, 50))
+            delete = Button("", 40, 40, (350, 310 + i), self.ggf).custom_image("images/RedCross.png", (50, 50))
+            self.buttons.append((b, level, [430, 300 + i], edit, delete))
+            i += 80
+
+        add = Button("", 40, 40, (630, 300 + i), self.ggf).custom_image("images/AddCross.png", (50, 50))
+        back = Button("", 40, 40, (10, 10), self.ggf).custom_image("images/getback.png", (50, 50))
 
         click = False
         highlight = "None"
-
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -91,6 +92,9 @@ class LevelSelector:
                 highlight = button[1].name
                 if click and len(self.levels) > 1:
                     self.remove_level(button[1])
+            if back.collides():
+                if click:
+                    return False
             if add.collides():
 
                 if len(self.levels) == 4:
@@ -114,11 +118,14 @@ class LevelSelector:
             button[3].render(highlight)
             button[4].render(highlight)
             add.render(highlight)
+            back.render(highlight)
 
             if self.text:
                 self.box.draw(self.mode)
 
         pygame.display.update()
+
+        return True
 
     def remove_level(self, level):
         self.levels.remove(level)

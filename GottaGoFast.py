@@ -40,7 +40,7 @@ class GGf:
 
     def menu(self):
         pygame.mixer.music.load('images/idée-menu-non-mixée.ogg')
-        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.set_volume(0.1)
         pygame.mixer.music.play(-1)
 
         self.level_selector.propose_levels()
@@ -68,9 +68,9 @@ class GGf:
             if play.collides():
                 highlight = play.title
                 if click:
-
-                    while not self.level_selector.has_selected_level():
-                        self.level_selector.process()
+                    back = True
+                    while not self.level_selector.has_selected_level() and back:
+                        back = self.level_selector.process()
 
             elif rules.collides():
                 highlight = rules.title
