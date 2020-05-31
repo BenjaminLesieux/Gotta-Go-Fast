@@ -268,6 +268,9 @@ class Game:
             if (self.player.dead == "Win"):
                 self.end_menu.state = "Victoire"
                 self.end_menu.activated = True
+                pygame.mixer.music.load('images/Heaven.ogg')
+                pygame.mixer.music.set_volume(0.3)
+                pygame.mixer.music.play(-1)
             else:
                 self.end_menu.state = "Game over"
                 self.end_menu.activated = True
