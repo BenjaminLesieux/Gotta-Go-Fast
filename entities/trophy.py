@@ -10,12 +10,22 @@ class Trophy(Sprite):
         self.platform = platform
         self.rect = self.image.get_rect(center = (self.x,self.y))
 
+    """
+        Affiche le casque dans la fenêtre de jeu
+    """
     def draw(self, surface):
         surface.blit(self.image, (self.x-31.5, self.y-25))
     
+    """
+        redéfinit le rectangle du casque
+    """
     def new_rect(self):
         self.rect = self.image.get_rect(center = (self.x,self.y))
 
+    """
+        type string
+        : return Win ou None - état de victoire du perso 
+    """
     def collide_with(self, player):
 
         if (player.y - self.y+51 < 10) and self.rect.colliderect(player.rect):
