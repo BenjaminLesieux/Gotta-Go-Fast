@@ -11,22 +11,20 @@ class Trophy(Sprite):
         self.rect = self.image.get_rect(center = (self.x,self.y))
 
     """
-    :param surface - l'écran de jeu
-    :desc - dessine sur l'écran de jeu
+        Affiche le casque dans la fenêtre de jeu
     """
     def draw(self, surface):
         surface.blit(self.image, (self.x-31.5, self.y-25))
-
+    
     """
-    :desc - réajuste le rectangle du sprite 
+        redéfinit le rectangle du casque
     """
     def new_rect(self):
         self.rect = self.image.get_rect(center = (self.x,self.y))
 
     """
-    :param player - le joueur qui peut potentiellement collisionner 
-    :return "Win" si le joueur collisionne ; "None" sinon
-    :type string 
+        type string
+        : return Win ou None - état de victoire du perso 
     """
     def collide_with(self, player):
 

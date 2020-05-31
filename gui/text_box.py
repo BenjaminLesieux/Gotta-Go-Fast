@@ -112,9 +112,5 @@ class TextBox:
         except ValueError:
             print("Error")
 
-    """
-    :type string 
-    :return text - le texte saisi dans la textbox
-    """
     def getText(self):
         return self.text

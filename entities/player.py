@@ -37,25 +37,13 @@ class Player(Sprite):
         self.dead = "None"
         self.speed = 0
 
-    """
-    :return position - la position du joueur
-    :type - un tuple d'integer correspondant à la position du joueur
-    """
     def get_position(self):
         return self.position
 
-    """
-    :desc - Retrace la hitbox du personnage pendant le saut
-    """
     def update(self):
         self.rect.topleft = self.x, self.y
         self.position = self.x, self.y
 
-    """
-    :desc - Remet à jour les conditions initiales du saut
-    :call - self.update()
-    :call - self.new_rect()
-    """
     def update_position(self):
         """ Mise à jour des conditions initiales """
         self.d0 = int(self.x)
@@ -67,11 +55,6 @@ class Player(Sprite):
         self.update()
         self.new_rect()
 
-    """
-    :param decalage - Le décalage correspond au delta lorsque l'écran de jeu bouge 
-    :return i
-    :type integer
-    """
     def move(self, decalage):
         """ Gestion des évènements """
         i = 0
@@ -165,24 +148,14 @@ class Player(Sprite):
         self.animation()
         return i
 
-    """
-    :desc - Dessine le joueur sur l'écran
-    """
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
 
-    """
-    :desc - S'occupe de la trajectoire verticale lors d'une chute
-    """
     def fall(self):
         """ Trajectoire selon y uniquement, pour une chute verticale """
         self.y = self.convert * 0.5 * self.g * self.i * self.i + self.h0
         self.i += self.dist_fall
 
-    """
-    :param power - la puissance du saut
-    :param angle - l'angle initial du saut
-    """
     def jump(self, power, angle):
         self.x = self.sens * self.i * power * cos(angle) + self.d0  # equation horaire selon x
         self.y = self.convert * 0.5 * self.g * self.i ** 2 + power * sin(
@@ -198,15 +171,9 @@ class Player(Sprite):
 
         return self.i
 
-    """
-    :desc - Remet à jour le rectangle du joueur
-    """
     def new_rect(self):
         self.rect = self.image.get_rect(center=self.position)
 
-    """
-    :desc - Anime le joueur pendant le mouvement
-    """
     def animation(self):
 
         if (self.frame == 12):
@@ -237,29 +204,18 @@ class Player(Sprite):
             elif (self.sens == -1):
                 self.image = self.list_images[3]
 
-    """
-    :return True si elle peut, False sinon
-    :type boolean
-    """
     def can_lava_move(self):
         if self.y <= 500:  # Valeur à changer pour le début de montée de lave
             return True
         else:
             return False
-
-    """
-    :return True si elle peut, False sinon
-    :type boolean
-    """
+    
     def can_defil(self):
         if self.y <= 300:  # Valeur à changer pour le début du fond d'écran
             return True
         else :
             return False
 
-    """
-    :desc - Pour ne pas que le joueur tombe verticalement d'une plateforme
-    """
     def just_falling(self):
         if (self.falling == True):
             if self.sens == 1:
