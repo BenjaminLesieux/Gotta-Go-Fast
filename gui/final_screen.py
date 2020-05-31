@@ -19,6 +19,9 @@ class FinalScreen:
     def is_activated(self):
         return self.activated
 
+    """
+        Lit les scores retenus dans les fichier txt
+    """
     def read_scores(self, level_name):
         file = open("high scores/" + level_name + ".txt", "r")
         lines = file.readlines()
@@ -29,6 +32,10 @@ class FinalScreen:
                 self.times[i] = self.times[i].replace('\n', '')
         file.close()
 
+    """
+        Met a jour les scores et les enregistre dans le level txt
+        Si un score est meilleur qu'un autre, il le remplace
+    """
     def update_scores(self, new_score):
         for i in range(0, 3):
             self.times[i] = self.times[i].replace('\n', '')
@@ -47,13 +54,21 @@ class FinalScreen:
                 elif i == 2:
                     self.times[2] = new_score
                     break
-
+    
+    """
+        Enregistre le score dans le fichier texte.
+    """
     def save_scores(self, scores, level_name):
         file = open("high scores/" + level_name + ".txt", "w")
         for i in range(0, 3):
             file.write(scores[i] + '\n')
         file.close()
 
+    """
+        Fonction d'affichage de fin de niveau.
+        Affiche toujours le score.
+        Dépend des retours des fonction collide de Trophy et Lava 
+    """
     def process(self, level_name):
         running = True
         click = False
