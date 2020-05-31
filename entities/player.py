@@ -139,11 +139,13 @@ class Player(Sprite):
                 if self.alpha < 28:
                     self.alpha += 0.2
                     self.power += 0.004
+                    self.sens = 0
 
             elif key[pygame.K_DOWN] or key[pygame.K_s]:
                 if self.alpha > 20:
                     self.alpha -= 0.2
                     self.power -= 0.004
+                    self.sens = 0
 
             else:  # S'il ne se passe rien
                 self.face = True

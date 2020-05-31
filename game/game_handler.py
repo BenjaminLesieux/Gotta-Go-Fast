@@ -33,7 +33,7 @@ class Game:
             self.start_time = time.time()
             self.ggf.timer = 0
             pygame.mixer.music.load("images/Run.ogg")
-            pygame.mixer.music.set_volume(0.3)
+            pygame.mixer.music.set_volume(0.1)
             pygame.mixer.music.play(-1)
 
         if not self.stop:
