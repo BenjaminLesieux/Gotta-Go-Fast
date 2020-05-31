@@ -15,15 +15,29 @@ class Button:
         (self.mouse_x, self.mouse_y) = pygame.mouse.get_pos()
         self.value = self.image.get_rect(topleft=(self.x, self.y))
 
+    """
+    :desc - Si la souris est sûr le bouton
+    :return - True si oui False sinon
+    :type - boolean
+    """
     def collides(self):
         if self.mouse_x > self.x and self.mouse_x < self.x + self.image.get_width() and self.mouse_y > self.y and self.mouse_y < self.y + self.image.get_height():
             return True
         return False
 
+    """
+    desc - Change la position d'un bouton
+    """
     def move_to(self, position):
         self.x = position[0]
         self.y = position[1]
 
+    """
+    :param link - le lien de l'image
+    :param dimensions - les nouvelles dimensions
+    :return self
+    :type Button
+    """
     def custom_image(self, link, dimensions):
         self.image = pygame.image.load(link).convert_alpha()
         self.title = ""
@@ -33,9 +47,17 @@ class Button:
 
         return self
 
+    """
+    :param text, font, color 
+    :param surface - Surface sur laquelle on dessine le texte
+    :param x,y - la position
+    """
     def draw_text(self, text, font, color, surface, x, y):
         self.ggf.draw_text(text, font, color, surface, x, y)
 
+    """
+    :param highlight - hover effect
+    """
     def render(self, highlight):
 
         self.ggf.mode.blit(self.image, (self.x, self.y))
