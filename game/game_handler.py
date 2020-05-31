@@ -146,12 +146,11 @@ class Game:
 
             last = i
             x = int(lines[j][1:i])
-
             i += 1
 
             while lines[j][i] != "/":
                 i += 1
-            # s
+
             y = int(lines[j][last + 1:i])
 
             while lines[j][i] != "/":
@@ -183,14 +182,12 @@ class Game:
     def rewrite_file(self, level_name, platform):
 
         level = open(level_name.name + ".txt", "r")  # Pour être sûr de mettre en mode 'read' après la possible création
-
         lines = level.readlines()
         num_line = 0
         ymax = 0
 
         for j in range(0, len(lines)):
             i = 1
-
             while lines[j][i] != "/":
                 i += 1
 
@@ -198,32 +195,26 @@ class Game:
             x = int(lines[j][1:i])
 
             i += 1
-
             while lines[j][i] != "/":
                 i += 1
-            # s
-            y = int(lines[j][last + 1:i])
 
+            y = int(lines[j][last + 1:i])
             while lines[j][i] != "/":
                 i += 1
 
             ptype = int(lines[j][i + 1])
-
             if y < ymax:
                 ymax = y
                 self.w_pos = j
 
             position = (x, y)
             mobile = True if lines[j][i + 3:len(lines[j]) - 2] == "True" else False
-
             if position == platform.position:
                 num_line = j
                 break
 
         level.close()
-
         lines.pop(num_line)
-
         level = open(level_name.name + ".txt", "w+")
 
         for line in lines:
@@ -233,7 +224,9 @@ class Game:
 
     def remove_platform(self, *sprite):
         self.platforms.remove(sprite)
-
+    """
+        Fonctions permettant d'initialiser les classes.
+    """
     def register_player(self, player):
         self.player = player
         self.player.surface = self.ggf.mode
@@ -246,6 +239,9 @@ class Game:
         self.background = Background()
         self.background.surface = self.ggf.mode
 
+    """
+        Vérifie si le joueur a gagné ou perdu
+    """
     def type_end(self):
 
         if self.trophy is not None:
@@ -254,6 +250,10 @@ class Game:
         if self.lava.collide_with(self.player) == "Lose":
             self.player.dead = "Lose"
 
+    """
+        Remet les conditions à zéro en cas de victoire/défaite
+        Donne des paramètres différents au menu.
+    """
     def end(self):
 
         if self.player.dead != "None":
