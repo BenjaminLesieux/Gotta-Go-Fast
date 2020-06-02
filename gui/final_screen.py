@@ -102,6 +102,8 @@ class FinalScreen:
             elif self.state == "Game over":
                 self.ggf.mode.blit(self.ggf.lose, [448, 10])
             self.time = self.time.replace(self.time[6:len(self.time)], "")
+            self.ggf.draw_text(level_name, pygame.font.Font("images/Fipps-Regular.otf", 35), (255, 255, 255),
+                               self.ggf.mode, 900, 20)
             self.ggf.draw_text(str(self.time) + "s", pygame.font.Font("images/Fipps-Regular.otf", 35), (255, 255, 255),
                                self.ggf.mode, 30, 20)
             self.ggf.draw_text("Meilleurs scores : ", self.time_font, (255, 255, 255), self.ggf.mode, 430, 250)

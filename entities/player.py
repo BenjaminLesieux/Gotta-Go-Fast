@@ -12,11 +12,11 @@ class Player(Sprite):
     def __init__(self, position):
         super().__init__()
         self.position = position
-        self.list_images = [pygame.image.load("images/face.png"),
-                            pygame.image.load("images/right1.png"),
-                            pygame.image.load("images/right2.png"),
-                            pygame.image.load("images/left1.png"),
-                            pygame.image.load("images/left2.png")]  # toutes les images du personnages
+        self.list_images = [pygame.image.load("images/soinc.png"),
+                            pygame.image.load("images/soinc1.png"),
+                            pygame.image.load("images/soinc2.png"),
+                            pygame.image.load("images/soincg1.png"),
+                            pygame.image.load("images/soincg2.png")]  # toutes les images du personnages
         self.image = self.list_images[0]
         self.rect = self.image.get_rect()
         self.surface = None
