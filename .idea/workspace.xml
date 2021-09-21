@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b215d3-555d-40dd-af8c-1335f9db47a1" name="Default Changelist" comment="We are reaching the end">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Projet Tranverse 1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet Tranverse 1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/lava.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/lava.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/platform.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/platform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/trophy.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/trophy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/background.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ggf.bat" beforeDir="false" afterPath="$PROJECT_DIR$/ggf.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/final_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/final_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/game_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/game_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/levelselector.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/levelselector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/option_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/option_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/text_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/text_box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/high scores/Ben.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/high scores/Niveau 2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/high scores/Niveau 2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/high scores/Niveau Final.txt" beforeDir="false" afterPath="$PROJECT_DIR$/high scores/Niveau Final.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/levels.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level 1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +19,17 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -78,23 +73,26 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Quentin\Documents\Projets\Gotta-Go-Fast\levels" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/gui" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,9 +125,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\Apps\Python\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -197,13 +195,8 @@
       <workItem from="1609794097487" duration="2567000" />
       <workItem from="1609942438138" duration="562000" />
       <workItem from="1632242756254" duration="6022000" />
-    </task>
-    <task id="LOCAL-00010" summary="Voici le début du squelette du jeu. Je n'ai rien implanter du code de quentin&#10;&#10;Signed-off-by: stephench420 &lt;benjamin.lesieux@efrei.net&gt;">
-      <created>1585495709966</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1585495709966</updated>
+      <workItem from="1632256187657" duration="1343000" />
+      <workItem from="1632260738883" duration="3517000" />
     </task>
     <task id="LOCAL-00011" summary="Ce serait bien que quelqu'un me dise si le changement des menus s'effectue ou non&#10;&#10;Signed-off-by: stephench420 &lt;benjamin.lesieux@efrei.net&gt;">
       <created>1585504860391</created>
@@ -541,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591102593369</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="refactor and setup easier">
+      <created>1632264187106</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1632264187107</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +584,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajout d'une selection de niveau, pour l'instant doit s'ajouter à la main dans le fichiers levels.txt en n'oubliant pas de sauter une ligne à la fin" />
     <MESSAGE value="Correction du bug d'highlighting des boutons" />
     <MESSAGE value="Simplification du code, il est beaucoup plus facile de créer des boutons. Voir option_menu.py" />
     <MESSAGE value="Les boutons ils sont jolis" />
@@ -609,7 +608,8 @@
     <MESSAGE value="Chrono et touuuuuuuuuuut" />
     <MESSAGE value="We are reaching the end" />
     <MESSAGE value="Soinc skin DLC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Soinc skin DLC" />
+    <MESSAGE value="refactor and setup easier" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor and setup easier" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -618,7 +618,7 @@
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$game.coverage" NAME="game Coverage Results" MODIFIED="1581356655030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$Projet_Tranverse_1.coverage" NAME="game Coverage Results" MODIFIED="1580931744961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProjetTranverse1$test.coverage" NAME="test Coverage Results" MODIFIED="1581526788278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/GottaGoFast_py$ggf.coverage" NAME="ggf Coverage Results" MODIFIED="1632253031154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GottaGoFast_py$ggf.coverage" NAME="ggf Coverage Results" MODIFIED="1632263772921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Projet_Tranverse_1$bin.coverage" NAME="bin Coverage Results" MODIFIED="1581074667779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProjetTranverse1$game.coverage" NAME="game Coverage Results" MODIFIED="1581447233474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ggf$All_trajectories.coverage" NAME="All trajectories Coverage Results" MODIFIED="1588844284337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
