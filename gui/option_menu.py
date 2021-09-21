@@ -3,8 +3,9 @@ from gui.gui import Gui
 import pygame
 import sys
 
-pygame.mixer.init(44100, -16,2,2048)
+pygame.mixer.init(44100, -16, 2, 2048)
 clic = pygame.mixer.Sound("images/clic.ogg")
+
 
 class OptionMenu(Gui):
 

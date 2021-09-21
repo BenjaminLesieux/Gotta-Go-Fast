@@ -26,8 +26,9 @@ class TextBox:
     :param window - une surface sur laquelle dessiner 
     :desc - dessine la textbox à l'écran
     """
+
     def draw(self, window):
-        if self.active == False:
+        if not self.active:
             self.image.fill(self.black)
             pygame.draw.rect(self.image, self.color, (1, 1, self.width - 2, self.height - 2))
             text = self.font.render(self.text, False, (109, 0, 0))
@@ -51,8 +52,9 @@ class TextBox:
     :param pos - position du clic
     :desc - vérifie si l'on clique sur la textbox 
     """
+
     def verifClick(self, pos):
-        if pos[0] > self.x and pos[0] < self.x + self.width and pos[1] > self.y and pos[1] < self.y + self.height:
+        if self.x < pos[0] < self.x + self.width and self.y < pos[1] < self.y + self.height:
             self.active = True
         else:
             self.active = False
@@ -61,20 +63,20 @@ class TextBox:
     :param key - la touche pressée 
     :desc - Ajoute du texte dans la textbox 
     """
+
     def addText(self, key):
-        if (key > 47 and key < 58) or (key > 255 and key < 266):
+        if (47 < key < 58) or (255 < key < 266):
             self.caps = False
-            if (key > 255 and key < 266):
+            if 255 < key < 266:
                 key = key - 208
-        if self.caps == True:
+        if self.caps:
             key = key - 32
         elif key == 13:
             self.active = False
 
         try:
             if key != 109 and key != 77:
-                if key == 59 or key == 27 or (64 < key and key < 91) or (96 < key and key < 123) or (
-                        47 < key and key < 58):
+                if key == 59 or key == 27 or (64 < key < 91) or (96 < key < 123) or (47 < key < 58):
                     letter = chr(key)
                     if letter == 'q':
                         letter = 'a'

@@ -1,11 +1,12 @@
 from pygame.sprite import *
 from math import *
 
-pygame.mixer.init(44100, -16,2,2048)
+pygame.mixer.init(44100, -16, 2, 2048)
 jump = pygame.mixer.Sound("images/Jump.ogg")
 walk = pygame.mixer.Sound("images/Walk.ogg")
 walk.set_volume(0.05)
 jump.set_volume(0.1)
+
 
 class Player(Sprite):
 
@@ -26,7 +27,7 @@ class Player(Sprite):
         self.ground = self.rect.bottom
         self.falling = False  # True si le joueur chute, mais pas d'un saut
         self.landed = True  # True si le joueur a atteri après un saut ou une chute
-        self.power = 0.8  # equivalent à la vitesse initiale, trouvé avec experimentations
+        self.power = 0.75  # equivalent à la vitesse initiale, trouvé avec experimentations
         self.alpha = 26  # 30 = vertical; 0 = horizontal
         self.angle = -self.alpha * pi / 60  # calcul de l'angle en RAD, selon alpha
         self.convert = ((38.2 / 1920) / 100)  # Pour un écran 17", 38.2 cm = 1920pix => 1 pix = (38.2/1920)/100m
@@ -35,8 +36,8 @@ class Player(Sprite):
         self.i = 1  # variables itérative arbitraire (remplace la variable temporaire d'une vraie équation de trajectoire)
         self.d0 = self.x
         self.h0 = self.y
-        self.dist_jump = 20
-        self.dist_fall = 20
+        self.dist_jump = 10
+        self.dist_fall = 10
         self.frame = 0
         self.face = True
         self.dead = "None"
@@ -64,9 +65,9 @@ class Player(Sprite):
         """ Gestion des évènements """
         i = 0
         key = pygame.key.get_pressed()
-        dist = 6  # la distance en 1 frame
+        dist = 3  # la distance en 1 frame
 
-        if (self.landed == False):
+        if not self.landed:
             """ Tant que le joueur n'a pas attéri, il continue son saut """
             self.angle = -self.alpha * pi / 60
             i = self.jump(self.power, self.angle)
@@ -79,9 +80,9 @@ class Player(Sprite):
             self.face = False
             if key[pygame.K_RIGHT] or key[pygame.K_d]:  # fleche de droite ou touche 'd'
                 self.x += dist
-                if (self.sens == 1 and self.speed < 6):  # vitesse de chute de plateforme
+                if self.sens == 1 and self.speed < 6:  # vitesse de chute de plateforme
                     self.speed += 0.2
-                elif (self.sens == -1):
+                elif self.sens == -1:
                     self.speed = 0
                 self.sens = 1
                 walk.play()
@@ -91,22 +92,22 @@ class Player(Sprite):
                     i = self.dist_jump
                     jump.play()
 
-                elif key[pygame.K_UP] or key[pygame.K_w]:
+                elif key[pygame.K_UP] or key[pygame.K_z]:
                     if self.alpha < 28:
                         self.alpha += 0.2
-                        self.power += 0.004
+                        self.power += 0.003
 
                 elif key[pygame.K_DOWN] or key[pygame.K_s]:
-                    if self.alpha > 20:
+                    if self.alpha > 22:
                         self.alpha -= 0.2
-                        self.power -= 0.004
+                        self.power -= 0.003
 
 
-            elif key[pygame.K_LEFT] or key[pygame.K_a]:  # fleche de droite ou touche 'q' ('a' en qwerty)
+            elif key[pygame.K_LEFT] or key[pygame.K_q]:  # fleche de droite ou touche 'q' ('a' en qwerty)
                 self.x -= dist
-                if (self.sens == -1 and self.speed < 6):
+                if self.sens == -1 and self.speed < 6:
                     self.speed += 0.2
-                elif (self.sens == 1):
+                elif self.sens == 1:
                     self.speed = 0
                 self.sens = -1
                 walk.play()
@@ -117,40 +118,40 @@ class Player(Sprite):
                     i = self.dist_jump
                     jump.play()
 
-                elif key[pygame.K_UP] or key[pygame.K_w]:
+                elif key[pygame.K_UP] or key[pygame.K_z]:
                     if self.alpha < 28:
                         self.alpha += 0.2
-                        self.power += 0.004
+                        self.power += 0.003
 
                 elif key[pygame.K_DOWN] or key[pygame.K_s]:
-                    if self.alpha > 20:
+                    if self.alpha > 22:
                         self.alpha -= 0.2
-                        self.power -= 0.004
+                        self.power -= 0.003
 
 
             elif key[pygame.K_SPACE]:
                 self.update_position()
                 self.landed = False
-                self.power = 0.8
+                self.power = 0.75
                 i = self.dist_jump
                 jump.play()
 
-            elif key[pygame.K_UP] or key[pygame.K_w]:
+            elif key[pygame.K_UP] or key[pygame.K_z]:
                 if self.alpha < 28:
                     self.alpha += 0.2
-                    self.power += 0.004
+                    self.power += 0.003
                     self.sens = 0
 
             elif key[pygame.K_DOWN] or key[pygame.K_s]:
-                if self.alpha > 20:
+                if self.alpha > 22:
                     self.alpha -= 0.2
-                    self.power -= 0.004
+                    self.power -= 0.003
                     self.sens = 0
 
             else:  # S'il ne se passe rien
                 self.face = True
                 self.sens = 0
-                if self.landed == True:
+                if self.landed:
                     self.speed = 0
 
         if self.y > 720:
@@ -186,8 +187,7 @@ class Player(Sprite):
         self.rect = self.image.get_rect(center=self.position)
 
     def animation(self):
-
-        if (self.frame == 12):
+        if self.frame == 24:
             self.frame = 0
 
         if self.landed:
@@ -195,24 +195,24 @@ class Player(Sprite):
                 self.image = self.list_images[0]
 
             else:
-                if (self.sens == 1):
-                    if (self.frame//6 == 0):
+                if self.sens == 1:
+                    if self.frame // 6 == 0:
                         self.image = self.list_images[1]
                     else:
                         self.image = self.list_images[2]
                     self.frame += 1
-                
-                elif (self.sens == -1):
-                    if (self.frame//6 == 0):
+
+                elif self.sens == -1:
+                    if self.frame // 6 == 0:
                         self.image = self.list_images[3]
                     else:
                         self.image = self.list_images[4]
                     self.frame += 1
 
         else:
-            if (self.sens == 1):
+            if self.sens == 1:
                 self.image = self.list_images[1]
-            elif (self.sens == -1):
+            elif self.sens == -1:
                 self.image = self.list_images[3]
 
     def can_lava_move(self):
@@ -220,16 +220,16 @@ class Player(Sprite):
             return True
         else:
             return False
-    
+
     def can_defil(self):
         if self.y <= 300:  # Valeur à changer pour le début du fond d'écran
             return True
-        else :
+        else:
             return False
 
     def just_falling(self):
-        if (self.falling == True):
+        if self.falling:
             if self.sens == 1:
-                self.x += self.speed
+                self.x += 0.4 * self.speed
             else:
-                self.x -= self.speed
+                self.x -= 0.4 * self.speed

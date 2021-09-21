@@ -42,12 +42,11 @@ class Platform(Sprite):
         Mouvement horizontal des plateformes
     """
     def move(self):
-
         if self.mobile:
             if self.sens:
-                self.x += 5
+                self.x += 2
             else:
-                self.x -= 5
+                self.x -= 2
 
             if self.x == self.position[0] + 40:
                 self.sens = False
@@ -75,10 +74,11 @@ class Platform(Sprite):
             le joueur est téléporté au dessus de la plateforme
         : return Booléen
     """
+
     def collides_with(self, player, platforms):
-        if pygame.sprite.spritecollideany(player, platforms, None) != None and player.y_1 < player.y:
-            if player.rect.left > self.rect.left - 2 / 3 * player.image.get_width() and player.rect.right < self.rect.right + 2 / 3 * player.image.get_width() and player.rect.bottom < self.rect.bottom + 5 and player.rect.bottom > self.rect.top - 5:
-                if (player.y != self.rect.top - player.image.get_height() + 1):
+        if pygame.sprite.spritecollideany(player, platforms, None) is not None and player.y_1 < player.y:
+            if player.rect.left > self.rect.left - 2 / 3 * player.image.get_width() and player.rect.right < self.rect.right + 2 / 3 * player.image.get_width() and self.rect.bottom + 5 > player.rect.bottom > self.rect.top - 5:
+                if player.y != self.rect.top - player.image.get_height() + 1:
                     player.y = self.rect.top - player.image.get_height() + 1
                     player.landed = True
                     player.update_position()
@@ -91,4 +91,4 @@ class Platform(Sprite):
     """
     def collides(self):
         self.mouse_x, self.mouse_y = pygame.mouse.get_pos()
-        return self.mouse_x > self.x and self.mouse_x < self.x + self.image.get_width() and self.mouse_y > self.y and self.mouse_y < self.y + self.image.get_height()
+        return self.x < self.mouse_x < self.x + self.image.get_width() and self.y < self.mouse_y < self.y + self.image.get_height()

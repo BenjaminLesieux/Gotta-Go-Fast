@@ -55,4 +55,3 @@ class GameMenu(Gui):
         self.game_handler.register_player(self.player)
         self.ggf.player.add(self.player)
         self.game_handler.render_lava()
-        

@@ -5,8 +5,9 @@ from gui.leveleditor import LevelEditor
 from gui.text_box import TextBox
 from gui.final_screen import FinalScreen
 
-pygame.mixer.init(44100, -16,2,2048)
+pygame.mixer.init(44100, -16, 2, 2048)
 clic = pygame.mixer.Sound("images/clic.ogg")
+
 
 class LevelSelector:
 
@@ -26,6 +27,7 @@ class LevelSelector:
     """
     :desc - Ajout d'un niveau dans la liste des niveaux
     """
+
     def register_level(self, level):
         registered = open("levels.txt", "a+")
         registered.write(level.name + "\n")
@@ -33,6 +35,7 @@ class LevelSelector:
     """
     :desc - Charge les niveaux 
     """
+
     def propose_levels(self):
         registered = open("levels.txt", "r")
 
@@ -43,6 +46,7 @@ class LevelSelector:
     :return True si un niveau a été selectionné, False sinon
     :type boolean
     """
+
     def has_selected_level(self):
         return self.selected_level is not None
 
@@ -143,6 +147,7 @@ class LevelSelector:
     """
     :desc - Retire un niveau de la liste des niveaux
     """
+
     def remove_level(self, level):
         self.levels.remove(level)
         f = open("levels.txt", "w")
