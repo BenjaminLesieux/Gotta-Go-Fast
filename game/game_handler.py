@@ -37,7 +37,6 @@ class Game:
             pygame.mixer.music.play(-1)
 
         if not self.stop:
-
             collide = 0
             self.lava.new_rect()
             self.player.update()
@@ -98,8 +97,10 @@ class Game:
 
             self.ggf.draw_text(self.count + "s", pygame.font.Font("images/Fipps-Regular.otf", 35), (255, 255, 255),
                                self.ggf.mode, 30, 20)
+            self.ggf.draw_text("Angle : " + str((self.player.alpha - 22) * 100 // (28 - 22))[0:3],
+                               pygame.font.Font("images/Fipps-Regular.otf", 25), (255, 255, 255),
+                               self.ggf.mode, 1050, 20)
             self.end()
-
 
     def register_platform(self, level_name, position, mobile, decalage, ptype):
 
@@ -128,8 +129,6 @@ class Game:
 
         ymax = 10000
 
-        level = open(level_name + ".txt", "r") if os.path.exists(level_name + ".txt") else open(level_name + ".txt",
-                                                                                                "a+")
         if os.path.exists("high scores/" + level_name + ".txt"):
             level_hs = open("high scores/" + level_name + ".txt", "r")
         else:
@@ -137,7 +136,11 @@ class Game:
             for i in range(0, 3):
                 level_hs.write("999.99\n")
         level_hs.close()
-        level = open(level_name + ".txt", "r")  # Pour être sûr de mettre en mode 'read' après la possible création
+
+        if os.path.exists("levels/" + level_name + ".txt"):
+            level = open("levels/" + level_name + ".txt", "r")
+        else:
+            level = open("levels/" + level_name + ".txt", "a+")
 
         lines = level.readlines()
 
@@ -184,7 +187,8 @@ class Game:
 
     def rewrite_file(self, level_name, platform):
 
-        level = open(level_name.name + ".txt", "r")  # Pour être sûr de mettre en mode 'read' après la possible création
+        level = open("levels/" + level_name.name + ".txt",
+                     "r")  # Pour être sûr de mettre en mode 'read' après la possible création
         lines = level.readlines()
         num_line = 0
         ymax = 0
@@ -205,20 +209,18 @@ class Game:
             while lines[j][i] != "/":
                 i += 1
 
-            ptype = int(lines[j][i + 1])
             if y < ymax:
                 ymax = y
                 self.w_pos = j
 
             position = (x, y)
-            mobile = True if lines[j][i + 3:len(lines[j]) - 2] == "True" else False
             if position == platform.position:
                 num_line = j
                 break
 
         level.close()
         lines.pop(num_line)
-        level = open(level_name.name + ".txt", "w+")
+        level = open("levels/" + level_name.name + ".txt", "w+")
 
         for line in lines:
             level.write(line)
@@ -227,9 +229,11 @@ class Game:
 
     def remove_platform(self, *sprite):
         self.platforms.remove(sprite)
+
     """
         Fonctions permettant d'initialiser les classes.
     """
+
     def register_player(self, player):
         self.player = player
         self.player.surface = self.ggf.mode
@@ -245,6 +249,7 @@ class Game:
     """
         Vérifie si le joueur a gagné ou perdu
     """
+
     def type_end(self):
 
         if self.trophy is not None:
@@ -257,6 +262,7 @@ class Game:
         Remet les conditions à zéro en cas de victoire/défaite
         Donne des paramètres différents au menu.
     """
+
     def end(self):
 
         if self.player.dead != "None":

@@ -1,3 +1,4 @@
+import pygame
 from pygame.sprite import *
 from math import *
 
@@ -96,11 +97,15 @@ class Player(Sprite):
                     if self.alpha < 28:
                         self.alpha += 0.2
                         self.power += 0.003
+                    else:
+                        self.alpha = 28
 
                 elif key[pygame.K_DOWN] or key[pygame.K_s]:
                     if self.alpha > 22:
                         self.alpha -= 0.2
                         self.power -= 0.003
+                    else:
+                        self.alpha = 22
 
 
             elif key[pygame.K_LEFT] or key[pygame.K_q]:  # fleche de droite ou touche 'q' ('a' en qwerty)
@@ -122,11 +127,15 @@ class Player(Sprite):
                     if self.alpha < 28:
                         self.alpha += 0.2
                         self.power += 0.003
+                    else:
+                        self.alpha = 28
 
                 elif key[pygame.K_DOWN] or key[pygame.K_s]:
                     if self.alpha > 22:
                         self.alpha -= 0.2
                         self.power -= 0.003
+                    else:
+                        self.alpha = 22
 
 
             elif key[pygame.K_SPACE]:
@@ -141,12 +150,16 @@ class Player(Sprite):
                     self.alpha += 0.2
                     self.power += 0.003
                     self.sens = 0
+                else:
+                    self.alpha = 28
 
             elif key[pygame.K_DOWN] or key[pygame.K_s]:
                 if self.alpha > 22:
                     self.alpha -= 0.2
                     self.power -= 0.003
                     self.sens = 0
+                else:
+                    self.alpha = 22
 
             else:  # S'il ne se passe rien
                 self.face = True

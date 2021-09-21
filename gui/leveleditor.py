@@ -114,13 +114,13 @@ class LevelEditor:
                             for i in range(0, 3):
                                 level_hs.write("999.99\n")
                             level_hs.close()
-                            self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, False,
+                            self.game_handler.register_platform("levels/" + self.level.name + ".txt", mouse_pos, False,
                                                                 self.bg.decalage,
                                                                 self.p_type)
                     elif event.button == 3:
                         click = True
                         if place:
-                            self.game_handler.register_platform(self.level.name + ".txt", mouse_pos, True,
+                            self.game_handler.register_platform("levels/" + self.level.name + ".txt", mouse_pos, True,
                                                                 self.bg.decalage,
                                                                 self.p_type)
                 if event.type == pygame.QUIT:

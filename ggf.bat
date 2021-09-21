@@ -1,3 +1,3 @@
 @echo off
-python GottaGoFast.py %*
+venv\Scripts\python.exe GottaGoFast.py %*
 pause

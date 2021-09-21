@@ -29,7 +29,7 @@ class LevelSelector:
     """
 
     def register_level(self, level):
-        registered = open("levels.txt", "a+")
+        registered = open("levels/levels.txt", "a+")
         registered.write(level.name + "\n")
 
     """
@@ -37,7 +37,7 @@ class LevelSelector:
     """
 
     def propose_levels(self):
-        registered = open("levels.txt", "r")
+        registered = open("levels/levels.txt", "r")
 
         for line in registered.readlines():
             self.levels.append(Level(line[0:len(line) - 1]))
@@ -150,7 +150,7 @@ class LevelSelector:
 
     def remove_level(self, level):
         self.levels.remove(level)
-        f = open("levels.txt", "w")
+        f = open("levels/levels.txt", "w")
 
         for l in self.levels:
             f.write(l.name + "\n")
